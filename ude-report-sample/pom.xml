@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>iisi-ude-report-itext-sample</artifactId>
+	<artifactId>iisi-ude-report-sample</artifactId>
 	<parent>
 		<groupId>com.iisigroup</groupId>
 		<artifactId>iisi-ude-component</artifactId>
