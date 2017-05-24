@@ -14,7 +14,6 @@ Maven Repository Setting :
         </releases>
         <snapshots>
             <enabled>true</enabled>
-            <updatePolicy>interval:5</updatePolicy>
         </snapshots>
     </repository>
 </repositories>
