@@ -11,17 +11,12 @@
   * [3. 文件(PDF/Word/RTF)](documents/ch01/ch01-pdf.md)
   * [4. 試算表(Excel/ODS)](documents/ch01/ch01-excel.md)
   * [5. CSV](documents/ch01/ch01-csv.md)
-  
-  
-*  頁面控制
-*   邊界
-*  頁首頁尾
-* 浮水印
-    
-    
-  
-  基本文字輸出
-  基本表格輸出
+* [頁面控制]
+  * [邊界]
+  * [頁首頁尾]
+  * [浮水印]
+* 基本文字輸出
+* 基本表格輸出
   
 
 
