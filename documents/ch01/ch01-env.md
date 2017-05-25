@@ -104,3 +104,44 @@ font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
 若使用完整UDE套件及相關設定方式，設定路徑中可使用${global.resource.path}、${resource.path}等環境變數，讀入設定檔時會自動代換。
 
 # 單元測試
+
+一般建議使用 AbstractITextTestkit或是 AbstractITextTest 為父類別，實作單元測試，因為有一些附加的測試特性可以選用。
+
+## AbstractITextTestkit
+
+基礎的測試類別，主要功能有二：提供 PDFDocumentManager 以及依據測試METHOD 名稱產出輸出檔案物件。
+
+建構子需傳入可以使用ITextTestConfig定義測試設定值
+
+``` java
+public class GSS0010Test extends AbstractITextTestkit {
+
+    final GSS0010 gss0010 = new GSS0010();
+
+    public GSS0010Test() {
+        super(prepareConfig());
+    }
+
+    private static ITextTestConfig prepareConfig() {
+        final ITextTestConfig config = new ITextTestConfig();
+        return config;
+    }
+
+    @Test
+    public void testPDF() {
+        this.gss0010.generatePDF(getDocumentManager(), createFileByTestName(DocumentFormat.PDF));
+    }
+
+    @Test
+    public void testExcel() {
+        this.gss0010.generateExcel(createFileByTestName(DocumentFormat.EXCEL));
+    }
+
+}
+
+```
+
+
+
+
+
