@@ -110,8 +110,7 @@ font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
 ## AbstractITextTestkit
 
 基礎的測試類別，主要功能有二：提供 PDFDocumentManager 以及依據測試METHOD 名稱產出輸出檔案物件。
-
-建構子需傳入可以使用ITextTestConfig定義測試設定值
+建構子可傳入ITextTestConfig以定義測試設定。
 
 ``` java
 public class GSS0010Test extends AbstractITextTestkit {
@@ -140,6 +139,15 @@ public class GSS0010Test extends AbstractITextTestkit {
 }
 
 ```
+以下是 ITextTestConfig 的可設定內容：
+
+
+
+* iTextConfigPath: iText設定檔路徑，預設為 classpath:itext-config-default.properties。
+
+* outputRoot : 指定輸出PDF的根目錄。預設為系統TEMP路徑下的__Report_SAMPLE子目錄。
+* keepOutputPDF :執行完成後，是否保留PDF檔，預設為TRUE。
+* showMarginBorder : 輸出的範例PDF，是否額外輸出邊界虛線，預設為TRUE。此項設定可以有效幫助開發人員調整版面設定。如果要產出給客戶做需求確認時，可以視需求設為FALSE。
 
 
 
