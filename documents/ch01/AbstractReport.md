@@ -1,6 +1,12 @@
 #  設計表樣清單定義介面
 
-輸出結果 : [GSSPDF](/sample-output/ch01/[GSS0010Test]PDF.pdf)
+
+原始程式(github)：
+  * [src](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/main/java/ude/report/sample/ch01)
+  * [test](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/test/java/ude/report/sample/ch01)
+
+輸出結果 : 
+  * [PDF/Excel/CSV](https://github.com/tcf625/ude-reports/tree/master/sample-output/ch01)
 
 ## ReportDefinition 
 
@@ -64,7 +70,7 @@ public enum AllReports implements ReportDefinition {
 
 ## AbstractReport
 
-
+要求子類別實作所有輸出格式介面。
 
 ``` java
 public abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
@@ -75,41 +81,47 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
         this.reportDefinition = reportDefinition;
         super.setPageSize(pageSize);
     }
+    
+    public ReportDefinition getReportDefinition() {
+        return this.reportDefinition;
+    }
+    
+    // ... 後略
+}
+```
 
-    //####################################################################
-    //## [Method] sub-block : 預設 PDF layout
-    //####################################################################
+## GSS0010 / GSS0011
 
-    protected final LayoutInfo defaultLayoutInfo(final double deltaLeft, final double deltaRight, final double deltaTop,
-            final double deltaBottom) {
-        final LayoutInfo layoutInfo = new LayoutInfo(//
-                LengthUnit.CM.trans(1.5f + (float) deltaLeft)     // 左
-                , LengthUnit.CM.trans(1.5f + (float) deltaRight)  // 右
-                , LengthUnit.CM.trans(2.0f + (float) deltaTop)    // 上
-                , LengthUnit.CM.trans(1.8f + (float) deltaBottom) // 下
+最簡單的輸出內容程式，如：
 
-        );
-        return layoutInfo;
+``` java 
+    @Override
+    public void generatePDFContent(final PDFDocument pdfDocument) {
+        pdfDocument.writeText("TEST-GSS0010");
     }
 
     @Override
-    public LayoutInfo prepareLayoutInfo(final Rectangle secPageSize) {
-        final LayoutInfo layout = this.defaultLayoutInfo();
-        this.defaultHeader(layout);
-        return layout;
+    public void generateExcelContent(final ExcelDocument<?, ?> document) {
+        final ExcelSheet<?> sheet = document.createSheet(this.toExcelSheetName());
+        sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
+        sheet.setColumnWidth(0, 20);
     }
 
-    protected LayoutInfo defaultLayoutInfo() {
-        return this.defaultLayoutInfo(0, 0, 0, 0);
+    @Override
+    public void generateCSVContent(final CSVPrinter csvPrinter) throws IOException {
+        csvPrinter.print("TEST-GSS0010");
+        csvPrinter.print("TEST-GSS0011");
+        csvPrinter.print("TEST-GSS0012");
+        csvPrinter.println();
     }
-
-    protected void defaultHeader(final LayoutInfo layoutInfo) {
-        layoutInfo.setHeader(ItemPosition.LeftHeader, this.reportDefinition.getReportCode(), 12);
-        layoutInfo.setHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportName(), 12);
-    }
-
-}
 ```
+
+## GSS0010Test
+
+   執行報表程式用，完整說明請參考「單元測試」範例。
+
+
+
 
 
 
