@@ -27,15 +27,11 @@ default.document.marginRight=30
 default.document.marginBottom=30
 default.document.marginTop=30
 
-
 default.encryption.enable=false
 default.encryption.owner.password=
 default.encryption.user.password=
 
-#default.table.integer.format=#,##0
-#default.table.decimal.format=#,##0.00
-
-watermarks.config.path=${share.path}/reports/marks/
+watermarks.config.path=${resource.path}/reports/marks/
 
 #字型定義
 font.WindowsFont.MINGLIU.0 = C:/windows/fonts/mingliu.ttc
@@ -68,7 +64,29 @@ font.CNS11643.KAI.2=${global.resource.path}/fonts/TW-Kai-Ext-B-98_1.ttf
 font.CNS11643.KAI.F=${global.resource.path}/fonts/TW-Kai-Plus-98_1.ttf
 
 
+```
 
+### 字型設定
+
+``` properties
+default.font=WindowsFont.MINGLIU
+default.font.size=12
+```
+
+* default.font      文件產出時預設使用的字型代碼。
+* default.font.size 文件產出時預設使用的字型大小。
+
+實際使用的字型檔案則以 font.{字型代碼}.{UNICODE字面} 進行定義。例如 
+
+``` properties
+font.CNS11643.SUNG.0=${global.resource.path}/fonts/TW-Sung-98_1.ttf
+font.CNS11643.SUNG.2=${global.resource.path}/fonts/TW-Sung-Ext-B-98_1.ttf
+font.CNS11643.SUNG.F=${global.resource.path}/fonts/TW-Sung-Plus-98_1.ttf
 
 ```
+
+
+font.CNS11643.SUNG.0 為全字庫宋體字第0字面，font.CNS11643.SUNG.F為全字庫宋體字第15字面。如相同的字面設定有多組，則套件會逐一測試各檔案路徑是否存在可用字型檔。
+若使用完整UDE套件及相關設定方式，設定路徑中可使用${global.share.path}等環境變數，讀入時會自動代換。
+
 
