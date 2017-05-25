@@ -20,5 +20,6 @@
 * [五、繪圖](documents/ch05/README.md)
 * [六、表格描述定義](documents/ch06/README.md)
 * [七、其它議題](documents/ch07/README.md)
-  * \[PDF文件安全性設定\]
+  * [1. PDF文件安全性設定](documents/ch07/ch07-encryption.md)
+
 
