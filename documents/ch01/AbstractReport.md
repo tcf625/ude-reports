@@ -1,8 +1,12 @@
 #  設計表樣清單定義介面
 
 
-原始程式(github)：[AbstractReport](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/main/java/ude/report/sample/ch01)
-輸出結果 : [PDF/Excel/CSV](https://github.com/tcf625/ude-reports/tree/master/sample-output/ch01)
+原始程式(github)：
+  * [src](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/main/java/ude/report/sample/ch01)
+  * [test](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/test/java/ude/report/sample/ch01)
+
+輸出結果 : 
+  * [PDF/Excel/CSV](https://github.com/tcf625/ude-reports/tree/master/sample-output/ch01)
 
 ## ReportDefinition 
 
@@ -111,6 +115,11 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
         csvPrinter.println();
     }
 ```
+
+## GSS0010Test
+
+   執行報表程式用，完整說明請參考「單元測試」範例。
+
 
 
 
