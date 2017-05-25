@@ -12,14 +12,12 @@ Ude-Report 基於 UDE-Frameword 開發，一般運作於 Spring 環境之下，�
 
 ## 設定檔
 
-設定檔使用
-預設的 itext-config-default.properties 內容如下：
-
+設定檔使用 UDE-Extended properties 格式撰寫，預設的 itext-config-default.properties 內容如下：
 
 
 ``` properties
 
-預設字型
+# 預設字型
 default.font=WindowsFont.MINGLIU
 default.font.size=12
 
