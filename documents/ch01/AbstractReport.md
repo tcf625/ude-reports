@@ -103,7 +103,7 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
 
     protected void defaultHeader(final LayoutInfo layoutInfo) {
         layoutInfo.setHeader(ItemPosition.LeftHeader, this.reportDefinition.getReportCode(), 12);
-        layoutInfo.setHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportCode(), 12);
+        layoutInfo.setHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportName(), 12);
     }
 
 }
