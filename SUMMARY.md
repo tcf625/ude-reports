@@ -15,8 +15,8 @@
   * [邊界]
   * [頁首頁尾]
   * [浮水印]
-* [三、基本文字](documents/ch03/README.md)
-* [四、基本表格](documents/ch04/README.md)
+* [三、文字](documents/ch03/README.md)
+* [四、表格](documents/ch04/README.md)
 * [五、繪圖](documents/ch05/README.md)
 * [六、表格描述定義](documents/ch06/README.md)
 * [七、其它議題](documents/ch07/README.md)
