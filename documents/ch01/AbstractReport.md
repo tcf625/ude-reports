@@ -1,6 +1,6 @@
 #  設計表樣清單定義介面
 
-輸出結果 : [GSSPDF](/sample-output/ch01/[GSS0010Test]PDF.pdf)
+輸出結果 : [GSSPDF](/sample-output/ch01/)
 
 ## ReportDefinition 
 
