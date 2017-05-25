@@ -17,11 +17,13 @@ public interface ReportDefinition {
     }
 }
 ```
-## AllReports
+
+
+##  AllReports
+
 
 ``` java
 public enum AllReports implements ReportDefinition {
-
     GSS0010("折抵役期空白清冊"), //
     GSS0011("折抵役期資料匯出", DocumentFormat.CSV), //
     ;
@@ -56,5 +58,8 @@ public enum AllReports implements ReportDefinition {
 
 }
 ```
+
+
+
 
 
