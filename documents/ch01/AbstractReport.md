@@ -4,9 +4,6 @@
 原始程式(github)：[AbstractReport](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/main/java/ude/report/sample/ch01)
 輸出結果 : [PDF/Excel/CSV](https://github.com/tcf625/ude-reports/tree/master/sample-output/ch01)
 
-
-
-
 ## ReportDefinition 
 
 基本的規劃範例，每一張表樣應有的資訊可能包括「代碼」、「名稱」及「可支援輸出格式」。
@@ -69,7 +66,7 @@ public enum AllReports implements ReportDefinition {
 
 ## AbstractReport
 
-
+要求子類別實作所有輸出格式介面。
 
 ``` java
 public abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
