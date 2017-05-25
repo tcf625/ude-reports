@@ -19,7 +19,7 @@ public interface ReportDefinition {
 ```
 ## AllReports
 
-``` JAVA
+``` java
 public enum AllReports implements ReportDefinition {
 
     GSS0010("折抵役期空白清冊"), //
