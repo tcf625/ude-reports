@@ -96,10 +96,10 @@ font.WindowsFont.MINGLIU.0 = ${global.resource.path}/fonts/mingliu.ttc
 
 專案有使用自造字者，也可以使用多組設定，把自造字加到第二組後。
 
-''' properties
+``` properties
 font.NPP_FONT.MING.0=${global.resource.path}/font/TW-Sung-98_1.ttf
 font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
-'''
+``` 
 
 
 
