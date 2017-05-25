@@ -1,5 +1,7 @@
 #  設計表樣清單定義介面
 
+輸出結果 : [GSSPDF](/sample-output/ch01/[GSS0010Test]PDF.pdf)
+
 ## ReportDefinition 
 
 基本的規劃範例，每一張表樣應有的資訊可能包括「代碼」、「名稱」及「可支援輸出格式」。
