@@ -11,19 +11,15 @@
   * [3. 文件(PDF/Word/RTF)](documents/ch01/ch01-pdf.md)
   * [4. 試算表(Excel/ODS)](documents/ch01/ch01-excel.md)
   * [5. CSV](documents/ch01/ch01-csv.md)
-* [頁面控制]
+* [二、頁面控制](documents/ch02/README.md)
   * [邊界]
   * [頁首頁尾]
   * [浮水印]
-* 基本文字輸出
-* 基本表格輸出
-  
+* [三、基本文字](documents/ch03/README.md)
+* [四、基本表格](documents/ch04/README.md)
+* [五、繪圖](documents/ch05/README.md)
+* [六、表格描述定義](documents/ch06/README.md)
+* [七、其它議題](documents/ch07/README.md)
+  * [PDF文件安全性設定]
 
-
-進階控制
-PDF文件安全性設定
-
-    
-  
-* [二、PDF文件基本操作](documents/ch02/README.md)
 
