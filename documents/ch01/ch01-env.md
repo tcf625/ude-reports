@@ -156,6 +156,8 @@ public class GSS0010Test extends AbstractITextTestkit {
 * UDE 套件設定
   *  setFixedBaseDir(String) : 在單一測試中，抽換所使用的系統瑻境變數 BASEDIR 值。
   *  setPath(UdeSystemPropertyItem, String) : 在單一測試中，指定系統瑻境路徑變數值。
+  
+## AbstractITextTest 
 
 
 
