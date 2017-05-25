@@ -146,7 +146,7 @@ public class GSS0010Test extends AbstractITextTestkit {
 * iTextConfigPath: iText設定檔路徑，預設為 classpath:itext-config-default.properties。
 
 * outputRoot : 指定輸出PDF的根目錄。預設為系統TEMP路徑下的__Report_SAMPLE子目錄。
-* keepOutputPDF :執行完成後，是否保留PDF檔，預設為TRUE。
+* keepOutputFile : 執行完成後，是否保留檔案，預設為TRUE。但在 CI 環境中，應以環境變數 keepOutputFile 設定為 FALSE。
 * showMarginBorder : 輸出的範例PDF，是否額外輸出邊界虛線，預設為TRUE。此項設定可以有效幫助開發人員調整版面設定。如果要產出給客戶做需求確認時，可以視需求設為FALSE。
 
 
