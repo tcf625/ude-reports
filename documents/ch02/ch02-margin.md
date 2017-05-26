@@ -51,7 +51,6 @@ public void test_Margin() {
 要手動對PDF進行換頁，請呼叫 pdfDocument.newPage()，若當前頁面還沒有實際內容輸出，不會真的換頁。所以如果要輸出空白頁面，請在兩次換頁間插入一次 writeText(“”)，或用 newPage(true)。
 
 
-
 ``` java
 @Test
 public void test_newPage() {
@@ -78,11 +77,32 @@ public void test_newPage() {
 
 ```
 
+輸出內容後，如果要確認是否造成換頁，可以用pdfDocument.isPageChanged()、pdfDocument.isNewPageBegin() 兩個Method 進行判斷。
+當PageChanged為真，則換頁事件有被觸發。
+當NewPageBegin為真，表示還沒有任何內容輸出到新的頁面。
 
 
 
+``` java
+for (int i = 0; i < 200; i++) {
+    final String prefix = i + StringUtils.repeat(" ", i % 4 + 1);
+    pdfDocument.writeText(prefix + "-1換頁測試\n" //
+                        + prefix + "-2換頁測試\n" //
+                        + prefix + "-3換頁測試\n");
+    if (pdfDocument.isPageChanged()) {
+        if (pdfDocument.isNewPageBegin()) {
+            pdfDocument.newPage();
+            pdfDocument.writeText("前項輸出剛好導致換頁，新頁面還沒有內容輸出", 10, DocumentAlign.CENTER);
+        } else {
+            pdfDocument.writeText("前項輸出導致換頁，而且部分內容已輸出到新頁面", 10, DocumentAlign.CENTER);
+        }
+    }
+}
 
-輸出內容後，如果要確認是否造成換頁，可以用pdfDocument.isPageChanged()、pdfDocument.isNewPageBegin() 兩個Method 進行判斷。當PageChanged為真，則換頁事件有被觸發。當NewPageBegin為真，表示還沒有任何內容輸出到新的頁面。
+```
+
+
+
 
 
 
