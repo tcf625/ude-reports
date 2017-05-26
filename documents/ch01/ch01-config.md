@@ -1,4 +1,4 @@
-# 設定檔
+### 設定檔
 
 設定檔使用 UDE-Extended properties 格式撰寫，預設的 itext-config-default.properties 內容如下：
 
@@ -54,7 +54,7 @@ font.CNS11643.KAI.F=${global.resource.path}/fonts/TW-Kai-Plus-98_1.ttf
 
 ```
 
-## 字型設定
+#### 字型設定
 
 主要的設定有兩個，'default.font' 與 'default.font.size' ，分別定義文件產出時預設使用的字型代碼與大小。
 預設範本使用「WINDOWS-細明體」輸出文字。

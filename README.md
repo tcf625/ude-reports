@@ -2,7 +2,8 @@
 
 所有相關範例，目前需於公司內網執行，以取得相關 libraries
 
-Maven Repository Setting :
+**範例程式 @ GitHub：** https://github.com/tcf625/ude-reports/
+** Maven Repository Setting :**
 
 ```xml
 <repositories>
@@ -18,6 +19,7 @@ Maven Repository Setting :
     </repository>
 </repositories>
 ```
+
 
 ## 概述
 
