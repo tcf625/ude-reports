@@ -1,2 +1,2 @@
-![](/assets/ch02/pages_margin.png)
+<img src="/assets/ch02/pages_margin.png" >
 
