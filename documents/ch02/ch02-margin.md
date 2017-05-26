@@ -1,3 +1,3 @@
 
 
-<img src="/assets/ch02/pages_margin.png" width="30%" >
+<img src="/assets/ch02/pages_margin.png" sytle="width:20%" >
