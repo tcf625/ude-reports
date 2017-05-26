@@ -20,14 +20,6 @@ public abstract class AbstractRisReport<DEF extends ReportDefinition> //
 頁面邊界經由 LayoutInfo 物件設定，可以在產生PDFDocument時傳入設定或另行設值。
 在所有的範例輸出結果中，都可以經由邊界虛線看出設定效果。
 
-
-
-
-
-
-
-
-
 ![](/assets/ch02/pages_margin-small.png)
 
 ``` java
