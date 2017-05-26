@@ -53,14 +53,14 @@
 UDE-Report 套件已將此部分開關文件流程進行包裝。
 
 ``` java
- @Test
-    public void testCreatePDF() throws IOException {
-        final PDFDocumentManager documentManager = getDocumentManager();
-        final File file = createFileByTestName(DocumentFormat.PDF);
-        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
-            pdfDocument.writeText("TEST");
-        }
+@Test
+public void testCreatePDF() throws IOException {
+    final PDFDocumentManager documentManager = getDocumentManager();
+    final File file = createFileByTestName(DocumentFormat.PDF);
+    try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
+        pdfDocument.writeText("TEST");
     }
+}
 ```
 
 
