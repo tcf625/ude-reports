@@ -49,6 +49,20 @@
 
 ## PDF \(itext\)
 
+以 itext 產製 PDF 文件的基本步驟為建立 Dodument、PdfWriter物件，並使用相關 methods 進行內容輸出。
+UDE-Report 套件已將此部分開關文件流程進行包裝。
+
+``` java
+ @Test
+    public void testCreatePDF() throws IOException {
+        final PDFDocumentManager documentManager = getDocumentManager();
+        final File file = createFileByTestName(DocumentFormat.PDF);
+        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
+            pdfDocument.writeText("TEST");
+        }
+    }
+```
+
 
 
 ## Word
