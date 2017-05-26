@@ -1,2 +1,2 @@
-![a](/assets/ch02/pages_margin.png=192x102)
+![small](/assets/ch02/pages_margin.png)
 
