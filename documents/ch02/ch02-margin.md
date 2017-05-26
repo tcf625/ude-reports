@@ -1,4 +1,35 @@
-pages\_margin.png
+
+
+
+以PDFDocumeneManager產生PDFDocument時，即需設定頁面大小。
+若使用AbstractPDFGenerator，預設為 A4 直印，但建議一律在建構子中明確設定。
+
+``` java
+public abstract class AbstractRisReport<DEF extends ReportDefinition> //
+        extends AbstractPDFGenerator {
+
+    // ...
+            
+    public AbstractRisReport(final DEF reportDef, final Rectangle pageSize) {
+        super(pageSize);
+        this.reportDef = reportDef;
+    }
+
+```
+
+
+    
+AbstractPDFGenerator
+
+則可以override setup() method，在其中呼叫 setPageSize() 進行定義。
+
+頁面邊界則是經由 LayoutInfo 物件設定，同樣可以在產生PDFDocument時傳入設定或另行設值，範例中可以經由測試用的邊界虛線看出設定效果。
+
+
+
+
+
+
 
 
 
