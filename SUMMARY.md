@@ -42,10 +42,15 @@
     * [範例：Barcodes](documents/ch05/barcodes.md)  
   * [4. 表格輸出](documents/ch05/painter-table.md)
 * [六、表格描述定義](documents/ch06/README.md)
-
+  * [1. 資料表格](documents/ch06/tableMetadata.md)
+    * [樹狀表格](documents/ch06/TreeTable.md)
+    * [巢狀表格](documents/ch06/NestTable.md)
+  * [2. 資料統計](documents/ch06/grouping.md)
+  * [3. 額外區塊](documents/ch06/block.md)
+  * [4. 其它轉換器](documents/ch06/tableTransfer.md)
 * [七、其它議題](documents/ch07/README.md)
   * [1. PDF文件安全性設定](documents/ch07/ch07-encryption.md)
   * [2. PDFPageEvent](documents/ch07/ch07-page-event.md)
-
+  * [3. 大型資料表格](documents/ch07/ch07-bigTable.md)
 
 
