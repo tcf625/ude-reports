@@ -16,6 +16,7 @@ default List<DocumentGenerator> getSections() {
 };
 ```
 
+## PrintPageSize 頁面大小
 
 
 
