@@ -7,6 +7,7 @@
 下例 SectionSample 用於輸出基本頁面，產出指定大小頁面配上單一文字。
 
 ``` java
+// SectionSample is a 'PDFGenerator'. 
 public class SectionSample extends AbstractPDFGenerator {
     private String text;
     public SectionSample(final Rectangle pageSize, final String text) {
@@ -20,8 +21,12 @@ public class SectionSample extends AbstractPDFGenerator {
 }
 ```
 
-然後我們可以建立多個 PDFGenerator 實例
+我們可以建立多個 SectionSample 實例，並組裝起來，使其依 1、2、2-1、2-2、2-3、3、4、5 的順序輸出。
+組裝方式有二：
 
+* 第一層的項目可以直接用 PDFGenerator.Helper.from( PDFGenerator... ) 產出一個空的 ROOT 文件包含指定內容。
+  * 一般專案實作中，也可以自訂空白 ROOT 文件類別，以便處理專案所需的邏輯，如檔案置放原則等等...。
+* 第二層以後的項目可用 AbstractPDFGenerator 所定義的 addSection() method 加入。
 
 
 ``` java
