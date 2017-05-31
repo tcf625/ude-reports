@@ -20,6 +20,9 @@ setPrintPageSize(PrintPageSize)
 
 ## 共通介面
 
+當同一種報表內容要用不同格式輸出時，通常會使用共同的 AbstractReport 實作所有格式介面。
+
+
 
 在 DocumentGenerator 介面中，與頁面控制相關的項目有以下幾項
 。AbstractPDFGenerator 是 DocumentGenerator 的主要實作。
