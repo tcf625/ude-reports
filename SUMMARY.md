@@ -36,8 +36,16 @@
     * [範例：外框處理(Table)](documents/ch04/decorator-border.md)
     * [範例：每列底色變化(Table)](documents/ch04/decorator-row-bgcolor.md)
 * [五、繪圖、定位輸出](documents/ch05/README.md)
+  * [1. 線段輸出](documents/ch05/painter-lines.md)
+  * [2. 文字輸出](documents/ch05/painter-text.md)
+  * [3. 圖片輸出](documents/ch05/painter-image.md)
+    * [範例：Barcodes](documents/ch05/barcodes.md)  
+  * [4. 表格輸出](documents/ch05/painter-table.md)
 * [六、表格描述定義](documents/ch06/README.md)
+
 * [七、其它議題](documents/ch07/README.md)
   * [1. PDF文件安全性設定](documents/ch07/ch07-encryption.md)
+  * [2. PDFPageEvent](documents/ch07/ch07-page-event.md)
+
 
 
