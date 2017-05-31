@@ -36,7 +36,23 @@ default List<DocumentGenerator> getSections() {
 
 ## PrintPageSize 頁面大小
 
-目前有 PDF / Excel 支援，PDF 格式的頁面定義較彈性，EXCEL則受限於 POI 的 void setPaperSize(short size); 只有
+目前有 PDF / Excel 支援，PDF 格式的頁面定義較彈性；EXCEL則受限於 POI 的 void setPaperSize(short size); 只有固定的選項可用。
+
+## BaseLayoutInfo 邊界與頁首頁尾控制
+
+見後文說明。
+
+## 分節 getSections()
+
+UDE-Report 可利用 Sections 機制，組合多個 DocumentGenerator 輸出為同一檔案，
+見後文說明.
+
+
+
+
+
+
+
 
 
 
