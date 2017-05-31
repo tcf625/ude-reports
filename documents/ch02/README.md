@@ -36,9 +36,10 @@ default List<DocumentGenerator> getSections() {
 
 ## PrintPageSize 頁面大小
 
-目前有 PDF / Excel 
+目前有 PDF / Excel 支援，PDF 格式的頁面定義較彈性，EXCEL則受限於 POI 的 void setPaperSize(short size); 只有
 
 
 
-本章主要以
+
+
 
