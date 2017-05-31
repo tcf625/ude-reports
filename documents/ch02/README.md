@@ -4,15 +4,20 @@
 
 * PDFDocument
 
-
-```
+``` JAVA
 setPageSize(Rectangle)
 setLayoutInfo(LayoutInfo)
 setMarkers(List<? extends MarkInfo>)
 ```
 
+* ExcelDocument - ExcelSheet
 
-* ExcelDocument
+``` JAVA
+setPrintPageSize(PrintPageSize)
+```
+
+
+
 
 
 
