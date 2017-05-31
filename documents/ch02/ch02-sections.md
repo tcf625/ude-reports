@@ -1,6 +1,23 @@
 
 
 
+``` java
+public class SectionSample extends AbstractPDFGenerator {
+    private String text;
+    public SectionSample(final Rectangle pageSize, final String text) {
+        super(pageSize);
+        this.text = text;
+    }
+
+    @Override
+    public void generatePDFContent(final PDFDocument pdfDocument) {
+        pdfDocument.writeText(this.text, 28, DocumentAlign.CENTER);
+    }
+}
+```
+
+
+
 
 ``` java
 final SectionSample s1 = new SectionSample(PageSize.A6.rotate(), "Chap 1");
