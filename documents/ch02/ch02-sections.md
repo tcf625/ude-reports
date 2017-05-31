@@ -3,6 +3,7 @@
 
 分節控制，一般應用於輸出文件類型的檔案，可因應封面頁、目錄等部分版面配置不同的需求。
 另一個常見用途是組合不同報表做客制化輸出。
+當然，依文件類型特性，分節處理模式自然不同。像是 EXCEL 預設會以獨立 SHEET 輸出各節內容；CSV 預設直接接續輸出所有內容。若有其它較特別的需求，也可以自行 override xxxGenerator 中的相關實作處理。
 
 下例 SectionSample 用於輸出基本頁面，產出指定大小頁面配上單一文字。
 
@@ -41,4 +42,6 @@ s2.addSection(new SectionSample(PageSize.A7, "Chap 2-2"));
 s2.addSection(new SectionSample(PageSize.A7, "Chap 2-3"));
 root.generatePDF(getDocumentManager(), createFileByTestName(DocumentFormat.PDF));
 ```
+
+
 
