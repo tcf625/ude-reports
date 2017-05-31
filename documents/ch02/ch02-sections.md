@@ -1,7 +1,10 @@
 
-分節控制，
-一般應用輸出文件類型的檔案。
+## 內容分節
 
+分節控制，一般應用於輸出文件類型的檔案，可因應封面頁、目錄等部分版面配置不同的需求。
+另一個常見用途是組合不同報表做客制化輸出。
+
+下例 SectionSample 用於輸出基本頁面，產出指定大小頁面配上單一文字。
 
 ``` java
 public class SectionSample extends AbstractPDFGenerator {
@@ -17,6 +20,7 @@ public class SectionSample extends AbstractPDFGenerator {
 }
 ```
 
+然後我們可以建立多個 PDFGenerator 實例
 
 
 
