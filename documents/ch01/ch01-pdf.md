@@ -63,7 +63,8 @@ public void testCreatePDF() throws IOException {
 }
 ```
 
-上例是使用基本 API 輸出 PDF 文件。但若使用 AbstractPDFGenerator ，實作 generatePDFContent(final PDFDocument pdfDocument) ，並呼叫 generatePDF(...) 產出PDF，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。
+上例展示如何使用包裝過的基本 API 輸出 PDF 文件。
+若使用 AbstractPDFGenerator ，實作 generatePDFContent(final PDFDocument pdfDocument) ，並呼叫 generatePDF(...) 產出PDF，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。
 
 
 ### MS Word
