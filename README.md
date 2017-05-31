@@ -19,7 +19,7 @@ Maven Repository Setting :
 </repositories>
 ```
 
-**GitHub：** https://github.com/tcf625/ude-reports/
+**範例程式 @ GitHub：** https://github.com/tcf625/ude-reports/
 
 
 ## 概述
