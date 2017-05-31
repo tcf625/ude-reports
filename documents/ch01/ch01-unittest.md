@@ -54,7 +54,6 @@ public class GSS0010Test extends AbstractITextTestkit {
   
 ## AbstractITextTest 
 
-TODO...
-
+** TODO : 細部說明待補 ** 
 
 
