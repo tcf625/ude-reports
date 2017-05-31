@@ -8,7 +8,6 @@ public class SectionSample extends AbstractPDFGenerator {
         super(pageSize);
         this.text = text;
     }
-
     @Override
     public void generatePDFContent(final PDFDocument pdfDocument) {
         pdfDocument.writeText(this.text, 28, DocumentAlign.CENTER);
