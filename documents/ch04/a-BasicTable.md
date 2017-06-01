@@ -64,5 +64,22 @@ addCell(PdfPCell) // ITEXT 原生METHOD
 
 ### Excel
 
-excel
+* 取得 ExcelDocument<?, ?> document 。
+* 呼叫 document.createSheet(name) 得到 ExcelSheet<?> 。
+
+
+
+
+appendCell(ExcelPoint, ExcelPoint, Object, CellFormat)
+appendCell(ExcelPoint, Object, CellFormat)
+appendCell(Point, Object, CellFormat)
+appendCell(Point, Point, Object, CellFormat)
+appendFormulaCell(ExcelPoint, String, CellFormat)
+
+
+
+
+
+
+
 
