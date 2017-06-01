@@ -4,14 +4,13 @@
 
 本章主要針對 PDF 輸出文字內容進行說明，因為對 Excel 文件而言，所有內容皆為表格輸出。
 
-
 ## 基本輸出
 
-writeText(…) 提供基本輸出文字功能，可設定字型大小及對齊方式。
-預設的字型大小為 itext-config.properties 中的「default.font.size」，也可經由 pdfDocument.setFontSize() 重新設定。
+writeText\(…\) 提供基本輸出文字功能，可設定字型大小及對齊方式。  
+預設的字型大小為 itext-config.properties 中的「default.font.size」，也可經由 pdfDocument.setFontSize\(\) 重新設定。  
 預設行高為 1.25 倍字高。
 
-``` java 
+```java
 @Test
 public void test_basicText() {
     super.createPDF(pdfDocument -> {
@@ -30,4 +29,11 @@ public void test_basicText() {
 
 
 
-    
+
+
+![](/assets/ch03/basicText.png)
+
+
+
+![](/assets/ch03/changeFont.png)
+
