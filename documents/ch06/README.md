@@ -7,10 +7,7 @@
 
 
 ```
-* append(String, ConsumerTABLE)
-```
-
-```
+* append(String, Consumer&lt;C&gt;)
 * append(CellDataSource, float)
 * append(ColumnDefine)
 * append(String)
