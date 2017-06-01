@@ -3,13 +3,15 @@
 
 ### PDF 建立 TableIText
 
+
+
 #### createTable(float widthPercentage, int numColumns)
 
-等寬表格，共numColumns欄，並指定表格寬度佔頁面比例widthPercentage。
+等寬表格，共有 numColumns 欄，並指定表格寬度佔頁面比例 widthPercentage。
 
 #### createTable(float widthPercentage, float[] widths)
 
-指定欄寬比例widths，並指定表格寬度佔頁面比例widthPercentage。
+指定欄寬比例widths，並指定表格寬度佔頁面比例 widthPercentage。
 
 #### createTable(LengthUnit unit, float[] realWidths)
 
