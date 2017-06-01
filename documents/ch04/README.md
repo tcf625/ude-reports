@@ -2,6 +2,10 @@
 # 表格
 
 
+
+CellFormat
+
+
 ## PDF
 
 本套件主要使用iText中的PdfPTable做為底層表格輸出元件。但使用時，應使用com.iisigroup.ude.report.itext2.table.TableiText。
