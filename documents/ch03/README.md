@@ -29,3 +29,13 @@ public void test_basicText() {
 
 ![](/assets/ch03/basicText.png)
 
+### 預設字型調整
+
+文件預設字型可使用setFontInfo(…)調整。
+可參考範例說明，但一般不會頻於設定文件預設字型。
+
+### ParagraphBuilder
+
+特殊格式的文字，如粗體、變色，可使用ParagraphBuilder完成。由 pdfDocument 建立paragraphBuilder後，即可逐一用addText(text, fontInfo)加入文字區塊，最後以appendMe()進行輸出。
+ParagraphBuilder，也可設定iText原生Paragraph物件中的各項設定值，如對齊、縮排等等…。
+

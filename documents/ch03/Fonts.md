@@ -1,7 +1,7 @@
 ### 預設字型調整
 
 文件預設字型可使用setFontInfo(…)調整。
-首先取得指定字體的CHTFontFactory，用以建立想要產出的字型資訊（FontInfo），可設定大小、Style、顏色、底色。但一般不會頻於設定文件預設字型，而會採用下一個
+首先取得指定字體的CHTFontFactory，用以建立想要產出的字型資訊（FontInfo），可設定大小、Style、顏色、底色。但一般不會頻於設定文件預設字型。
 
 ``` java
 final String text = "中文，第二字面：「" + "𠀝" + "」(下/上)";
