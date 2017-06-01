@@ -28,7 +28,6 @@ _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 要手動對PDF進行換頁，請呼叫 PDFDocument.newPage()，若當前頁面還沒有實際內容輸出時，並不會真的換頁。所以如果要輸出空白頁面，請在兩次換頁間插入一次 writeText(“”)。
 
 
-
 ``` java 
 @Test
 public void test_newPage() {
