@@ -2,7 +2,7 @@
 
 欄位底色可直接使用 java.awt.Color 設定 backgroundColor
 
-``` java
+```java
 final TableiText table = pdfDocument.createTable(98, 16);
 table.getDefaultFormat().setFontSize(8)
 for (int r = 0;r<255;r+=16){
@@ -17,4 +17,5 @@ for (int r = 0;r<255;r+=16){
 table.appendMe();
 ```
 
+![](/assets/ch04/cellformat_bgcolor.png)
 
