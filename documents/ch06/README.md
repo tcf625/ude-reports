@@ -9,8 +9,6 @@
 
 
 
-
-
 ``` java 
 public NormalTableMetadata BASIC_METADATA(String captionText) {
   final NormalTableMetadata tm = new NormalTableMetadata();
