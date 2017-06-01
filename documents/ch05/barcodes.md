@@ -1,3 +1,7 @@
+### 條碼 
+
+以 Coordinate 建立Barcode39Drawer、Barcode128Drawer、QRCodeDrawer。
+再使用 CodeDrawer.draw(PdfContentByte contentByte, String text, PointF pos, float w, float h, boolean showText) 輸出
 
 #### CODE 39
 
@@ -28,4 +32,6 @@ public void test_barCode39() {
     });
 }
 ```
+
+#### QR-CODE 
 
