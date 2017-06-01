@@ -9,8 +9,8 @@
 
 ## PDF
 
-本套件主要使用 iText 的 PdfPTable 做為底層表格輸出元件(不採用)。
-但使用時，應使用com.iisigroup.ude.report.itext2.table.TableiText。
+本套件主要使用 iText 中功能較完整的 PdfPTable 做為底層表格輸出元件。
+但使用時，應使用 Ude-Report 所包裝的 TableiText 類別操作。
 
 
 TableiText 是 PdfPTable的包覆類別，它提供中文處理能力、樣式簡易設定、跨欄、跨列與InnerTable相關操作，也可取得原生 PdfPTable 物件進行更複雜的操作。
