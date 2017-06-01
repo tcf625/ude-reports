@@ -37,34 +37,30 @@ TableIText 繼承 PdfPTableWrapper，其中包含以下 delegate 函式可操作
 
 ### 增加欄位內容. ADD CELL
 
-TableItext 所提供的 addCell(...) 函式，其參數依型別分類，排列組合而成
+TableItext 所提供的 addCell\(...\) 函式，其參數依型別分類，排列組合而成
 
 * 內容 
- * String text / CellDataSource source ： 二選一，欄位的內容文字。
- * SubPhrase... subPhrases ： varargs 必定在最後一項。
+  * String text / CellDataSource source ： 二選一，欄位的內容文字。
+  * SubPhrase... subPhrases ： varargs 必定在最後一項。
 * 外觀
- * CellFormat cellFormat ：本欄樣式。
- * int colspan ： 跨欄位數。
- 
-
-addCell(String, SubPhrase...)
-addCell(String, CellFormat, int, SubPhrase...)
-addCell(String, CellFormat, SubPhrase...)
-addCell(String, int, SubPhrase...)
-addCell(SubPhrase...)
-addCell(CellFormat, int, SubPhrase...)
-addCell(CellFormat, SubPhrase...)
-addCell(int, SubPhrase...)
-addCell(CellDataSource, CellFormat, int, SubPhrase...)
-addCell(CellDataSource, CellFormat, SubPhrase...)
-addCell(CellDataSource, int, SubPhrase...)
-addCell(CellDataSource, SubPhrase...)
-addCell(PdfPCell)
-
-
-
-
-
+  * CellFormat cellFormat ：本欄樣式。
+  * int colspan ： 跨欄位數。
+  
+```
+addCell(String, SubPhrase...)  
+addCell(String, CellFormat, int, SubPhrase...)  
+addCell(String, CellFormat, SubPhrase...)  
+addCell(String, int, SubPhrase...)  
+addCell(SubPhrase...)  
+addCell(CellFormat, int, SubPhrase...)  
+addCell(CellFormat, SubPhrase...)  
+addCell(int, SubPhrase...)  
+addCell(CellDataSource, CellFormat, int, SubPhrase...)  
+addCell(CellDataSource, CellFormat, SubPhrase...)  
+addCell(CellDataSource, int, SubPhrase...)  
+addCell(CellDataSource, SubPhrase...)  
+addCell(PdfPCell) // ITEXT 原生METHOD
+```
 
 ### Excel
 
