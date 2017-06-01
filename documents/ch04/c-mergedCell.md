@@ -1,9 +1,9 @@
 ## 表格合併欄位
 
 
-### addCell (..., int colspans, ...)
+### PDF： addCell (..., int colspans, ...)
 
-### subTable (...)
+### PDF： subTable (...)
 
 
-### Excel
+### Excel：  appendCell(ExcelPoint, ExcelPoint, Object, CellFormat) 
