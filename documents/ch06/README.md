@@ -4,10 +4,8 @@
 
 最後再使用PDFTableTransfer、ExcelTableTransfer等表格轉換器，撘配原始資料\(List&lt;JavaBean/Map&gt;\)轉換為表格輸出。
 
-
-
 ```
-* append(String, Consumer&lt;C&gt;)
+* append(String, Consumer<C>)
 * append(CellDataSource, float)
 * append(ColumnDefine)
 * append(String)
@@ -15,9 +13,6 @@
 * append(String, CellDataSource, float)
 * append(String, CellDataSource, float, Consumer)
 * append(String, float)
-
-
-
 ```
 
 以下逐一介紹 TableMetadata 的可設定特性
