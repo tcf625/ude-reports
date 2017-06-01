@@ -7,6 +7,7 @@ PaintTool 用於精準輸出圖形、文字於定位的工具類別。需配合 
 
 
 
+
 ## 線段輸出
 
 * drawLines(PdfContentByte, Float, Float...)
