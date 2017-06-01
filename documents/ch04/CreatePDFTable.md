@@ -1,7 +1,6 @@
-
 ### 指定表格寬度佔頁面比例
 
-``` java
+```java
 super.createPDF(pdfDocument -> {
     final TableiText table0 = pdfDocument.createTable(80, 2);
     table0.setHorizontalAlignment(DocumentAlign.LEFT);
@@ -18,11 +17,13 @@ super.createPDF(pdfDocument -> {
 });
 ```
 
+### ![](/assets/ch04/sample_basicTable_create1.png)
 
-### 指定表格寬度佔頁面比例及欄寬權重        
-        
+### 
 
-``` java 
+### 指定表格寬度佔頁面比例及欄寬權重
+
+```java
 @Test
 public void test_basicWidths() {
     super.createPDF(pdfDocument -> {
@@ -48,4 +49,6 @@ private static void addWidthInfoCells(final TableiText table) {
     }
 }
 ```
+
+![](/assets/ch04/sample_basicTable_create2.png)
 
