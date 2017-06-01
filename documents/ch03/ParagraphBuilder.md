@@ -14,7 +14,7 @@ pdfDocument.writeText("設列高 = X 1.0");
 final FontInfo font10 = pdfDocument.getFontInfo().asSize(10);
 pdfDocument.paragraphBuilder() //
     .addText(toBlockText(7, 4), font10)//
-    .setMultipliedLeading(1F) //
+    .setMultipliedLeading(1F) // 設定列高 = X 1.0
     .appendMe();
 
 ```
