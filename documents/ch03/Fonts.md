@@ -4,11 +4,12 @@
 首先取得指定字體的CHTFontFactory，用以建立想要產出的字型資訊（FontInfo），可設定大小、Style、顏色、底色。但一般不會頻於設定文件預設字型。
 
 ```java
-final String text = "中文，第二字面：「" + "𠀝" + "」(下/上)";
+pdfDocument.writeText("中文，第二字面：「" + "𠀝" + "」(下/上)");
 final CHTFontFactory kaiFactory = CHTFontFactories.INSTANCE.getFactory(WindowsFont.KAI);
 pdfDocument.setFontInfo(kaiFactory.createFontInfo(10, Color.BLUE));
 pdfDocument.writeText("轉成標楷體/藍色字，無第二字面可供顯示。");
-pdfDocument.writeText(text + "Size:18", 18);
+pdfDocument.writeText("中文，第二字面：「" + "𠀝" + "」(下/上)");
+pdfDocument.writeText("中文，第二字面：「" + "𠀝" + "」(下/上)", 18);
 ```
 
 ![](/assets/ch03/change-fonts-2.png)
