@@ -45,9 +45,37 @@ public void test_newPage() {
 
 ![](/assets/ch02/sample_pages.png)
 
+輸出內容後，如果要確認是否造成換頁，可以用pdfDocument.isPageChanged\(\)、pdfDocument.isNewPageBegin\(\) 兩個Method 進行判斷。
+
+* PageChanged 為真：有觸發換頁事件。
+* NewPageBegin為真：新頁面還沒有輸出任何內容。
+
+``` java 
+@Test
+public void test_forceNewPage() {
+    super.createPDF(pdfDocument -> {
+        final LayoutInfo layoutInfo = new LayoutInfo();
+        layoutInfo.setHeader(ItemPosition.CenterFooter, new PageHeaderCH(12));
+        pdfDocument.setLayoutInfo(layoutInfo);
+        pdfDocument.setPageSize(PageSize.A8.rotate());
+        // !
+        Assert.assertFalse("一開始未換頁", pdfDocument.isPageChanged());
+        Assert.assertTrue(pdfDocument.isNewPageBegin());
+        // !
+        pdfDocument.writeText("P1");
+        Assert.assertFalse(pdfDocument.isPageChanged());
+        Assert.assertFalse(pdfDocument.isNewPageBegin());
+        // !
+        pdfDocument.newPage(true);   // 強制換頁
+        Assert.assertTrue("因為 newPage() 觸發換頁事件", pdfDocument.isPageChanged());
+        Assert.assertTrue("新頁面還沒有輸出任何內容，但關檔時強制輸出新頁。", pdfDocument.isNewPageBegin());
+    });
+}
+```
 
 
-輸出內容後，如果要確認是否造成換頁，可以用pdfDocument.isPageChanged\(\)、pdfDocument.isNewPageBegin\(\) 兩個Method 進行判斷。當PageChanged為真，則換頁事件有被觸發。當NewPageBegin為真，表示還沒有任何內容輸出到新的頁面。
+
+
 
 頁面大小與邊界，在文件生成的過程中是可以改變的。當目前頁面已有內容輸出時，頁面大小變動會在下一頁才生效。  
 但邊界變動可能會導致部分頁首頁尾輸出與預期不符，使用時請自行確認當下文件輸出狀態。換言之，建議把PageSize與LayoutInfo的異動緊接在newPage\(\) 之後進行。
