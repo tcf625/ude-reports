@@ -7,7 +7,7 @@
 再回顧一下基本概念中看到的「頁面版型結構」，使用 BaseLayoutInfo 可定義其中的定位資訊。
 
 單位為 pixel，可以使用 LengthUnit.XXX.trans() 進行換算，如下例為公分、公厘、英吋不同單位設定結果。
-_(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。)_
+_\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
 
 
