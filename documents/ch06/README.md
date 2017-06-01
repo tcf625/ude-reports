@@ -8,6 +8,15 @@
 以下逐一介紹 TableMetadata 的可設定特性
 
 
+* append(CellDataSource, float)
+* append(ColumnDefine)
+* append(String)
+* append(String, CellDataSource)
+* append(String, CellDataSource, float)
+* append(String, CellDataSource, float, Consumer<C>)
+* append(String, Consumer<C>)
+* append(String, float)
+
 
 ``` java 
 public NormalTableMetadata BASIC_METADATA(String captionText) {
