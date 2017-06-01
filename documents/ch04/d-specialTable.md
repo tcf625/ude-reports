@@ -22,5 +22,4 @@ public interface CellCreator<T extends Celltype> {
 
 
 
-
 ### TableiTextDecorator
