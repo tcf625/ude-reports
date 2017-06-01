@@ -5,4 +5,4 @@
 
 ### PDF： subTable (...)
 
-### Excel：  appendCell(ExcelPoint, ExcelPoint, Object, CellFormat) 
+### Excel： appendCell(ExcelPoint, ExcelPoint, Object, CellFormat) 
