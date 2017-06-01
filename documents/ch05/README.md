@@ -13,6 +13,7 @@ PaintTool 用於精準輸出圖形、文字於定位的工具類別。需配合 
 * drawBlock(PdfContentByte, PointF, PointF)
 * drawBlock(PdfContentByte, PointF, PointF, float offset)
 * drawBlock(PdfContentByte, SimpleRectangle, float offset)
+
 ## 文字輸出
 
 * drawText(PdfContentByte, String, float, float)
@@ -21,10 +22,12 @@ PaintTool 用於精準輸出圖形、文字於定位的工具類別。需配合 
 * drawTextAlignLeft(PdfContentByte, String, float, float, float)
 * drawTextBlock(PdfContentByte, Font, String, float, float, float, float)
 * drawTextBlock(PdfContentByte, Phrase, float, float, float, float)
+
 ## 圖片輸出
 
 * drawImageAlignLeft(PdfContentByte, File, float, float)
 * drawImageAlignLeft(PdfContentByte, File, float, float, ScaleStrategy)
+
 ## 表格輸出
 
 * drawTable(PdfContentByte, TableiText, float, float)
