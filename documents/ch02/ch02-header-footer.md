@@ -14,9 +14,23 @@
 
 ### 基本文字輸出
 
+於頁首、頁尾輸出固定文字text並指定字體大小，輸出位置以邊界定位點自動計算。
+
 
 
 ### 基本頁碼輸出
+
+
+* PAGE	文件頁次
+* TOTAL_PAGES	文件頁數
+* BOTH 	文件頁次＋文件頁數
+* SECTION	目前節次
+* PAGE_IN_SECTION	目前節內頁次
+* SECTION_AND_PAGE	目前節次＋目前節內頁次
+* SECTION_PAGES	各節總頁數
+
+
+
 
 ## PDF  
 
