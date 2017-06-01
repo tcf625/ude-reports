@@ -10,8 +10,15 @@
 _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
 
-
 ![](/assets/ch02/pages_margin-small.png)
+
+
+跟 Excel 中的版面設定相比，上下定位點的定義略有不同，不過 UDE-Report 會進行相關轉換處理。
+
+
+** TODO : ADD SAMPLE**
+
+
 
 
 ## 換頁控制
