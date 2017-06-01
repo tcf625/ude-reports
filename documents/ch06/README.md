@@ -7,7 +7,7 @@
 
 以下逐一介紹 TableMetadata 的可設定特性
 
-* **append(String, Consumer<TABLE>)**
+* **append\(String, Consumer<TABLE>\)**
 * append(CellDataSource, float)
 * append(ColumnDefine)
 * append(String)
