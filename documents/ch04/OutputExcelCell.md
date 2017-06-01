@@ -1,6 +1,6 @@
 ### Excel Sample
 
-``` java
+```java
     @Test
     public void test_basic() {
         super.createExcel(document -> {
@@ -10,5 +10,5 @@
     }
 ```
 
-
+![](/assets/ch04/sample_basicExcel.png)
 

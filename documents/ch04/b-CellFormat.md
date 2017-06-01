@@ -1,6 +1,17 @@
 ## 表格欄位樣式
 
-本套件以CellFormat來定義個別Cell的顯示外觀，在TableiText 可用getDefaultFormat()取得並設定適用整個表格的預設外觀定義。個別Cell則是在addCell時，傳入指定的CellFormat物件即可。
-一般建議，在輸出任何表格內容前，就把defaultFormat設定完成。若輸出欄位後，才異動defaultFormat，雖不會影響到已輸出的欄位外觀，但這是不推薦使用的特殊用法，維護性較差。
-當表格中含有InnerTable時，InnerTable的defaultFormat的未定義部分，會參考外表格的defaultFormat值。
+
+
+本套件以CellFormat來定義個別Cell的顯示外觀。
+ExcelDocument 及 TableiText 可用getDefaultFormat\(\)取得並設定適用整個表格的預設外觀定義。
+個別Cell則是在addCell時，傳入指定的CellFormat物件即可。
+
+
+一般建議在輸出任何表格內容前，就設定 defaultFormat 完成。
+若輸出欄位後，才異動 defaultFormat，雖不會影響到已輸出的欄位外觀，但維護性可能較差。
+
+  
+當表格中含有InnerTable時，InnerTable的defaultFormat的未定義部分，會參考外表格的defaultFormat值。  
+
 以下逐一說明CellFormat的設定內容。
+
