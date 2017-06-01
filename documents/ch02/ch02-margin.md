@@ -1,6 +1,6 @@
 ## 邊界控制
 
-* 適用於 PDF / EXCEL
+* **適用於 PDF / EXCEL**
 
 ![UDE-PDF](/assets/ch01-layout-pdf.png)
 
@@ -15,7 +15,7 @@
 
 ## 換頁控制
 
-* 適用於 PDF
+* **適用於 PDF**
 
 要手動對PDF進行換頁，請呼叫 PDFDocument.newPage()，若當前頁面還沒有實際內容輸出時，並不會真的換頁。所以如果要輸出空白頁面，請在兩次換頁間插入一次 writeText(“”)。
 
