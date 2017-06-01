@@ -23,3 +23,17 @@ public interface CellCreator<T extends Celltype> {
 
 
 ### TableiTextDecorator
+
+
+實作以下 MEHTOD，在輸出 TABLE 時額外處理外觀設定。
+
+```
+    public abstract void drawTableLayout(PDFDocument pdfDocument //
+            , PdfPTable table //
+            , float[][] widths //
+            , float[] heights //
+            , int headerRows //
+            , int rowStart//
+            , PdfContentByte[] canvases);
+```
+
