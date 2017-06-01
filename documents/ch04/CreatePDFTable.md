@@ -19,8 +19,6 @@ super.createPDF(pdfDocument -> {
 
 ### ![](/assets/ch04/sample_basicTable_create1.png)
 
-### 
-
 ### 指定表格寬度佔頁面比例及欄寬權重
 
 ```java
