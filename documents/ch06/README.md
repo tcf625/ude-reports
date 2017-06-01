@@ -15,7 +15,7 @@ public NormalTableMetadata BASIC_METADATA(String captionText) {
   ColumnMetadata colA = tm.append("年度", new BeanProperty("text1"), 20);
   ColumnMetadata colB = tm.append("地區", new BeanProperty("text2"), 20);
   ColumnMetadata colC = tm.append("項目", new BeanProperty("text3"), 20);
-  ColumnMetadata colD = tm.append("值1", new BeanProperty("value1"), 20);
+  ColumnMetadata colD = tm.append("值1",  new BeanProperty("value1"), 20);
   colD.getContentFormat().setAlignH(AlignH.RIGHT);
   return tm;
 }
