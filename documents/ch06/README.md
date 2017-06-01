@@ -13,7 +13,7 @@
 * append(String)
 * append(String, CellDataSource)
 * append(String, CellDataSource, float)
-* append(String, CellDataSource, float, Consumer\<C\>)
+* append(String, CellDataSource, float, Consumer)
 * append(String, float)
 
 
