@@ -1,6 +1,6 @@
 ### 底色
 
-欄位底色可直接使用java.awt.Color設定backgroundColor
+欄位底色可直接使用 java.awt.Color 設定 backgroundColor
 
 
 ``` java
