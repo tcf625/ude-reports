@@ -15,8 +15,6 @@
 指定度量單位，並直接指定各欄的實際寬度。若總計寬度超過頁面大小，則自動以滿版分配比例顯示。  
 但用PaintTool公用類別輸出時，仍顯示為實際大小。處理特殊頁首頁尾時，有可能會使用此建構方式。
 
-### 
-
 ### PDF 表格設定
 
 TableIText 繼承 PdfPTableWrapper，其中包含以下 delegate 函式可操作原生 PdfPTable，控制輸出位置及欄位呈現設定等等。
@@ -37,7 +35,36 @@ TableIText 繼承 PdfPTableWrapper，其中包含以下 delegate 函式可操作
 * setSplitLate\(boolean\)
 * setSplitRows\(boolean\)
 
-### DataSource
+### 增加欄位內容. ADD CELL
+
+TableItext 所提供的 addCell(...) 函式，其參數依型別分類，排列組合而成
+
+* 內容 
+ * String text / CellDataSource source ： 二選一，欄位的內容文字。
+ * SubPhrase... subPhrases ： varargs 必定在最後一項。
+* 外觀
+ * CellFormat cellFormat ：本欄樣式。
+ * int colspan ： 跨欄位數。
+ 
+
+addCell(String, SubPhrase...)
+addCell(String, CellFormat, int, SubPhrase...)
+addCell(String, CellFormat, SubPhrase...)
+addCell(String, int, SubPhrase...)
+addCell(SubPhrase...)
+addCell(CellFormat, int, SubPhrase...)
+addCell(CellFormat, SubPhrase...)
+addCell(int, SubPhrase...)
+addCell(CellDataSource, CellFormat, int, SubPhrase...)
+addCell(CellDataSource, CellFormat, SubPhrase...)
+addCell(CellDataSource, int, SubPhrase...)
+addCell(CellDataSource, SubPhrase...)
+addCell(PdfPCell)
+
+
+
+
+
 
 ### Excel
 
