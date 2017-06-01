@@ -19,8 +19,7 @@ super.createPDF(pdfDocument -> {
 ```
 
 
-        
-        
+### 指定表格寬度佔頁面比例及欄寬權重        
         
 
 ``` java 
