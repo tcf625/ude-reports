@@ -50,7 +50,7 @@ public void test_newPage() {
 * PageChanged 為真：有觸發換頁事件。
 * NewPageBegin為真：新頁面還沒有輸出任何內容。
 
-``` java 
+```java
 @Test
 public void test_forceNewPage() {
     super.createPDF(pdfDocument -> {
@@ -73,7 +73,7 @@ public void test_forceNewPage() {
 }
 ```
 
-
+![](/assets/ch02/sample_forceNewPages)
 
 
 
