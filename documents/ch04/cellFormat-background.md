@@ -17,5 +17,5 @@ for (int r = 0;r<255;r+=16){
 table.appendMe();
 ```
 
-![](/assets/ch04/cellformat_bgcolor.png)
+![](/assets/ch04/cellformat-bgcolor-2.png)
 
