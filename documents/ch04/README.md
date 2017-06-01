@@ -1,10 +1,13 @@
 
 # 表格
 
+* **適用於 PDF / EXCEL**
 
+## CellFormat
 
-CellFormat
+本套件以 CellFormat 來定義個別欄位l的顯示外觀，此物件可適用於 PDF 及 Excel 表格，唯部分性質可能在兩種文件格式中的支援度不同。
 
+在 「表格」
 
 ## PDF
 
