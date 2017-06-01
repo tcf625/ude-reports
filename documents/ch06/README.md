@@ -13,7 +13,7 @@
 
 ``` java 
 public NormalTableMetadata BASIC_METADATA(String captionText) {
-  final NormalTableMetadata tm = new NormalTableMetadata(captionText);
+  final NormalTableMetadata tm = new NormalTableMetadata();
   tableMeta.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
   ColumnMetadata colA = tm.append("年度", new BeanProperty("text1"), 20);
   ColumnMetadata colB = tm.append("地區", new BeanProperty("text2"), 20);
