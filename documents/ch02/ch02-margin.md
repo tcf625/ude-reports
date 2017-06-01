@@ -73,7 +73,7 @@ public void test_forceNewPage() {
 }
 ```
 
-![](/assets/ch02/sample_forceNewPages)
+![](/assets/ch02/sample_forceNewPages.png)
 
 
 
