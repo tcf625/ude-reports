@@ -11,7 +11,7 @@ public interface Celltype {
 }
 ```
 
-專案若自行定義 Celltype ，同時必須實作對應的 CellCreator
+專案若自行定義 Celltype ，同時必須實作對應的 CellCreator。
 
 ``` java 
 public interface CellCreator<T extends Celltype> {
