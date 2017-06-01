@@ -8,3 +8,9 @@
 
 文字型態浮水印資訊的實作類別是 TextWatermarkProperties，預設建構子為輸出文字，預設字型使用PDFDocument的定義，所以通常必要再設定它的FontType及FontSize。
 不特別指定角度的話，預設依內頁範圍的左下-右上對角輸出。
+
+
+
+### 圖片浮水印
+圖片浮水印資訊的實作類別是ImageWatermarkProperties，預設建構子為filePath。若打包時會把圖檔資源放到classpath中，則可以用classpath:${resource-path}格式指定。
+
