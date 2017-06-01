@@ -1,6 +1,6 @@
 ## 邊界控制
 
-* _**適用於 PDF / EXCEL**_
+* **適用於 PDF / EXCEL**
 
 ![UDE-PDF](/assets/ch01-layout-pdf.png)
 
