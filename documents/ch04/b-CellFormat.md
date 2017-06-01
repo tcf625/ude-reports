@@ -13,5 +13,5 @@ ExcelDocument 及 TableiText 可用getDefaultFormat\(\)取得並設定適用整�
   
 當表格中含有InnerTable時，InnerTable的defaultFormat的未定義部分，會參考外表格的defaultFormat值。  
 
-以下逐一說明CellFormat的設定內容。
+以下逐一說明 CellFormat 的設定內容。
 
