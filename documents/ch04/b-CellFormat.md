@@ -36,6 +36,10 @@ ExcelDocument 及 TableiText 可用getDefaultFormat\(\)取得並設定適用整�
 * setCellType(Celltype)
 * setTextFormat(String)
 
+表格的字型預設樣式依AddCell當下，pdfDocument 的預設字型決定。
+若要單獨設定，可使用getFontSize()、getFontType()、getFontBold()進行異動。
+以上只支援基本粗體設定，若要用到複雜的格式，如斜體、底線、文字底色等等，請在AddCell時，使用(SubPhrase... subPhrases) 逐一傳入文字區塊定義
+
 ### 大小
 
 * setMinHeightInCM(Float)
