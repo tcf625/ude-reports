@@ -66,15 +66,26 @@ addCell(PdfPCell) // ITEXT 原生METHOD
 
 * 取得 ExcelDocument<?, ?> document 。
 * 呼叫 document.createSheet(name) 得到 ExcelSheet<?> 。
+* 輸出CELL 位置皆以 ExcelPoint定位，其行列計數由 0 起算。
+  * appendCell(ExcelPoint, Object)
+  * appendCell(ExcelPoint, Object, CellFormat)
+* 有兩個 ExcelPoint 輸入時，表示合併儲存格。
+  * appendCell(ExcelPoint, ExcelPoint, Object, CellFormat)
+* 插入 EXCEL 公式需用專用 METHOD 
+  * appendFormulaCell(ExcelPoint, String, CellFormat)
 
 
 
 
-appendCell(ExcelPoint, ExcelPoint, Object, CellFormat)
-appendCell(ExcelPoint, Object, CellFormat)
-appendCell(Point, Object, CellFormat)
-appendCell(Point, Point, Object, CellFormat)
-appendFormulaCell(ExcelPoint, String, CellFormat)
+
+
+
+
+
+
+
+
+
 
 
 
