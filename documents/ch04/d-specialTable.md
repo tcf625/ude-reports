@@ -25,7 +25,8 @@ public interface CellCreator<T extends Celltype> {
 ### TableiTextDecorator
 
 
-實作以下 MEHTOD，在輸出 TABLE 時額外處理外觀設定。
+實作以下 MEHTOD，當每一個單獨表格繪製完成後，可用自訂的TableiTextDecorator加上表格裝飾效果。
+UDE-Report 也有提供一些常用的的裝飾類別。
 
 ```
     public abstract void drawTableLayout(PDFDocument pdfDocument //
