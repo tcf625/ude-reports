@@ -1,7 +1,6 @@
 ## 表格欄位樣式
 
 
-
 本套件以CellFormat來定義個別Cell的顯示外觀。
 ExcelDocument 及 TableiText 可用getDefaultFormat\(\)取得並設定適用整個表格的預設外觀定義。
 個別Cell則是在addCell時，傳入指定的CellFormat物件即可。
