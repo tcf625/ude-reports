@@ -40,3 +40,8 @@ public void test_basicText() {
 特殊格式的文字，如粗體、變色，可使用ParagraphBuilder完成。由 pdfDocument 建立paragraphBuilder後，即可逐一用addText(text, fontInfo)加入文字區塊，最後以appendMe()進行輸出。
 ParagraphBuilder，也可設定iText原生Paragraph物件中的各項設定值，如對齊、縮排等等…。
 
+在表格欄位中，若要輸出混合格式的文字，原理也與 ParagraphBuilder 相同。
+
+
+
+
