@@ -14,3 +14,41 @@ ExcelDocument 及 TableiText 可用getDefaultFormat\(\)取得並設定適用整�
 
 以下逐一說明 CellFormat 的設定內容。
 
+### 底色
+
+* setBackgroundColor(Color)
+
+### 邊框
+
+* setBorder(Border)
+* setBorderWidth(Float)
+
+### 對齊
+
+* setAlignH(AlignH)
+* setAlignV(AlignV)
+
+### 字型、輸出
+
+* setFontBold(Boolean)
+* setFontSize(Integer)
+* setFontType(FontType)
+* setCellType(Celltype)
+* setTextFormat(String)
+
+### 大小
+
+* setMinHeightInCM(Float)
+
+### 留白
+
+* setPadding(double)
+* setPaddingB(double)
+* setPaddingH(double)
+* setPaddingL(double)
+* setPaddingR(double)
+* setPaddingT(double)
+* setPaddingV(double)
+
+
+
