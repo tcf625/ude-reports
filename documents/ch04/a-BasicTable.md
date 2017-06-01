@@ -1,30 +1,45 @@
-##  基本表格輸出
+## 基本表格輸出
 
+### PDF：建立 TableIText
 
-### PDF 建立 TableIText
-
-#### createTable(float widthPercentage, int numColumns)
+#### createTable\(float widthPercentage, int numColumns\)
 
 等寬表格，共有 numColumns 欄，並指定表格寬度佔頁面比例 widthPercentage。
 
-#### createTable(float widthPercentage, float[] widths)
+#### createTable\(float widthPercentage, float\[\] widths\)
 
 指定欄寬比例widths，並指定表格寬度佔頁面比例 widthPercentage。
 
-#### createTable(LengthUnit unit, float[] realWidths)
+#### createTable\(LengthUnit unit, float\[\] realWidths\)
 
-指定度量單位，並直接指定各欄的實際寬度。若總計寬度超過頁面大小，則自動以滿版分配比例顯示。
+指定度量單位，並直接指定各欄的實際寬度。若總計寬度超過頁面大小，則自動以滿版分配比例顯示。  
 但用PaintTool公用類別輸出時，仍顯示為實際大小。處理特殊頁首頁尾時，有可能會使用此建構方式。
 
-### PDF 表格外觀設定
+### 
 
+### PDF 表格設定
 
+TableIText 繼承 PdfPTableWrapper，其中包含以下 delegate 函式可操作原生 PdfPTable，控制輸出位置及欄位呈現設定等等。
+
+* setExtendLastRow\(boolean\)
+* setFooterRows\(int\)
+* setHeaderRows\(int\)
+* setHorizontalAlignment\(DocumentAlign\)
+* setHorizontalAlignment\(int\)
+* setKeepTogether\(boolean\)
+* setSkipFirstHeader\(boolean\)
+* setSkipLastFooter\(boolean\)
+* setSpacing\(double\)
+* setSpacingAfter\(double\)
+* setSpacingAfterInCM\(float\)
+* setSpacingBefore\(double\)
+* setSpacingBeforeInCM\(float\)
+* setSplitLate\(boolean\)
+* setSplitRows\(boolean\)
 
 ### DataSource
 
+### Excel
 
+excel
 
-### Excel 
-
-
-excel 
