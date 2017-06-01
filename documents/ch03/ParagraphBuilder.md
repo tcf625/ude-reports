@@ -5,7 +5,7 @@ pdfDocument.setFontSize(12); // set Default Size
 pdfDocument.writeText("列高範例：");
 // !
 pdfDocument.writeText("default size (12)");
-pdfDocument.writeText(toBlockText(7, 5));
+pdfDocument.writeText(toBlockText(7, 5)); // toBlockText : 取得區塊文字
 // !
 pdfDocument.writeText("size (10)");
 pdfDocument.writeText(toBlockText(7, 4), 10);
