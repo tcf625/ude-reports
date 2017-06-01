@@ -27,6 +27,30 @@ _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
 要手動對PDF進行換頁，請呼叫 PDFDocument.newPage()，若當前頁面還沒有實際內容輸出時，並不會真的換頁。所以如果要輸出空白頁面，請在兩次換頁間插入一次 writeText(“”)。
 
+
+
+``` java 
+@Test
+public void test_newPage() {
+    super.createPDF(pdfDocument -> {
+        pdfDocument.setPageSize(PageSize.A6.rotate());
+        pdfDocument.writeText("P1"); // 一開始在 P1
+        pdfDocument.newPage(); // 進入 P2
+        pdfDocument.newPage(); // 連續兩次呼叫兩次 newPage() 不會有空白頁
+        pdfDocument.writeText("P2");
+        pdfDocument.newPage(); // 進入 P3
+        pdfDocument.newPage();
+        pdfDocument.newPage();
+        pdfDocument.newPage(true); // 強制換頁後，才進入 P4
+        pdfDocument.writeText("P4. 我是第四頁");
+    });
+}
+```
+
+
+
+
+
 輸出內容後，如果要確認是否造成換頁，可以用pdfDocument.isPageChanged()、pdfDocument.isNewPageBegin() 兩個Method 進行判斷。當PageChanged為真，則換頁事件有被觸發。當NewPageBegin為真，表示還沒有任何內容輸出到新的頁面。
 
 
