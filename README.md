@@ -1,9 +1,9 @@
 # UDE - Reports 說明文件與範例
 
-所有相關範例，目前需於公司內網執行，以取得相關 libraries
+目前相關 libraries 僅發佈於本公司內網，故所有相關範例應於內網環境執行。
 
-**範例程式 @ GitHub：** https://github.com/tcf625/ude-reports/
-** Maven Repository Setting :**
+* **範例程式 @ GitHub：** https://github.com/tcf625/ude-reports/
+* ** Maven Repository Setting :**
 
 ```xml
 <repositories>
@@ -23,11 +23,7 @@
 
 ## 概述
 
-UDE-Reports 是基於 iText 及 Apache POI 開發的報表產製輔助套件。
-
-主要目的為簡化 iText 及 Apache POI 產製PDF及Excel文件的程式語法。
-
-針對通用性的版面Layout及表格，可使用同一組描述資料與資料集，產出不同格式的輸出結果，以減少重複程式開發。
+UDE-Reports 報表產製輔助套件基於 iText 及 Apache POI 開發，主要目的為簡化使用原生 API 產製 PDF 及 Excel 文件的程式語法。另外，針對基本的版面 Layout 及 表格，可使用同一組描述資料與資料集，以產出不同格式的輸出結果，減少重複程式開發。
 
 ## 特性
 
