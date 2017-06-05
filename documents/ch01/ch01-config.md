@@ -56,7 +56,7 @@ font.CNS11643.KAI.F=${global.resource.path}/fonts/TW-Kai-Plus-98_1.ttf
 
 #### 字型設定
 
-主要的設定有兩個，'default.font' 與 'default.font.size' ，分別定義文件產出時預設使用的字型代碼與大小。
+主要的設定值有兩項：'default.font' 與 'default.font.size' ，分別定義文件產出時預設使用的字型代碼與大小。
 預設範本使用「WINDOWS-細明體」輸出文字。
 
 ``` properties
@@ -81,6 +81,14 @@ font.WindowsFont.MINGLIU.0 = C:/winnt/fonts/mingliu.ttc
 font.WindowsFont.MINGLIU.0 = D:/winnt/fonts/mingliu.ttc
 font.WindowsFont.MINGLIU.0 = ${global.resource.path}/fonts/mingliu.ttc
 ```
+
+TTC 字型第二組以後的定義
+
+```
+font.WindowsFont.NEW-MINGLIU.0 = C:/windows/fonts/mingliu.ttc,1
+font.WindowsFont.NEW-MINGLIU.2 = C:/windows/fonts/mingliub.ttc,1
+```
+
 
 專案有使用自造字者，也可以使用多組設定，把自造字加到第二組後。
 
