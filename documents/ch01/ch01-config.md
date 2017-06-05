@@ -101,6 +101,5 @@ font.WindowsFont.NEW-MINGLIU.2 = C:/windows/fonts/mingliub.ttc,1
 ```
 
 
-
 若使用完整UDE套件及相關設定方式，設定路徑中可使用${global.resource.path}、${resource.path}等環境變數，讀入設定檔時會自動代換。
 
