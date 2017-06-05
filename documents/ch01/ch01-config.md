@@ -72,6 +72,8 @@ font.CNS11643.SUNG.2=${global.resource.path}/fonts/TW-Sung-Ext-B-98_1.ttf
 font.CNS11643.SUNG.F=${global.resource.path}/fonts/TW-Sung-Plus-98_1.ttf
 ```
 
+##### 多個字型檔案
+
 如相同的字面設定有多組，則套件會逐一測試各檔案路徑是否存在可用字型檔。像下例中把常用的 WINDOWS 細明體字型所在目錄都做了設定，但只有實際存在的檔案會被引入，其它則被忽略。
 
 ``` properties
@@ -82,7 +84,14 @@ font.WindowsFont.MINGLIU.0 = D:/winnt/fonts/mingliu.ttc
 font.WindowsFont.MINGLIU.0 = ${global.resource.path}/fonts/mingliu.ttc
 ```
 
-TTC 字型第二組以後的定義
+專案有使用自造字者，也可以使用多組設定，把自造字加到第二組後。
+
+``` properties
+font.NPP_FONT.MING.0=${global.resource.path}/font/TW-Sung-98_1.ttf
+font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
+``` 
+
+##### TTC 字型第二組以後的定義
 
 ```
 font.WindowsFont.NEW-MINGLIU.0 = C:/windows/fonts/mingliu.ttc,1
@@ -90,12 +99,6 @@ font.WindowsFont.NEW-MINGLIU.2 = C:/windows/fonts/mingliub.ttc,1
 ```
 
 
-專案有使用自造字者，也可以使用多組設定，把自造字加到第二組後。
-
-``` properties
-font.NPP_FONT.MING.0=${global.resource.path}/font/TW-Sung-98_1.ttf
-font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
-``` 
 
 若使用完整UDE套件及相關設定方式，設定路徑中可使用${global.resource.path}、${resource.path}等環境變數，讀入設定檔時會自動代換。
 
