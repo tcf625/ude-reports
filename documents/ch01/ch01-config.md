@@ -88,8 +88,7 @@ font.WindowsFont.KAI.0 = D:/winnt/fonts/kaiu.ttf
 font.WindowsFont.KAI.0 = ${global.resource.path}/fonts/kaiu.ttf
 ```
 
-專案有使用自造字者，也可以使用多字型檔案設定方式，把自造字檔案加到第二組。
-
+專案有使用自造字區者，也可以使用多字型檔案設定方式，把自造字檔案加到第二組。
 
 ``` properties
 font.NPP_FONT.MING.0=${global.resource.path}/font/TW-Sung-98_1.ttf
