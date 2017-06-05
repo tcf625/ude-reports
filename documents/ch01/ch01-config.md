@@ -78,7 +78,7 @@ font.CNS11643.SUNG.F=${global.resource.path}/fonts/TW-Sung-Plus-98_1.ttf
 
 ##### 多個字型檔案
 
-如相同的字面設定有多組，則套件會逐一測試各檔案路徑是否存在可用字型檔。像下例中把常用的 WINDOWS 標楷體字型所在目錄都做了設定，但只有實際存在的檔案會被引入，其它項目則被忽略。
+如相同的字面設定有多組，則套件啟動時，會逐一測試各檔案路徑是否存在可用字型檔。像下例中把常用的 WINDOWS 標楷體字型所在目錄都做了設定，但只有實際存在的檔案會被引入，其它項目則被忽略。
 
 ``` properties
 font.WindowsFont.KAI.0 = C:/windows/fonts/kaiu.ttf
