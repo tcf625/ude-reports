@@ -64,6 +64,8 @@ default.font=WindowsFont.MINGLIU
 default.font.size=12
 ```
 
+##### UNICODE 多字面
+
 實際使用的字型檔案則以 font.{字型代碼}.{UNICODE字面} 進行定義。如下例中，font.CNS11643.SUNG.0 為全字庫宋體字第0字面，font.CNS11643.SUNG.F為全字庫宋體字第15字面。
 
 若使用完整UDE套件及相關設定方式，設定路徑中可使用${global.resource.path}、${resource.path}等環境變數，讀入設定檔時會自動代換。
