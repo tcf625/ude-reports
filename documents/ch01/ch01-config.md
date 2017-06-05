@@ -74,14 +74,14 @@ font.CNS11643.SUNG.F=${global.resource.path}/fonts/TW-Sung-Plus-98_1.ttf
 
 ##### 多個字型檔案
 
-如相同的字面設定有多組，則套件會逐一測試各檔案路徑是否存在可用字型檔。像下例中把常用的 WINDOWS 細明體字型所在目錄都做了設定，但只有實際存在的檔案會被引入，其它則被忽略。
+如相同的字面設定有多組，則套件會逐一測試各檔案路徑是否存在可用字型檔。像下例中把常用的 WINDOWS 標楷體字型所在目錄都做了設定，但只有實際存在的檔案會被引入，其它則被忽略。
 
 ``` properties
-font.WindowsFont.MINGLIU.0 = C:/windows/fonts/mingliu.ttc
-font.WindowsFont.MINGLIU.0 = D:/windows/fonts/mingliu.ttc
-font.WindowsFont.MINGLIU.0 = C:/winnt/fonts/mingliu.ttc
-font.WindowsFont.MINGLIU.0 = D:/winnt/fonts/mingliu.ttc
-font.WindowsFont.MINGLIU.0 = ${global.resource.path}/fonts/mingliu.ttc
+font.WindowsFont.KAI.0 = C:/windows/fonts/kaiu.ttf
+font.WindowsFont.KAI.0 = D:/windows/fonts/kaiu.ttf
+font.WindowsFont.KAI.0 = C:/winnt/fonts/kaiu.ttf
+font.WindowsFont.KAI.0 = D:/winnt/fonts/kaiu.ttf
+font.WindowsFont.KAI.0 = ${global.resource.path}/fonts/kaiu.ttf
 ```
 
 專案有使用自造字者，也可以使用多組設定，把自造字加到第二組後。
