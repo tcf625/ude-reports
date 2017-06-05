@@ -1,14 +1,13 @@
-###  設計表樣清單定義介面
+### 文件範例
 
+本文件的範例程式原始碼，皆放置於 github 專案：https://github.com/tcf625/ude-reports/
 
-原始程式(github)：
-  * [src](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/main/java/ude/report/sample/ch01)
-  * [test](https://github.com/tcf625/ude-reports/tree/master/ude-report-sample/src/test/java/ude/report/sample/ch01)
+  * 範例程式：/ude-report-sample
+  * 相關產出結果：/sample-output
 
-輸出結果 : 
-  * [PDF/Excel/CSV](https://github.com/tcf625/ude-reports/tree/master/sample-output/ch01)
+###  表樣清單定義介面設計
 
-#### ReportDefinition 
+#### 介面：ReportDefinition 
 
 基本的規劃範例，每一張表樣應有的資訊可能包括「代碼」、「名稱」及「可支援輸出格式」。
 
@@ -26,7 +25,7 @@ public interface ReportDefinition {
 }
 ```
 
-####  AllReports
+####  定義：AllReports
 
 這個範例中定義了兩張表樣，一般正式的專案裡，表樣數量可能是數以百計，有可能會再依業務性質拆分為不同的 ENUM 定義。
 
@@ -68,7 +67,9 @@ public enum AllReports implements ReportDefinition {
 }
 ```
 
-#### AbstractReport
+### 文件產出範例
+
+#### 共用文件父類別：AbstractReport
 
 要求子類別實作所有輸出格式介面。
 
@@ -116,9 +117,9 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
     }
 ```
 
-#### GSS0010Test
+#### GSS0010Test / GSS0011Test
 
-   執行報表程式用，完整說明請參考「單元測試」範例。
+   執行報表程式用，完整說明請參考後續「單元測試」範例。
 
 
 
