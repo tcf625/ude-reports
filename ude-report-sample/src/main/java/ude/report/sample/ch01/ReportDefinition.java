@@ -7,7 +7,7 @@ import com.iisigroup.ude.report.DocumentFormat;
 import com.iisigroup.ude.util.lang8.date.Now;
 import com.iisigroup.ude.util.lang8.date.RocDateUtils;
 
-public interface ReportDefinition {
+interface ReportDefinition {
     String getReportName();
 
     String getReportCode();

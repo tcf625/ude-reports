@@ -1,18 +1,19 @@
-package com.iisigroup.ude.report.itext2.sample;
+package ude.report.sample;
 
 import java.io.File;
-import java.util.EnumSet;
-import java.util.Set;
 
-import com.iisigroup.ude.report.AbstractDocumentGenerator;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import com.iisigroup.ude.report.DocumentFormat;
+import com.iisigroup.ude.report.excel.ExcelGenerator;
 import com.iisigroup.ude.report.itext2.PDFGenerator;
-import com.iisigroup.ude.report.itext2.sample.content.PDFContent;
-import com.iisigroup.ude.report.itext2.testkit.AbstractITextTest;
+import com.iisigroup.ude.report.itext2.testkit.AbstractITextTestkit;
 import com.iisigroup.ude.report.itext2.testkit.ITextTestConfig;
 import com.iisigroup.ude.system.UdeSystemPropertyItem;
+import com.iisigroup.ude.util.internal.UdeRuntimeUtils;
 
-public abstract class AbstractSample extends AbstractITextTest<AbstractDocumentGenerator> {
+public abstract class AbstractSample extends AbstractITextTestkit {
     //================================================
     //== [Enumeration types] Block Start
     //== [Enumeration types] Block End
@@ -24,17 +25,13 @@ public abstract class AbstractSample extends AbstractITextTest<AbstractDocumentG
     //== [static variables] Block Stop
     //================================================
     //== [instance variables] Block Start
-
-    private Set<DocumentFormat> suppertedFormats = EnumSet.allOf(DocumentFormat.class);
-
     //== [instance variables] Block Stop
     //================================================
     //== [static Constructor] Block Start
 
     static {
-        final String BASEDIR = System.getProperty("BASEDIR", ".");
-        CONFIG.setFixedBaseDir(BASEDIR);
-        CONFIG.iTextConfigPath = "classpath:itext-config.properties";
+        CONFIG.setFixedBaseDir(".");
+        CONFIG.iTextConfigPath = "classpath:itext-config-test.properties";
         CONFIG.setPath(UdeSystemPropertyItem.GLOBAL_RESOURCE_PATH, "${BASEDIR}");
     }
 
@@ -60,22 +57,37 @@ public abstract class AbstractSample extends AbstractITextTest<AbstractDocumentG
     //== [Method] Block Start
 
     @Override
-    public File createFile(final AbstractDocumentGenerator reportGenerator, final String suffix, final DocumentFormat foramt) {
-        return super.createFileByTestName(suffix, foramt);
-    }
+    protected File createFileByTestName(final String suffix, final DocumentFormat format) {
+        final String methodName = this.testName.getMethodName();
+        final String method_suffix = methodName.replaceAll("(?i)^test_?", "");
+        final String packageName = this.getClass().getPackage().getName();
+        final String subFolder = StringUtils.substringAfterLast(packageName, ".");
 
-    @Override
-    public Set<DocumentFormat> getSuppertedFormats(final AbstractDocumentGenerator generator) {
-        return this.suppertedFormats;
+        final String testClassName = this.getClass().getSimpleName().replaceAll("^Sample_", "");
+        final String fileName = "" //
+                + "[" + testClassName + "]" //
+                + StringUtils.capitalize(method_suffix) //
+                + suffix;
+
+        final File file = new File(this.config.outputRoot + "/" + subFolder + "/" + testClassName,
+                fileName + "." + format.getExtFileName());
+        UdeRuntimeUtils.quietRun(() -> FileUtils.forceMkdirParent(file));
+        if (!this.config.keepOutputFile) {
+            file.deleteOnExit();
+        }
+        return file;
     }
 
     //####################################################################
     //## [Method] sub-block :
     //####################################################################
 
-    public final void createPDF(final PDFContent content) {
-        final File file = super.createFileByTestName("", DocumentFormat.PDF);
-        this.doDocument(file, new SamplePDFGenerator(content), this::outputPDF);
+    public final File createPDF(final PDFGenerator content) {
+        return super.doDocument(content, DocumentFormat.PDF, "");
+    }
+
+    public final File createExcel(final ExcelGenerator content) {
+        return super.doDocument(content, DocumentFormat.EXCEL, "");
     }
 
     //== [Method] Block Stop

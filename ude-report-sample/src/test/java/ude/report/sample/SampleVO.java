@@ -4,19 +4,20 @@
  *
  * This software is the confidential and proprietary information of IISI.
  */
-package com.iisigroup.ude.report.itext2.sample;
+package ude.report.sample;
 
 import java.util.Date;
 import java.util.List;
 
 /**
- * 
+ *
  * @author tsaicf
  */
 public class SampleVO {
     private String text1;
     private String text2;
     private String text3;
+    private String text4;
 
     private Integer value1;
 
@@ -36,15 +37,15 @@ public class SampleVO {
 
     private Object obj3;
 
-    private List<Object> list1;
+    private List<?> list1;
 
-    private List<List<Object>> list2;
+    private List<List<?>> list2;
 
     public String getText1() {
         return this.text1;
     }
 
-    public void setText1(String text1) {
+    public void setText1(final String text1) {
         this.text1 = text1;
     }
 
@@ -52,7 +53,7 @@ public class SampleVO {
         return this.text2;
     }
 
-    public void setText2(String text2) {
+    public void setText2(final String text2) {
         this.text2 = text2;
     }
 
@@ -60,15 +61,23 @@ public class SampleVO {
         return this.text3;
     }
 
-    public void setText3(String text3) {
+    public void setText3(final String text3) {
         this.text3 = text3;
+    }
+
+    public String getText4() {
+        return this.text4;
+    }
+
+    public void setText4(final String text4) {
+        this.text4 = text4;
     }
 
     public Integer getValue1() {
         return this.value1;
     }
 
-    public void setValue1(Integer value1) {
+    public void setValue1(final Integer value1) {
         this.value1 = value1;
     }
 
@@ -76,7 +85,7 @@ public class SampleVO {
         return this.value2;
     }
 
-    public void setValue2(Integer value2) {
+    public void setValue2(final Integer value2) {
         this.value2 = value2;
     }
 
@@ -84,7 +93,7 @@ public class SampleVO {
         return this.value3;
     }
 
-    public void setValue3(Integer value3) {
+    public void setValue3(final Integer value3) {
         this.value3 = value3;
     }
 
@@ -92,7 +101,7 @@ public class SampleVO {
         return this.date1;
     }
 
-    public void setDate1(Date date1) {
+    public void setDate1(final Date date1) {
         this.date1 = date1;
     }
 
@@ -100,7 +109,7 @@ public class SampleVO {
         return this.date2;
     }
 
-    public void setDate2(Date date2) {
+    public void setDate2(final Date date2) {
         this.date2 = date2;
     }
 
@@ -108,7 +117,7 @@ public class SampleVO {
         return this.date3;
     }
 
-    public void setDate3(Date date3) {
+    public void setDate3(final Date date3) {
         this.date3 = date3;
     }
 
@@ -116,7 +125,7 @@ public class SampleVO {
         return this.obj1;
     }
 
-    public void setObj1(Object obj1) {
+    public void setObj1(final Object obj1) {
         this.obj1 = obj1;
     }
 
@@ -124,7 +133,7 @@ public class SampleVO {
         return this.obj2;
     }
 
-    public void setObj2(Object obj2) {
+    public void setObj2(final Object obj2) {
         this.obj2 = obj2;
     }
 
@@ -132,23 +141,23 @@ public class SampleVO {
         return this.obj3;
     }
 
-    public void setObj3(Object obj3) {
+    public void setObj3(final Object obj3) {
         this.obj3 = obj3;
     }
 
-    public List<Object> getList1() {
+    public List<?> getList1() {
         return this.list1;
     }
 
-    public void setList1(List<Object> list1) {
+    public void setList1(final List<?> list1) {
         this.list1 = list1;
     }
 
-    public List<List<Object>> getList2() {
+    public List<List<?>> getList2() {
         return this.list2;
     }
 
-    public void setList2(List<List<Object>> list2) {
+    public void setList2(final List<List<?>> list2) {
         this.list2 = list2;
     }
 

@@ -1,24 +1,23 @@
-package ude.report.sample.ch01;
+package ude.report.sample;
+
+import java.io.IOException;
+
+import org.apache.commons.csv.CSVPrinter;
 
 import com.iisigroup.ude.report.csv.CSVGenerator;
+import com.iisigroup.ude.report.excel.ExcelDocument;
 import com.iisigroup.ude.report.excel.ExcelGenerator;
 import com.iisigroup.ude.report.itext2.AbstractPDFGenerator;
+import com.iisigroup.ude.report.itext2.PDFDocument;
 import com.iisigroup.ude.report.itext2.commons.LayoutInfo;
-import com.iisigroup.ude.report.layout.ItemPosition;
 import com.iisigroup.ude.report.utils.LengthUnit;
+import com.iisigroup.ude.util.internal.UdeRuntimeUtils;
 import com.lowagie.text.Rectangle;
 
-abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
+public abstract class AbstractSampleReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
 
-    protected final ReportDefinition reportDefinition;
-
-    protected AbstractReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
-        this.reportDefinition = reportDefinition;
+    protected AbstractSampleReport(final Rectangle pageSize) {
         super.setPageSize(pageSize);
-    }
-
-    public ReportDefinition getReportDefinition() {
-        return this.reportDefinition;
     }
 
     //####################################################################
@@ -27,9 +26,7 @@ abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGener
 
     @Override
     public final LayoutInfo prepareLayoutInfo() {
-        final LayoutInfo layout = this.createLayoutInfo();
-        this.defaultHeader(layout);
-        return layout;
+        return this.createLayoutInfo();
     }
 
     protected LayoutInfo createLayoutInfo() {
@@ -47,9 +44,22 @@ abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGener
         return layoutInfo;
     }
 
-    protected void defaultHeader(final LayoutInfo layoutInfo) {
-        layoutInfo.setHeader(ItemPosition.LeftHeader, this.reportDefinition.getReportCode(), 12);
-        layoutInfo.setHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportName(), 12);
+    @Override
+    public void generateCSVContent(final CSVPrinter csvPrinter) throws IOException {
+        UdeRuntimeUtils.doNothing();
+
+    }
+
+    @Override
+    public void generateExcelContent(final ExcelDocument<?, ?> document) {
+        UdeRuntimeUtils.doNothing();
+
+    }
+
+    @Override
+    public void generatePDFContent(final PDFDocument pdfDocument) {
+        UdeRuntimeUtils.doNothing();
+
     }
 
 }

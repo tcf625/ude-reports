@@ -27,6 +27,9 @@ public class GSS0011 extends AbstractReport {
     @Override
     public void generateCSVContent(final CSVPrinter csvPrinter) throws IOException {
         csvPrinter.print("TEST-GSS0010");
+        csvPrinter.print("TEST-GSS0011");
+        csvPrinter.print("TEST-GSS0012");
+        csvPrinter.println();
     }
 
 }
