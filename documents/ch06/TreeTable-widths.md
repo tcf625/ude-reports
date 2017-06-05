@@ -35,23 +35,29 @@ metadata.append("資料內容", 10, column -> {
 
 #### 產出結果
 
+可以看到第二組資料內容(值3/值4)的總計寬度，與第一組資料內容(值1/值2)一模一樣；也與「地區」欄位寬度相同。因為它們所佔權重的總合皆為 20 。
+
 ![](/assets/ch06/treeTable-width.png)
 
 #### WidthUnit
 
-metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
+在上例中，表格轉換的總計欄寬以頁面寬度的百分比為準(預設為100%)。
 
+但有時會需要以更明確的單位規劃表格，如公分、如 Excel 中的欄寬單位。
+這時可以使用 metadata.setWidthUnit\(LengthUnit\) 函式設定。
+若寬度總和小於頁面範圍，可以用 setHorizontalAlignment 將預設置中改換為靠左或靠右輸出。
 
-
+``` java
+    // FOR PDF
+    metadata.setWidthUnit(LengthUnit.MM);
+    metadata.setHorizontalAlignment(DocumentAlign.LEFT);
+    // FOR Excel
+    metadata.setWidthUnit(LengthUnit.ExcelPoint);
+});
+```
 #### 產出結果\(WidthUnit\)
 
 ![](/assets/ch06/treeTable-widthUnit.png)
-
-
-
-#### 實作說明
-
-
 
 #### **完整測試案例**
 
@@ -105,7 +111,7 @@ metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
         });
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
 
-            metadata.setWidthUnit(LengthUnit.MM); // TODO FIX IT
+            metadata.setWidthUnit(LengthUnit.MM);
             final PDFTableTransfer transfer = new PDFTableTransfer(pdfDocument, metadata);
             transfer.transTable(SampleVO_OM.testDataset());
 
