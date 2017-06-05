@@ -91,7 +91,9 @@ font.NPP_FONT.MING.0=${global.resource.path}/font/TW-Sung-98_1.ttf
 font.NPP_FONT.MING.0=${global.resource.path}/font/FNPMing.ttf
 ``` 
 
-##### TTC 字型第二組以後的定義
+##### TTC 字型檔
+
+TrueType Collections (TTC)允許將多個字型合併為一個檔案，為選擇的字型僅使用一些字型的不同字形建立替換間距儲存。若使用第二組以後的定義，如「新細明體」，可使用下列方式設定。
 
 ```
 font.WindowsFont.NEW-MINGLIU.0 = C:/windows/fonts/mingliu.ttc,1
