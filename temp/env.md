@@ -42,6 +42,7 @@
 ```
   tar -xf eclipse-jee-neon-4-6-SRIS4.tar.gz
 ```
+
 ### 建立 workspace
   - 進入 eclipse-jee-neon-4-6-SRIS4 目錄
   - 解開 \_workspace\_blank.tar.gz，並改名 \_workspace\_sris3
@@ -51,41 +52,37 @@ tar -xf _workspace_blank.tar.gz
 mv _workspace_blank _workspace_sris3
 ```
 
-
-
-
--   修改 eclipse.ini
-    -   更換 vm 路徑
-
-```
-notepad eclipse.ini 
-或者
-vi eclipse.ini 
-```
-
+### 修改 eclipse.ini (更換 Jvm 路徑)
+  - notepad eclipse.ini  
+  - (或) vi eclipse.ini 
+  - 找到以下 -vm 或新增 -vm 指到本機 JDK8 
 ```
 -vm
 C:/Java/jdk1.8.0_92/bin/javaw.exe 
 ```
 
--   建立開啟 eclipse WINDOWS 捷徑
-    -   在 WINDOWS 的捷徑內容，「捷徑」-&gt;「目標」加上 -data {workspace\_path} ，如
+### 建立開啟 eclipse WINDOWS 捷徑
+  -  在 WINDOWS 的捷徑內容，「捷徑」-&gt;「目標」加上 -data {workspace\_path} ，如
 
 ```
-C:\Java\Eclipses\eclipse-jee-neon-4-6-SRIS4\eclipse.exe -data C:\Java\Eclipses\eclipse-jee-neon-4-6-SRIS4\_workspace_sris4
+C:\Java\Eclipses\eclipse-jee-neon-4-6-SRIS4\eclipse.exe 
+    -data C:\Java\Eclipses\eclipse-jee-neon-4-6-SRIS4\_workspace_sris3
 ```
 
--   修改、確認個人 workspace 設定
-    -   點選捷徑開啟 eclipse ，使用 \_workspace\_sris4 為 workspace。
-        -   修改 eclipse 中的 JDK 路徑
-        -   修改 eclipse 中的 TOMCAT 路徑
-        -   修改 eclipse 中的 MAVEN : setting.xml 如附件
-            其中的 <localRepository> 可依個人電腦狀況指定路徑
-            原則上放到使用者目錄：${user.home}\\.m2
-            有另外下載MAVEN，也可以放到 GLOBAL 的 ${maven.home}\\conf\\
-        -   修改 eclipse中，DEFAULT 使用的 JRE 參數 -DBASEDIR=${sris4-dev-config-path} 為 LOCAL 下載 sris4-dev-config 的路徑。
 
-<!-- -->
+## 首次啟動 Ecplipse
 
--   到 Eclipse import 現有 maven 專案
-    **Import... -&gt; Existing Maven Projects**
+## 修改、確認個人 workspace 設定
+ -   點選捷徑開啟 eclipse ，使用 \_workspace\_sris3 為 workspace。
+   -   修改 eclipse 中的 JDK 路徑
+   -   修改 eclipse 中的 TOMCAT 路徑
+   -   修改 eclipse中，DEFAULT 使用的 JRE 參數 -DBASEDIR=${sris4-dev-config-path} 為 LOCAL 下載 CONFIG 的路徑。如：
+
+```
+  -DBASEDIR=D:\01_RIS_SRIS3_3.0_GIT\greenc\CONFIG 
+
+```
+
+##  import 現有 maven 專案
+
+  * **Import... -> Existing Maven Projects**
