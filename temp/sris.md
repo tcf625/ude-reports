@@ -1,30 +1,7 @@
-# AE 元件
+申請書類：
 
 
+### 報表代碼定義(RsApplicationForm extends RsApplicationForm)
 
-
-
-> ## DataLock 元件
->
-> ## 身分證影像元件
->
-> ## 使用者訊息通知元件
->
-> ## 批次作業執行派送元件
->
-> ## 遠端 Method 執行元件
->
-> ## LDAP 使用者資料讀取
->
-> ## 工作日管理元件
->
-> ## 雙簽到作業
->
-> ## 稽核記錄元件
->
-> ## Logger 切換管理介面
->
-> ## Profiler 工具 - 含管理介面
-
-
-
+* 實作定義：
+ * RLApplicationForm : RL 申請書類
