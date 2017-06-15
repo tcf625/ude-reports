@@ -1,23 +1,21 @@
+# 開發環境設定(ECLIPSE)
 
 [圖文版 GOOGLE DOC - 待編輯](https://docs.google.com/document/d/16MGbWAmmaZarmFtODbu5CbMC6YMVXGfVoRMYrLRDlwM/edit?usp=sharing)
 
-下載路徑
---------
+## 下載路徑
 
--   上傳日期 (2017/01/17)
--   http://192.168.10.8/sris/eclipse/eclipse-jee-neon-4-6-SRIS4.tar.gz
+- 上傳日期 (2017/01/17)
+- http://192.168.10.8/sris/eclipse/eclipse-jee-neon-4-6-SRIS4.tar.gz
 
-plug-in 清單
-------------
+## plug-in 清單
 
-JBoss Tool
-Subclipse
-EclEmma Java Code Coverage 2.3.3.201602231923 com.mountainminds.eclemma.feature.feature.group Mountainminds GmbH & Co. KG
-Properties Editor 6.0.4 jp.gr.java\_conf.ussiy.app.propedit.feature.group
-Eclipse Checkstyle Plug-in 6.19.1.201607051943 net.sf.eclipsecs.feature.group http://eclipse-cs.sf.net/
+- JBoss Tool
+- Subclipse
+- EclEmma Java Code Coverage 2.3.3.201602231923 com.mountainminds.eclemma.feature.feature.group Mountainminds GmbH & Co. KG
+- Properties Editor 6.0.4 jp.gr.java\_conf.ussiy.app.propedit.feature.group
+- Eclipse Checkstyle Plug-in 6.19.1.201607051943 net.sf.eclipsecs.feature.group http://eclipse-cs.sf.net/
 
-安裝流程
---------
+# ECLIPSE 安裝流程
 
 -   前置 : 已安裝 git 完成。
     -   安裝 git : https://git-scm.com/downloads
@@ -25,14 +23,18 @@ Eclipse Checkstyle Plug-in 6.19.1.201607051943 net.sf.eclipsecs.feature.group ht
     -   安裝 tortoisegit (GUI for windows) : https://tortoisegit.org/
 -   前置 : 已安裝 JDK8 完成。
 -   前置 : 下載 TOMCAT 8，並解開。
+-   前置 : 下載專案 source code。
 
-* 前置 : 初步下載專案完成。
 
-**** 自簽出專案 git
+## 自 git 簽出專案
 
-****\* 建立專案主目錄，如 F:\\01\_RIS\_SRIS4\_GIT
-
-****\* 到該目錄右鍵選 git bash here : 並輸入
+- 建立專案主目錄，如 D:\\_SRIS3_3.0_GIT。
+  - 到該目錄右鍵選 git bash here : 並輸入
+  
+``` bash  
+    git config --global http.sslVerify false
+  git clone https://sris.pj/git/greenc.git
+```  
 
     # 共用元件部分
     git clone http://www.sris.pj/git/ae/sris4-ae-app.git
