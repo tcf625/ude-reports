@@ -23,50 +23,36 @@
     -   安裝 tortoisegit (GUI for windows) : https://tortoisegit.org/
 -   前置 : 已安裝 JDK8 完成。
 -   前置 : 下載 TOMCAT 8，並解開。
--   前置 : 下載專案 source code。
 
-
-## 自 git 簽出專案
+## 自 git 簽出專案 source code
 
 - 建立專案主目錄，如 D:\\_SRIS3_3.0_GIT。
-  - 到該目錄右鍵選 git bash here : 並輸入
-  
-``` bash  
-    git config --global http.sslVerify false
-  git clone https://sris.pj/git/greenc.git
+  - 到該目錄右鍵選 git bash here : 並輸入  
+``` git
+    # 只需第一次更新 SSL 設定，日後若要重下專案，直接下CLONE 指令即可。
+    git config --global http.sslVerify false 
+    git clone https://sris.pj/git/greenc.git
 ```  
 
-    # 共用元件部分
-    git clone http://www.sris.pj/git/ae/sris4-ae-app.git
-    git clone http://www.sris.pj/git/ae/sris4-commons.git
-    git clone http://www.sris.pj/git/ae/sris4-global-config.git
-    git clone http://www.sris.pj/git/ae/sris4-db-domain.git
-    git clone http://www.sris.pj/git/ae/sris4-parent.git
+## Eclipse 安裝
 
-    # 個別專案開發
-    git clone http://www.sris.pj/git/sris/sris4-dev-config.git
-    git clone http://www.sris.pj/git/sris/sris4-rl-app.git
-    # ** 每一個專案都要更新 submodule **
-    cd sris4-rl-app
-    git submodule update --init
-    cd ..
-
--   解開 Eclipse
-    -   將 tar.gz 檔放至 eclipses 目錄，如 C:\\Java\\Eclipses\\
-    -   使用 Git-Bash OR CYGWIN 至該目錄下，以 tar 解開壓縮檔。如
-
+### 解開 Eclipse
+  - 將 tar.gz 檔放至 eclipses 目錄，如 C:\\Java\\Eclipses\\
+  - 使用 Git-Bash OR CYGWIN 至該目錄下，以 tar 解開壓縮檔。如
 ```
   tar -xf eclipse-jee-neon-4-6-SRIS4.tar.gz
 ```
-
--   建立 workspace
-    -   進入 eclipse-jee-neon-4-6-SRIS4 目錄
-    -   解開 \_workspace\_blank.tar.gz，並改名 \_workspace\_sris4
-
+### 建立 workspace
+  - 進入 eclipse-jee-neon-4-6-SRIS4 目錄
+  - 解開 \_workspace\_blank.tar.gz，並改名 \_workspace\_sris3
 ```
-  cd eclipse-jee-neon-4-6-SRIS4
-  tar -xf _workspace_blank.tar.gz ;mv _workspace_blank _workspace_sris4
+cd eclipse-jee-neon-4-6-SRIS4
+tar -xf _workspace_blank.tar.gz
+mv _workspace_blank _workspace_sris3
 ```
+
+
+
 
 -   修改 eclipse.ini
     -   更換 vm 路徑
