@@ -46,6 +46,7 @@
   * [1. 資料表格](documents/ch06/tableMetadata.md)
     * [樹狀表格](documents/ch06/TreeTable.md)
       * [範例：多層標題](documents/ch06/TreeTable-multiLevel.md)    
+      * [範例：欄寬](documents/ch06/TreeTable-widths.md)    
       * [範例：其它欄位插入模式](documents/ch06/TreeTable-addColumns.md)          
     * [巢狀表格](documents/ch06/NestTable.md)
     * [資料來源](documents/ch06/cellDataSource.md)    
