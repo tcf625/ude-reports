@@ -1,9 +1,9 @@
 ### 欄位寬度定義
 
-以 TableMetadata 定義表格，基本上欄寬皆是以權重方式定義。
+以 TableMetadata 定義表格，基本上欄寬皆是以權重方式定義。  
 append 函式中，基本相闗的組合如下，皆是多了一個 float 參數以定義寬度權重。
 
-``` java 
+```java
 // 基本新增用法
 append(String title, float widthWeight)
 append(String title, CellDataSource source, float widthWeight)
@@ -19,39 +19,33 @@ append(String title, CellDataSource source, float widthWeight, Consumer<C>)
 * 上層節點寬度為下層節點的總合。
 * 另外對上層節點設定寬度沒有作用。
 
-``` java 
-metadata.append("年度", new BeanProperty("text1"), 5);
-metadata.append("地區", new BeanProperty("text2"), 10);
-metadata.append("項目", new BeanProperty("text3"), 15);
+```java
+metadata.append("年度", new BeanProperty("text1"), 1);
+metadata.append("地區", new BeanProperty("text2"), 2);
+metadata.append("項目", new BeanProperty("text3"), 3);
 metadata.append("資料內容", column -> {
-  column.append("值1", new BeanProperty("value1"), 5);
-  column.append("值2", new BeanProperty("value2"), 5);
+  column.append("值1", new BeanProperty("value1"), 1);
+  column.append("值2", new BeanProperty("value2"), 1);
 });
-metadata.append("資料內容", 30, column -> {
-  column.append("值3", new BeanProperty("value1"), 5);
-  column.append("值4", new BeanProperty("value2"), 5);
+metadata.append("資料內容", 10, column -> {
+  column.append("值3", new BeanProperty("value1"), 1);
+  column.append("值4", new BeanProperty("value2"), 1);
 });
 ```
+
 #### 產出結果
 
 
 
 
 
+![](/assets/ch06/treeTable-width.png)
 
 #### WidthUnit
 
-
-
-metadata.setWidthUnit(LengthUnit.ExcelPoint);
-
-
-
-
+metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
 
 #### 實作說明
-
-
 
 ```
     @Test
@@ -81,4 +75,6 @@ metadata.setWidthUnit(LengthUnit.ExcelPoint);
         });
     }
 ```
+
+
 
