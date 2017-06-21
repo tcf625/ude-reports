@@ -58,7 +58,7 @@ metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
 
 
 
-```
+``` java
     @Test
     public void test_widths() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
