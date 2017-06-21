@@ -8,7 +8,7 @@
 // 新增後，以 Consumer 操作所加入的欄位描述資訊
 append(String, Consumer<C>)
 append(String, CellDataSource, float, Consumer<C>)
-//
+// 加入無標題欄位
 append(CellDataSource, float)
 //
 append(ColumnDefine)
