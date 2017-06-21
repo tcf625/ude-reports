@@ -14,8 +14,36 @@ append(String title, float widthWeight, Consumer<C>)
 append(String title, CellDataSource source, float widthWeight, Consumer<C>)
 ```
 
+#### 實作說明
 
-#### 無用的寬度設定(上層節點)
+* 上層節點寬度為下層節點的總合。
+* 另外對上層節點設定寬度沒有作用。
+
+``` java 
+metadata.append("年度", new BeanProperty("text1"), 5);
+metadata.append("地區", new BeanProperty("text2"), 10);
+metadata.append("項目", new BeanProperty("text3"), 15);
+metadata.append("資料內容", column -> {
+  column.append("值1", new BeanProperty("value1"), 5);
+  column.append("值2", new BeanProperty("value2"), 5);
+});
+metadata.append("資料內容", 30, column -> {
+  column.append("值3", new BeanProperty("value1"), 5);
+  column.append("值4", new BeanProperty("value2"), 5);
+});
+```
+#### 產出結果
+
+
+
+
+
+#### Excel
+
+
+
+metadata.setWidthUnit(LengthUnit.ExcelPoint);
+
 
 
 
@@ -46,7 +74,6 @@ append(String title, CellDataSource source, float widthWeight, Consumer<C>)
             transfer.transTable(SampleVO_OM.testDataset());
         });
         super.createExcel(excelDocument -> {
-            metadata.setWidthUnit(LengthUnit.ExcelPoint);
             final ExcelSheet<?> sheet = excelDocument.createSheet("A");
             final ExcelTableTransfer transfer = new ExcelTableTransfer(metadata, sheet);
             transfer.transTable(SampleVO_OM.testDataset());
