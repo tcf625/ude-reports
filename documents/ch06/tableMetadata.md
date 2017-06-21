@@ -1,6 +1,6 @@
 ## 資料表格
 
-UdeReport 中的 TableMetadata，目前簡單區分為樹狀與巢狀兩種定義。
+UdeReport 中的 TableMetadata，目前簡單區分為樹狀與巢狀兩種定義方式。
 
 * **樹狀**
 
