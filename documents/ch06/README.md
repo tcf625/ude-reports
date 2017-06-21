@@ -1,10 +1,8 @@
 # 表格描述定義
 
-利用本套件輸出此類表格的設定方式，第一步是先建立 xxxTableMetadata，再插入個別欄位定義\(含標頭、資料來源及格式\)、群組定義。最後再以 PDFTableTransfer、ExcelTableTransfer 等表格轉換器，撘配原始資料\(List&lt;JavaBean/Map&gt;\)轉換為表格輸出。
+利用本套件輸出此類表格的設定方式，第一步是先建立 xxxTableMetadata，再插入個別欄位定義\(含標頭、資料來源及格式\)、群組定義。最後再以 PDFTableTransfer、ExcelTableTransfer 等表格轉換器，撘配原始資料List《JavaBean/Map》轉換為表格輸出。
 
-
-UDE-Report 的表格描述基本準則，是將直欄標頭與資料來源做1-1對應設定。
-下面建立 TableMetadata 的範例中，為此 metadata 增加了一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
+UDE-Report 的表格描述基本準則，是1-1對應設定直欄標頭與資料來源。如下面建立 TableMetadata 的範例，為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
 
 ```java
 final TreeTableMetadata metadata = new TreeTableMetadata ();
