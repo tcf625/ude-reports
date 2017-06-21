@@ -1,8 +1,7 @@
 ### 樹狀欄位群組設定
 
 在規劃直欄表格時，可能會把相鄰的幾個欄位以群組方式呈現，以利使用者檢視報表。
-在 UDE-Report 中的用例如下：
-
+在 UDE-Report 中的用例如下，也就是以 append(String title, Consumer<C>) 建立合併欄位("資料內容")後，再在 Consumer.accept() 中對該欄位增加下面的 "值1","值2" 兩個子欄位。
 
 ``` java 
 metadata.append("資料內容", column -> {
