@@ -21,18 +21,13 @@ append(String, CellDataSource, float)
 append(String, float)
 ```
 
-以下逐一介紹 TableMetadata 的可設定特性
+TableMetadata 的建立方式如下，後續章節會逐一介紹 TableMetadata 的各種特性。
+在下例中的 new BeanProperty("text1") 敘述表示此欄位資料值將由 JavaBean 的 text1 屬性取得。
 
 ```java
-public NormalTableMetadata BASIC_METADATA(String captionText) {
-  final NormalTableMetadata tm = new NormalTableMetadata();
-  ColumnMetadata colA = tm.append("年度", new BeanProperty("text1"), 20);
-  ColumnMetadata colB = tm.append("地區", new BeanProperty("text2"), 20);
-  ColumnMetadata colC = tm.append("項目", new BeanProperty("text3"), 20);
-  ColumnMetadata colD = tm.append("值1",  new BeanProperty("value1"), 20);
-  colD.getContentFormat().setAlignH(AlignH.RIGHT);
-  return tm;
-}
+final TreeTableMetadata metadata = new TreeTableMetadata ();
+metadata.append("年度", new BeanProperty("text1"));
+// ...
 ```
 
 
