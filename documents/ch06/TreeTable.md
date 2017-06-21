@@ -1,9 +1,6 @@
 ### 樹狀表格
 
-
-
-
-``` java
+```java
     @Test
     public void test_basicTable() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
@@ -24,6 +21,10 @@
             transfer.transTable(SampleVO_OM.testDataset());
         });
     }
-
 ```
+
+上例分別用同一個 TreeTableMetadata 轉換表格資料為 PDF / EXCEL 輸出。
+可以看到在 PDF 中，每一頁會重複顯示標題部分；而 Excel 則否。
+
+![](/assets/ch06/basicTreeTable.png)
 
