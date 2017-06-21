@@ -1,6 +1,9 @@
 ### 樹狀欄位群組設定
 
 在規劃直欄表格時，可能會把相鄰的幾個欄位以群組方式呈現，以利使用者檢視報表。
+
+#### 實作說明
+
 在 UDE-Report 中的用例如下，也就是以 append(String title, Consumer<C>) 建立合併欄位("資料內容")後，再在 Consumer.accept() 中，對該欄位增加 "值1","值2" 兩個子欄位。
 
 ``` java 
@@ -10,7 +13,7 @@ metadata.append("資料內容", column -> {
 });
 ```
 
-在 JDK 7 以前的寫法會像下面這樣，若只有一兩個欄位有後續資料要設定時還好，但東西一多，會多出不少 Local variables ，程式的可讀性會略差一些。
+在 JDK 7 以前的寫法則如下例所示，若只有一兩個欄位有後續資料要設定時還好，但東西一多，會多出不少 Local variables ，程式的可讀性會略差一些。
 
 ``` java 
 final TreeColumnMetadata column1 = metadata.append("資料內容");
@@ -21,13 +24,7 @@ column2.append("值3", new BeanProperty("value3"));
 column2.append("值4", new BeanProperty("value4"));
 ```
 
-
-
-
-
-
-
-
+執行產出如下，沒有子欄位的標題項目，就會變成跨列欄位。
 
 
 ![](/assets/ch06/treeTable-multiLevel.png)
