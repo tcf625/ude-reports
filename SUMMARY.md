@@ -48,9 +48,7 @@
       * [範例：多層標題](documents/ch06/TreeTable-multiLevel.md)    
       * [範例：其它欄位插入模式](documents/ch06/TreeTable-addColumns.md)          
     * [巢狀表格](documents/ch06/NestTable.md)
-    * [資料來源](documents/ch06/cellDataSource.md)
-
-    
+    * [資料來源](documents/ch06/cellDataSource.md)    
   * [2. 資料統計](documents/ch06/grouping.md)
   * [3. 額外區塊](documents/ch06/block.md)
   * [4. 其它轉換器](documents/ch06/tableTransfer.md)
