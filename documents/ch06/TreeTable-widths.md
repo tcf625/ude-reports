@@ -35,15 +35,21 @@ metadata.append("資料內容", 10, column -> {
 
 #### 產出結果
 
-
-
-
-
 ![](/assets/ch06/treeTable-width.png)
 
 #### WidthUnit
 
 metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
+
+
+
+#### 產出結果\(WidthUnit\)
+
+![](/assets/ch06/treeTable-widthUnit.png)
+
+
+
+
 
 #### 實作說明
 
