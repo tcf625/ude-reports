@@ -85,6 +85,41 @@ metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
             transfer.transTable(SampleVO_OM.testDataset());
         });
     }
+    
+    
+
+    @Test
+    public void test_widthsUnit() {
+        final TreeTableMetadata metadata = new TreeTableMetadata();
+        metadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
+        metadata.append("年度", new BeanProperty("text1"), 10);
+        metadata.append("地區", new BeanProperty("text2"), 20);
+        metadata.append("項目", new BeanProperty("text3"), 30);
+        metadata.append("資料內容", column -> {
+            column.append("值1", new BeanProperty("value1"), 10);
+            column.append("值2", new BeanProperty("value2"), 10);
+        });
+        metadata.append("資料內容", 10, column -> {
+            column.append("值3", new BeanProperty("value1"), 10);
+            column.append("值4", new BeanProperty("value2"), 10);
+        });
+        super.createPDF(this::setPageSizeA5R, pdfDocument -> {
+
+            metadata.setWidthUnit(LengthUnit.MM); // TODO FIX IT
+            final PDFTableTransfer transfer = new PDFTableTransfer(pdfDocument, metadata);
+            transfer.transTable(SampleVO_OM.testDataset());
+
+            pdfDocument.newPage();
+            metadata.setHorizontalAlignment(DocumentAlign.LEFT);
+            transfer.transTable(SampleVO_OM.testDataset());
+        });
+        super.createExcel(excelDocument -> {
+            metadata.setWidthUnit(LengthUnit.ExcelPoint);
+            final ExcelSheet<?> sheet = excelDocument.createSheet("A");
+            final ExcelTableTransfer transfer = new ExcelTableTransfer(metadata, sheet);
+            transfer.transTable(SampleVO_OM.testDataset());
+        });
+    }    
 ```
 
 
