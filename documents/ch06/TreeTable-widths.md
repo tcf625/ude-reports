@@ -49,8 +49,6 @@ metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
 
 
 
-
-
 #### 實作說明
 
 ```
