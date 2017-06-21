@@ -8,10 +8,12 @@
 // 新增後，以 Consumer 操作所加入的欄位描述資訊
 append(String, Consumer<C>)
 append(String, CellDataSource, float, Consumer<C>)
+
+// 以 ColumnDefine 介面新增欄位，通常用於使用 ENUM 定義固定欄位選項。
+append(ColumnDefine)
+
 // 加入無標題欄位
 append(CellDataSource, float)
-//
-append(ColumnDefine)
 //
 append(String)
 append(String, CellDataSource)
