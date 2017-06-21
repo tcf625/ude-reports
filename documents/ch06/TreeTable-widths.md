@@ -20,16 +20,16 @@ append(String title, CellDataSource source, float widthWeight, Consumer<C>)
 * 另外對上層節點設定寬度沒有作用。
 
 ```java
-metadata.append("年度", new BeanProperty("text1"), 1);
-metadata.append("地區", new BeanProperty("text2"), 2);
-metadata.append("項目", new BeanProperty("text3"), 3);
+metadata.append("年度", new BeanProperty("text1"), 10);
+metadata.append("地區", new BeanProperty("text2"), 20);
+metadata.append("項目", new BeanProperty("text3"), 30);
 metadata.append("資料內容", column -> {
-  column.append("值1", new BeanProperty("value1"), 1);
-  column.append("值2", new BeanProperty("value2"), 1);
+  column.append("值1", new BeanProperty("value1"), 10);
+  column.append("值2", new BeanProperty("value2"), 10);
 });
 metadata.append("資料內容", 10, column -> {
-  column.append("值3", new BeanProperty("value1"), 1);
-  column.append("值4", new BeanProperty("value2"), 1);
+  column.append("值3", new BeanProperty("value1"), 10);
+  column.append("值4", new BeanProperty("value2"), 10);
 });
 ```
 
@@ -63,16 +63,16 @@ metadata.setWidthUnit\(LengthUnit.ExcelPoint\);
     public void test_widths() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
         metadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
-        metadata.append("年度", new BeanProperty("text1"), 5);
-        metadata.append("地區", new BeanProperty("text2"), 10);
-        metadata.append("項目", new BeanProperty("text3"), 15);
+        metadata.append("年度", new BeanProperty("text1"), 10);
+        metadata.append("地區", new BeanProperty("text2"), 20);
+        metadata.append("項目", new BeanProperty("text3"), 30);
         metadata.append("資料內容", column -> {
-            column.append("值1", new BeanProperty("value1"), 5);
-            column.append("值2", new BeanProperty("value2"), 5);
+            column.append("值1", new BeanProperty("value1"), 10);
+            column.append("值2", new BeanProperty("value2"), 10);
         });
-        metadata.append("資料內容", 30, column -> {
-            column.append("值3", new BeanProperty("value1"), 5);
-            column.append("值4", new BeanProperty("value2"), 5);
+        metadata.append("資料內容", 10, column -> {
+            column.append("值3", new BeanProperty("value1"), 10);
+            column.append("值4", new BeanProperty("value2"), 10);
         });
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
