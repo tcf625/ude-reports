@@ -2,11 +2,10 @@
 
 
 
-
 ``` java 
 metadata.append("資料內容", column -> {
-    column.append("值1", new BeanProperty("value1"), 20);
-    column.append("值2", new BeanProperty("value2"), 20);
+    column.append("值1", new BeanProperty("value1"));
+    column.append("值2", new BeanProperty("value2"));
 });
 ```
 
