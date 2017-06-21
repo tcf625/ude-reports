@@ -1,16 +1,35 @@
 ### 樹狀欄位群組設定
 
+
+
+
+``` java 
+metadata.append("資料內容", column -> {
+    column.append("值1", new BeanProperty("value1"), 20);
+    column.append("值2", new BeanProperty("value2"), 20);
+});
+```
+
+
+
+
+
+![](/assets/ch06/treeTable-multiLevel.png)
+
+
+#### **完整測試案例**
+
 ``` java 
     @Test
     public void test_columnGroup() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
         metadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
-        metadata.append("年度", new BeanProperty("text1"), 20);
-        metadata.append("地區", new BeanProperty("text2"), 20);
-        metadata.append("項目", new BeanProperty("text3"), 20);
+        metadata.append("年度", new BeanProperty("text1"));
+        metadata.append("地區", new BeanProperty("text2"));
+        metadata.append("項目", new BeanProperty("text3"));
         metadata.append("資料內容", column -> {
-            column.append("值1", new BeanProperty("value1"), 20);
-            column.append("值2", new BeanProperty("value2"), 20);
+            column.append("值1", new BeanProperty("value1"));
+            column.append("值2", new BeanProperty("value2"));
         });
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
@@ -25,10 +44,6 @@
     }
 
 ```
-
-
-
-![](/assets/ch06/treeTable-multiLevel.png)
 
 
 
