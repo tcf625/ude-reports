@@ -47,9 +47,7 @@ columnGroup.append(new BeanProperty("value3")).getContentFormat().setBorder(Bord
 
 ##### 產出結果
 
-
-
-
+![](/assets/ch06/treeTable-splitColumn.png)
 
 
 #### **完整測試案例**
