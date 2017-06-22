@@ -31,7 +31,7 @@ column2.append("值4", new BeanProperty("value4"));
 
 #### 欄位分割
 
-若新增子欄位時，皆沒有再給定欄位標題，則效果會變成僅標題欄位跨欄合併。
+若新增子欄位時，皆不再給定欄位標題，則效果會變成僅標題欄位跨欄合併。
 
 ``` java
 metadata.append("年度、地區", areaGroup -> {
