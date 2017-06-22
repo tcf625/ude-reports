@@ -36,3 +36,6 @@ columnGroup.prepend("資料集第1項");
 columnGroup.appendAt("資料集第3項", 2);
 metadata.append("值3");
 ```
+
+
+#### 產出結果(ColumnGroup )
