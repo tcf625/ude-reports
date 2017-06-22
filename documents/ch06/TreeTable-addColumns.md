@@ -1,12 +1,12 @@
 ### 欄位插入模式
 
-有時，為配合程式運算邏輯，無法依據由前到後的順序插入欄位。
-像是輸出於前方的合計欄位、欄位定義在其它形式的資料結構中。
-TreeTableMetadata 對應的 TreeColumnMetadata 提供更多模式的插入欄位方法 (參考JQuery命名)。
+有時，為配合程式運算邏輯，無法依據由前到後的順序插入欄位。  
+像是輸出於前方的合計欄位、欄位定義在其它形式的資料結構中。  
+TreeTableMetadata 對應的 TreeColumnMetadata 提供更多模式的插入欄位方法 \(參考JQuery命名\)。
 
 #### After and Before
 
-``` java
+```java
 // !
 final TreeColumnMetadata columnValue = metadata.append("值1", new BeanProperty("value1"));
 metadata.append("值2", new BeanProperty("value2"));
@@ -21,15 +21,15 @@ columnGroup.before("資料集前面");
 columnGroup.after("資料集後面");
 ```
 
-#### 產出結果(After and Before)
+#### 產出結果\(After and Before\)
 
-
+![](/assets/ch06/treeTable-after-before.png)
 
 #### ColumnGroup : appendAt /  prepend
 
 依上層欄位為基準新増：
 
-``` java
+```java
 final TreeColumnMetadata columnGroup = metadata.append("資料集");
 columnGroup.append("值1", new BeanProperty("value1"));
 columnGroup.append("值2", new BeanProperty("value2"));
@@ -38,18 +38,13 @@ columnGroup.appendAt("資料集第3項", 2);
 metadata.append("值3");
 ```
 
+#### 產出結果\(ColumnGroup \)
 
-#### 產出結果(ColumnGroup )
-
-
-
+![](/assets/ch06/treeTable-columnGroup-addColumns.png)
 
 #### **完整測試案例**
 
-
-``` java
-
-
+```java
     @Test
     public void test_afterAndBefore() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
@@ -82,7 +77,7 @@ metadata.append("值3");
             transfer.transTable(SampleVO_OM.testDataset());
         });
     }
-    
+
     @Test
     public void test_columnGroup() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
@@ -108,9 +103,7 @@ metadata.append("值3");
             transfer.transTable(SampleVO_OM.testDataset());
         });
     }
-    
 ```
-
 
 
 
