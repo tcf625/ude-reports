@@ -35,6 +35,8 @@ column2.append("值4", new BeanProperty("value4"));
 
 #### 多層次範例
 
+也可以設定3層以上的樹狀關係。
+
 ``` java
 metadata.append("所有資料", columnGroup -> {
     columnGroup.append("項目", new BeanProperty("text3"));
