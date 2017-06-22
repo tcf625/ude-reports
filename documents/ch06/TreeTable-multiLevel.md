@@ -39,6 +39,7 @@ metadata.append("年度、地區", areaGroup -> {
     areaGroup.append(new BeanProperty("text2"));
 });
 metadata.append("資料集", columnGroup -> {
+    // 操作邊框定義，以呈現合併效果
     columnGroup.append(new BeanProperty("value1")).getContentFormat().setBorder(Border.NR);
     columnGroup.append(new BeanProperty("value2")).getContentFormat().setBorder(Border.TB);
     columnGroup.append(new BeanProperty("value3")).getContentFormat().setBorder(Border.NL);
