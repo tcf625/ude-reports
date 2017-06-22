@@ -43,12 +43,6 @@ metadata.append("值3");
 ![](/assets/ch06/treeTable-columnGroup-addColumns.png)
 
 
-#### 隱含(內部分割)欄位
-
-
-
-
-
 
 #### **完整測試案例**
 
