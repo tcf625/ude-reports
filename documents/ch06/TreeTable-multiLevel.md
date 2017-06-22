@@ -24,10 +24,14 @@ column2.append("值3", new BeanProperty("value3"));
 column2.append("值4", new BeanProperty("value4"));
 ```
 
+##### 產出結果
+
 執行產出如下，沒有子欄位的標題項目，就會變成跨列欄位。
-
-
 ![](/assets/ch06/treeTable-multiLevel.png)
+
+#### 欄位分割
+
+
 
 
 #### **完整測試案例**
