@@ -37,7 +37,46 @@ NestTableMetadata 預設會把每一組資料所佔的列，用粗線外框標�
 ### 無框線表格
 
 
+
+``` java
+    final NestTableMetadata metadata = new NestTableMetadata();
+    metadata.getDefaultFormat().setBorder(Border.N);
+    metadata.append("年度", new BeanProperty("text1"));
+    metadata.append("地區", new BeanProperty("text2"));
+    metadata.append("項目", new BeanProperty("text3"));
+    metadata.subTable(subTable -> {
+        subTable.append("值1");
+        subTable.append("值2");
+        subTable.nextRow();
+        subTable.append("值3");
+        subTable.append("值4");
+        subTable.append("值5");
+        subTable.nextRow();
+        subTable.append("值A");
+        subTable.append("值B");
+        subTable.append("值C");
+        subTable.append("值D");
+    });
+```
+
+#### output
+
+
+
 ### 無框線表格 加 分割線
+
+
+
+``` java
+
+```
+
+
+#### output
+
+
+
+
 
 
 
