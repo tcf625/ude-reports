@@ -21,7 +21,7 @@ metadata.subTable(subTable -> {
 ```
 
 UDE-Report 所定義的巢狀表格，其巢狀新增方式是一塊塊插入子表格的做法。
-與 TreeTableMetadata 相較，產出
+與 TreeTableMetadata 相較，產出 PDF 的欄位 LAYOUT 會比較有彈性。如此例中，值1~5/A~C 欄位所佔寬度不同且未對齊；但生成EXCEL時，因試算表的天生限制，加上輸出原則以盡量不合併欄位為主，所以生成結果會與 PDF 文件有些許不同。
 
 
 
