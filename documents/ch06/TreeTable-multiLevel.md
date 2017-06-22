@@ -29,6 +29,24 @@ column2.append("值4", new BeanProperty("value4"));
 執行產出如下，沒有子欄位的標題項目，就會變成跨列欄位。
 ![](/assets/ch06/treeTable-multiLevel.png)
 
+
+
+
+
+#### 多層次範例
+
+``` java
+metadata.append("所有資料", columnGroup -> {
+    columnGroup.append("項目", new BeanProperty("text3"));
+    columnGroup.append("資料內容", column -> {
+        column.append("值1", new BeanProperty("value1"));
+        column.append("值2", new BeanProperty("value2"));
+    });
+});
+```
+
+
+
 #### 欄位分割
 
 若新增子欄位時，皆不再給定欄位標題，則效果會變成僅標題欄位跨欄合併。
