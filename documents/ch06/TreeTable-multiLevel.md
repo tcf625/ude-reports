@@ -4,7 +4,7 @@
 
 #### 實作說明
 
-在 UDE-Report 中的用例如下，也就是以 append(String title, Consumer<C>) 建立合併欄位("資料內容")後，再在 Consumer.accept() 中，對該欄位增加 "值1","值2" 兩個子欄位。
+在 UDE-Report 中的用例如下，也就是以 append(String title, Consumer) 建立合併欄位("資料內容")後，再在 Consumer.accept() 中，對該欄位增加 "值1","值2" 兩個子欄位。
 
 ``` java 
 metadata.append("資料內容", column -> {
