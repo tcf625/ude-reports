@@ -27,3 +27,12 @@ UDE-Report 所定義的巢狀表格，其巢狀新增方式是一塊塊插入子
 ![](/assets/ch06/nestTable-basic.png)
 
 
+### 資料框線
+
+為使人閱讀清冊報表時，可以較容易區別單筆資料，
+NestTableMetadata 預設會把每一組資料所佔的列，用粗線外框標示。
+
+可使用 metadata.setBorderWidth(0F); 取消此行為。
+
+
+
