@@ -21,6 +21,8 @@ columnGroup.before("資料集前面");
 columnGroup.after("資料集後面");
 ```
 
+#### 產出結果(After and Before)
+
 
 #### ColumnGroup : append / pAfter and Before
 
