@@ -24,6 +24,10 @@ columnGroup.after("資料集後面");
 #### 產出結果(After and Before)
 
 
+
+#### ColumnGroup : appendAt /  prepend
+
+
 ``` java
 final TreeColumnMetadata columnGroup = metadata.append("資料集");
 columnGroup.append("值1", new BeanProperty("value1"));
@@ -32,9 +36,3 @@ columnGroup.prepend("資料集第1項");
 columnGroup.appendAt("資料集第3項", 2);
 metadata.append("值3");
 ```
-
-
-#### ColumnGroup : append / pAfter and Before
-
-
-
