@@ -27,6 +27,7 @@ columnGroup.after("資料集後面");
 
 #### ColumnGroup : appendAt /  prepend
 
+依上層欄位為基準新増：
 
 ``` java
 final TreeColumnMetadata columnGroup = metadata.append("資料集");
