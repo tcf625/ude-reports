@@ -7,10 +7,18 @@ TreeTableMetadata 對應的 TreeColumnMetadata 提供更多模式的插入欄位
 #### After and Before
 
 ``` java
-final TreeColumnMetadata columnValue1 = metadata.append("值1", new BeanProperty("value1"));
-final TreeColumnMetadata columnValue2 = metadata.append("值2", new BeanProperty("value2"));
-columnValue1.after("值1前面");
-columnValue1.before("值1後面");
+// !
+final TreeColumnMetadata columnValue = metadata.append("值1", new BeanProperty("value1"));
+metadata.append("值2", new BeanProperty("value2"));
+columnValue.before("值1前面");
+columnValue.after("值1後面");
+
+// !
+final TreeColumnMetadata columnGroup = metadata.append("資料集");
+columnGroup.append("值3", new BeanProperty("value3"));
+columnGroup.append("值4", new BeanProperty("value4"));
+columnGroup.before("資料集前面");
+columnGroup.after("資料集後面");
 ```
 
 
