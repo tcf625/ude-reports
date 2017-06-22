@@ -42,6 +42,7 @@ final TreeColumnMetadata columnGroup = metadata.append("資料集");
 columnGroup.append(new BeanProperty("value1")).getContentFormat().setBorder(Border.NR);
 columnGroup.append(new BeanProperty("value2")).getContentFormat().setBorder(Border.TB);
 columnGroup.append(new BeanProperty("value3")).getContentFormat().setBorder(Border.NL);
+
 ```
 
 ##### 產出結果
