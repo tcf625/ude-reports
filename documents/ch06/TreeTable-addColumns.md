@@ -21,7 +21,7 @@ columnGroup.before("資料集前面");
 columnGroup.after("資料集後面");
 ```
 
-#### 產出結果\(After and Before\)
+##### 產出結果\(After and Before\)
 
 ![](/assets/ch06/treeTable-after-before.png)
 
@@ -38,9 +38,13 @@ columnGroup.appendAt("資料集第3項", 2);
 metadata.append("值3");
 ```
 
-#### 產出結果\(ColumnGroup \)
+##### 產出結果\(ColumnGroup \)
 
 ![](/assets/ch06/treeTable-columnGroup-addColumns.png)
+
+
+####
+
 
 #### **完整測試案例**
 
