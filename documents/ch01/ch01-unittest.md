@@ -1,10 +1,10 @@
 ### 單元測試
 
-一般建議使用 AbstractITextTestkit或是 AbstractITextTest 為父類別，實作單元測試，因為有一些附加的測試特性可以選用。
+一般建議使用 AbstractITextTestkit 或 AbstractITextTest 為父類別，實作單元測試，因為有一些附加的測試特性可以選用。
 
 #### AbstractITextTestkit
 
-基礎的測試類別，主要功能有二：提供 PDFDocumentManager 以及依據測試METHOD 名稱產出輸出檔案物件。
+基礎的測試類別，主要功能有二：提供 PDFDocumentManager 以及依據測試 METHOD 名稱產出輸出檔案物件。
 建構子可傳入ITextTestConfig以定義測試設定(也可使用預設無參數設定)。
 
 ``` java

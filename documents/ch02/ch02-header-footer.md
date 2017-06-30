@@ -29,6 +29,21 @@
 * SECTION_AND_PAGE	目前節次＋目前節內頁次
 * SECTION_PAGES	各節總頁數
 
+``` java
+final PDFSampleContent setting = pdfDocument -> {
+    pdfDocument.setPageSize(PageSize.A5.rotate());
+    final LayoutInfo layoutInfo = new LayoutInfo();
+    layoutInfo.setHeader(ItemPosition.LeftHeader, PageHeaderEN.PAGE, 14);
+    layoutInfo.setHeader(ItemPosition.CenterHeader, PageHeaderEN.BOTH, 14);
+    layoutInfo.setHeader(ItemPosition.RightHeader, PageHeaderEN.TOTAL_PAGES, 14);
+    layoutInfo.setHeader(ItemPosition.LeftFooter, PageHeaderZH.PAGE, 14);
+    layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 14);
+    layoutInfo.setHeader(ItemPosition.RightFooter, PageHeaderZH.TOTAL_PAGES, 14);
+    pdfDocument.setLayoutInfo(layoutInfo);
+};
+super.createPDF(setting.andThen(this::outputRepeatText));
+```
+
 
 
 
