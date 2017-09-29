@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch04;
+package ude.report.sample.rsSample;
 
 import org.junit.Test;
 

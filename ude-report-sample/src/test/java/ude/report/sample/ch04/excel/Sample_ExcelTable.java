@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch04;
+package ude.report.sample.ch04.excel;
 
 import org.junit.Test;
 
@@ -17,7 +17,6 @@ public class Sample_ExcelTable extends AbstractSample {
         super.createExcel(document -> {
             final ExcelSheet<?> sheet = document.createSheet("sheet1");
             sheet.appendCell(new ExcelPoint(0, 0), "A1");
-            
         });
     }
 

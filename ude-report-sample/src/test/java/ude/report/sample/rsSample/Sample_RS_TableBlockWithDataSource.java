@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch04;
+package ude.report.sample.rsSample;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ import ude.report.sample.AbstractSampleReport;
 import ude.report.sample.SampleVO;
 import ude.report.sample.SampleVO_OM;
 
-public class Sample_TableBlockWithDataSource extends AbstractSample {
+public class Sample_RS_TableBlockWithDataSource extends AbstractSample {
 
     final List<SampleVO> reportData = SampleVO_OM.testDataset(101);
 
@@ -38,12 +38,12 @@ public class Sample_TableBlockWithDataSource extends AbstractSample {
 
             final int size = 9;
 
-            for (int i = 0; i < Sample_TableBlockWithDataSource.this.reportData.size(); i += size) {
+            for (int i = 0; i < Sample_RS_TableBlockWithDataSource.this.reportData.size(); i += size) {
                 final List<TableBlock<?, ?>> blocksInPage = new ArrayList<>();
                 final TableBlock<?, ?> headerTable = headerTable();
                 final TableBlock<?, ?> masterHeader = masterHeader();
                 final TableBlock<?, ?> basicTable = basicTable(i,
-                        Math.min(i + size, Sample_TableBlockWithDataSource.this.reportData.size()));
+                        Math.min(i + size, Sample_RS_TableBlockWithDataSource.this.reportData.size()));
                 final TableBlock<?, ?> masterFooter = masterFooter();
 
                 // PDF
@@ -53,19 +53,17 @@ public class Sample_TableBlockWithDataSource extends AbstractSample {
                 blocksInPage.add(basicTable);
                 blocksInPage.add(masterFooter);
                 for (final TableBlock<?, ?> tableBlock : blocksInPage) {
-                    PDFTableTransferUtils.appendTable(pdfDocument, tableBlock, Sample_TableBlockWithDataSource.this);
+                    PDFTableTransferUtils.appendTable(pdfDocument, tableBlock, Sample_RS_TableBlockWithDataSource.this);
                 }
             }
-            System.out.println(Sample_TableBlockWithDataSource.this.reportData.size());
+            System.out.println(Sample_RS_TableBlockWithDataSource.this.reportData.size());
         };
 
         public TableBlock<?, ?> headerTable() {
             final NestBlock block = NestBlock.noBorder();
             block.append("戶政所別：", dataSource("reportData[0].text1"));
-            // block.append("戶政所別：", dataSource(Code.category(xxxx), "reportingParams.siteId"));
             block.nextRow();
             block.append("調整日期：", Const.define("民國106年09月22日"));
-
             return block;
         }
 

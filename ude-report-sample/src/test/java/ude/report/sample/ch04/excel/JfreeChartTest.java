@@ -1,4 +1,4 @@
-package ude.report.sample.ch04;
+package ude.report.sample.ch04.excel;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -16,6 +16,7 @@ import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.title.TextTitle;
 import org.jfree.data.general.DefaultPieDataset;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.iisigroup.ude.report.itext2.font.CHTFontFactories;
@@ -23,16 +24,19 @@ import com.iisigroup.ude.report.itext2.font.CNS11643;
 
 public class JfreeChartTest {
 
+    /** Logger Object. */
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(JfreeChartTest.class);
+
     @Test
+    @Ignore
     public void listFonts() {
         final String[] fontList = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         for (int i = 0; i < fontList.length; i++) {
-            System.err.println(fontList[i]);
+            LOGGER.trace(fontList[i]);
         }
     }
 
     private void createImage(final File imgFile) throws IOException {
-
         // 建立圓餅圖的資料集
         final DefaultPieDataset dataset = new DefaultPieDataset();
         dataset.setValue("非常同意", RandomUtils.nextInt(0, 100));
@@ -76,6 +80,7 @@ public class JfreeChartTest {
     public void testImg() throws IOException {
         final File imgFile = File.createTempFile("jfree", ".jpg");
         createImage(imgFile);
+        LOGGER.debug("imgFile:{}", imgFile);
     }
 
 }

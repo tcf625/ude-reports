@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch04;
+package ude.report.sample.ch04.excel;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.Range;
@@ -50,7 +50,7 @@ import com.iisigroup.ude.report.table.metadata.TreeColumnMetadata;
 import ude.report.sample.AbstractSample;
 import ude.report.sample.SampleVO_OM;
 
-public class Sample_ExcelTableChart extends AbstractSample {
+public class Sample_TRY_ExcelTableChart extends AbstractSample {
 
     /***
      * https://stackoverflow.com/questions/38913412/create-bar-chart-in-excel-with-apache-poi

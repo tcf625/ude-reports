@@ -19,7 +19,7 @@ public class Sample_CellFormat extends AbstractSample {
     public void test_bgColor() {
         super.createPDF(pdfDocument -> {
             final TableiText table = pdfDocument.createTable(98, 16);
-            table.getDefaultFormat().setFontSize(8);
+            table.getDefaultFormat().setFontSize(8).setMinHeightInCM(3F);
             for (int r = 0; r < 255; r += 32) {
                 for (int g = 0; g < 255; g += 32) {
                     for (int b = 0; b < 255; b += 32) {

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch04;
+package ude.report.sample.ch04.pdf;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import com.iisigroup.ude.util.collections.UdeArrayUtils;
 
 import ude.report.sample.AbstractSample;
 
-public class Sample_BasicInnerTable extends AbstractSample {
+public class Sample_Basic_CreateTable extends AbstractSample {
 
     @Test
     public void test_basicTable() {
