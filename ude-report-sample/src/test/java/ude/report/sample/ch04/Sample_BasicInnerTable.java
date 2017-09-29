@@ -11,7 +11,7 @@ import com.iisigroup.ude.util.collections.UdeArrayUtils;
 
 import ude.report.sample.AbstractSample;
 
-public class Sample_BasicTable extends AbstractSample {
+public class Sample_BasicInnerTable extends AbstractSample {
 
     @Test
     public void test_basicTable() {

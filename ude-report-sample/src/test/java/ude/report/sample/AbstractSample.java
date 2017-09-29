@@ -82,12 +82,19 @@ public abstract class AbstractSample extends AbstractITextTestkit {
     //## [Method] sub-block :
     //####################################################################
 
+    public final File createPDF(final PDFSampleContent sampleContent, final PDFSampleContent content) {
+        final File doDocument = super.doDocument(sampleContent.andThen(content), DocumentFormat.PDF, "");
+        return doDocument;
+    }
+
     public final File createPDF(final PDFGenerator content) {
-        return super.doDocument(content, DocumentFormat.PDF, "");
+        final File doDocument = super.doDocument(content, DocumentFormat.PDF, "");
+        return doDocument;
     }
 
     public final File createExcel(final ExcelGenerator content) {
-        return super.doDocument(content, DocumentFormat.EXCEL, "");
+        final File doDocument = super.doDocument(content, DocumentFormat.EXCEL, "");
+        return doDocument;
     }
 
     //== [Method] Block Stop

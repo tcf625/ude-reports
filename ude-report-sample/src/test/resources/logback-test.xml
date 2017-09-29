@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration debug="true">
+
+	<logger name="org" level="WARN" />
+	<logger name="oracle" level="WARN" />
+	<logger name="com.sun" level="WARN" />
+	<logger name="weblogic" level="WARN" />
+	<logger name="org.apache" level="WARN" />
+	<logger name="com.googlecode" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.web" level="WARN" />
+	<logger name="org.hibernate" level="WARN" />
+	<logger name="org.hibernate.SQL" level="WARN" />
+	
+<!--     <logger name="com.iisigroup.ude" level="WARN" /> -->
+    
+	<logger name="com.iisigroup.udeweb.security" level="WARN" />
+	<logger name="tw.gov.moi.aeweb.security" level="WARN" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{MM/dd-HH:mm:ss.SSS}][%-7X{taskCode}][%-5level] %msg \(%c.java:%L\)%n</pattern>
+		</encoder>
+	</appender>
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
