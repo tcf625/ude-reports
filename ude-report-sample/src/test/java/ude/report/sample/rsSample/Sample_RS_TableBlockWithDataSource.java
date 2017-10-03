@@ -53,7 +53,7 @@ public class Sample_RS_TableBlockWithDataSource extends AbstractSample {
                 blocksInPage.add(basicTable);
                 blocksInPage.add(masterFooter);
                 for (final TableBlock<?, ?> tableBlock : blocksInPage) {
-                    PDFTableTransferUtils.appendTable(pdfDocument, tableBlock, Sample_RS_TableBlockWithDataSource.this);
+                    PDFTableTransferUtils.append(pdfDocument, tableBlock, Sample_RS_TableBlockWithDataSource.this);
                 }
             }
             System.out.println(Sample_RS_TableBlockWithDataSource.this.reportData.size());

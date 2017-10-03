@@ -3,7 +3,6 @@
  */
 package ude.report.sample.ch06.bands;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -59,7 +58,8 @@ public class Sample_Bands extends AbstractSample {
     //## [Method] sub-block : 基本標題 - TableHeader : TreeBlock
     //####################################################################
 
-    @TestData("TableHeader")
+    //@TestData(enumType = BandType.class)
+    @TestData("TableFooterRepeat")
     public void test_TableHeader_T2T(final BandType bandType) {
         final AbstractTableMetadata<?> metadata = new TreeTableMetadata();
         metadata.addBand(bandType, this::treeBand);

@@ -11,6 +11,7 @@ import java.time.chrono.MinguoDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.lang3.RandomUtils;
 
@@ -53,6 +54,8 @@ public class SampleVO_OM {
         return values;
     }
 
+    static AtomicInteger counter = new AtomicInteger(0);
+
     public static SampleVO testData(final int year, final String area, final String item) {
         final Date now = new Date();
         final SampleVO vo = new SampleVO();
@@ -60,7 +63,7 @@ public class SampleVO_OM {
         vo.setText2(area);
         vo.setText3(item);
         vo.setText4("" + RandomUtils.nextInt(1000, 2000));
-        vo.setValue1(year);
+        vo.setValue1(counter.incrementAndGet());
         vo.setValue2(RandomUtils.nextInt(0, 200));
         vo.setValue3(RandomUtils.nextInt(0, 10000));
         vo.setDate1(now);
