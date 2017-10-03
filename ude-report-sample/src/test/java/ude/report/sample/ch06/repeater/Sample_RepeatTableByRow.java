@@ -3,8 +3,6 @@
  */
 package ude.report.sample.ch06.repeater;
 
-import java.util.Collections;
-
 import org.junit.Test;
 
 import com.iisigroup.ude.report.data.source.BeanProperty;

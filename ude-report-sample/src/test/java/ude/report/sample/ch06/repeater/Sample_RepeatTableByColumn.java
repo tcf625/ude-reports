@@ -20,7 +20,7 @@ import com.lowagie.text.PageSize;
 import ude.report.sample.AbstractSample;
 import ude.report.sample.SampleVO_OM;
 
-public class Sample_RepeatTable extends AbstractSample {
+public class Sample_RepeatTableByColumn extends AbstractSample {
 
     public void setPageSizeA5R(final PDFDocument pdfDocument) {
         pdfDocument.setPageSize(PageSize.A5.rotate());
