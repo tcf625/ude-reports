@@ -23,6 +23,7 @@ import ude.report.sample.AbstractSample;
 
 public class Sample_RS_BarcodeTable extends AbstractSample {
 
+    @SuppressWarnings("deprecation")
     @Test
     public void test() {
         super.createPDF(pdfDocument -> {
@@ -61,11 +62,11 @@ public class Sample_RS_BarcodeTable extends AbstractSample {
             table.addCell("NAME", 2);
             table.addCell("NAME", 2);
 
-            CellFormat picCell = new CellFormat().setAlign(AlignH.CENTER, AlignV.MIDDLE).setMinHeightInCM(5.2F);
-            Line line1 = new Line(new PointF(0.5F, 0.5F), new PointF(0.5F, 1));
-            Line line2 = new Line(new PointF(0.5F, 0.5F), new PointF(0.8F, 0.5F));
+            final CellFormat picCell = new CellFormat().setAlign(AlignH.CENTER, AlignV.MIDDLE).setMinHeightInCM(5.2F);
+            final Line line1 = new Line(new PointF(0.5F, 0.5F), new PointF(0.5F, 1));
+            final Line line2 = new Line(new PointF(0.5F, 0.5F), new PointF(0.8F, 0.5F));
             picCell.setCellType(new LinesDrawer(Coordinate.CM_TL, line1, line2));
-            
+
             table.addCell("依XXX\n相片XXX\nA", picCell);
             table.addCell("B");
             table.addCell("C");

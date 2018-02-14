@@ -9,41 +9,20 @@ import org.junit.Test;
 
 import com.iisigroup.ude.report.data.source.BeanProperty;
 import com.iisigroup.ude.report.itext2.PDFDocument;
-import com.iisigroup.ude.report.itext2.table.TableiText;
 import com.iisigroup.ude.report.itext2.table.transfer.PDFDuplicatedTableTransfer;
 import com.iisigroup.ude.report.table.TreeTableMetadata;
 import com.iisigroup.ude.report.table.band.BandType;
 import com.iisigroup.ude.report.table.band.TreeBlock;
 import com.iisigroup.ude.report.table.format.CellFormat.AlignV;
-import com.lowagie.text.PageSize;
 
-import ude.report.sample.AbstractSample;
 import ude.report.sample.SampleVO_OM;
 
-public class Sample_RepeatTableByColumn extends AbstractSample {
+public class Sample_RepeatTableByColumn extends Sample_BaseRepeatTable {
 
-    public void setPageSizeA5R(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A5.rotate());
-    }
-
-    public void setPageSizeA4(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A4);
-    }
-
-    private void appendBand(final TreeTableMetadata metadata, final BandType type) {
-        metadata.addBand(type, () -> {
-            final TreeBlock treeBlock = new TreeBlock();
-            treeBlock.append(type.name());
-            return treeBlock;
-        });
-    }
-
-    private void outputNextTable(final PDFDocument pdfDocument) {
-        final TableiText nextTable = pdfDocument.createTable(100, 2);
-        nextTable.addCell("Next");
-        nextTable.addCell("Table");
-        nextTable.setSpacing(0);
-        nextTable.appendMe();
+    @Override
+    protected PDFDuplicatedTableTransfer createPDFTransfer(final PDFDocument pdfDocument, final TreeTableMetadata metadata) {
+        final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+        return transfer;
     }
 
     //####################################################################
@@ -51,7 +30,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
     //####################################################################
 
     @Test
-    public void test_byColumn() {
+    public void test_basic() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
         metadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
         metadata.append("年度", new BeanProperty("text1"));
@@ -59,7 +38,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
         metadata.append("值2", new BeanProperty("value2"));
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.transTable(SampleVO_OM.testDataset().subList(0, 70));
             outputNextTable(pdfDocument);
         });
@@ -81,7 +60,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
 
         super.createPDF(this::setPageSizeA4, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.transTable(Collections.emptyList());
             transfer.transTable(SampleVO_OM.testDataset().subList(0, 1));
             transfer.transTable(SampleVO_OM.testDataset().subList(0, 2));
@@ -101,7 +80,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
         metadata.setSpacingAfter(8F);
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.transTable(SampleVO_OM.testDataset().subList(0, 70));
             outputNextTable(pdfDocument);
         });
@@ -127,7 +106,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
 
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.transTable(SampleVO_OM.testDataset(120));
         });
     }
@@ -148,7 +127,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
 
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.setAutoHeight(false);
             transfer.transTable(SampleVO_OM.testDataset(120));
         });
@@ -167,7 +146,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
         metadata.append("值2", new BeanProperty("value2"));
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.setGapWidth(0);
             transfer.transTable(SampleVO_OM.testDataset());
         });
@@ -182,7 +161,7 @@ public class Sample_RepeatTableByColumn extends AbstractSample {
         metadata.append("值2", new BeanProperty("value2"));
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
-            final PDFDuplicatedTableTransfer transfer = PDFDuplicatedTableTransfer.byColumn(pdfDocument, metadata, 3);
+            final PDFDuplicatedTableTransfer transfer = createPDFTransfer(pdfDocument, metadata);
             transfer.transTable(SampleVO_OM.testDataset());
         });
     }
