@@ -42,7 +42,8 @@ public void test_PDF_Section() {
     final PDFSection s4 = new PDFSection(PageSize.A6.rotate(), "Chap 4");
     final PDFSection s5 = new PDFSection(PageSize.A6.rotate(), "Chap 5");
     final PDFGenerator root = PDFGenerator.Helper.from(s1, s2, s3, s4, s5);
-    s2.addSection(new PDFSection(PageSize.A7, "Chap 2-1"));
+    // 第二層以後的項目
+    s2.addSection(new PDFSection(PageSize.A7, "Chap 2-1")); 
     s2.addSection(new PDFSection(PageSize.A7, "Chap 2-2"));
     s2.addSection(new PDFSection(PageSize.A7, "Chap 2-3"));
     super.createPDF(root);
