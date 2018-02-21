@@ -9,14 +9,17 @@
 
 #### 介面：ReportDefinition 
 
-基本的規劃範例，每一張表樣應有的資訊可能包括「代碼」、「名稱」及「可支援輸出格式」。
+基本的規劃範例：每一張表樣應有的資訊包括「代碼」、「名稱」及「可支援輸出格式」。
 
 ``` java
 public interface ReportDefinition {
-    String getReportCode(); 
-    String getReportName();
+    /** 代碼. */ 
+    String getReportCode();
+    /** 名稱. */ 
+    String getReportName(); 
+    /** 支援輸出格式. */
     Set<DocumentFormat> getSuppertedFormats();
-    /** 舉例：可以統一在此處理輸出時使用的檔名. */
+    /** 也可以統一處理輸出時使用的檔名(舉例). */
     default String toFileName(final DocumentFormat format) {
         final LocalDateTime localDateTime = Now.localDateTime();
         final String time = RocDateUtils.format(localDateTime, "yyyMMdd-h-m-s");
