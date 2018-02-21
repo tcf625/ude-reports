@@ -30,7 +30,7 @@ public interface ReportDefinition {
 
 ####  定義：AllReports
 
-這個範例中定義了兩張表樣，一般正式的專案裡，表樣數量可能是數以百計，有可能會再依業務性質拆分為不同的 ENUM 定義。
+這個範例只定義兩張表樣。一般正式的專案裡，表樣數量可能是數以百計，也有可能會依業務性質拆分為多個不同的 ENUM 定義。
 
 ``` java
 public enum AllReports implements ReportDefinition {
@@ -42,12 +42,13 @@ public enum AllReports implements ReportDefinition {
     private final Set<DocumentFormat> suppertedFormats;
 
     /** 規劃預期支援的文件格式為 PDF/EXCEL. */
-    private AllReports(final String reportName) {
+    private AllReports(String reportName) {
         this.reportName = reportName;
         this.suppertedFormats = EnumSet.of(DocumentFormat.PDF, DocumentFormat.EXCEL);
     }
+    
     /** 自訂支援文件格式. */ 
-    private AllReports(final String reportName, final DocumentFormat first, final DocumentFormat... rest) {
+    private AllReports(String reportName, DocumentFormat first, DocumentFormat... rest) {
         this.reportName = reportName;
         this.suppertedFormats = EnumSet.of(first, rest);
     }
