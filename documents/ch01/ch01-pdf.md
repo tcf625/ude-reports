@@ -24,7 +24,7 @@
 
 圖中由藍底的4個定位值 \(top、bottom、left、rigth\) 所框起來的黃色區域，即是內文區。
 
-#### 表格 \(Table\)
+### 表格 \(Table\)
 
 產出類型為報表資料時的主體內容。以文件輸出表格時，顯示格式的彈性會較試算表為自由。
 
@@ -35,7 +35,7 @@
 
 * 表頭  ColumnHeader  
   與欄位資料對應的標題列，通常每一頁重複出現。  
-  但輸出為試算表時，則通常只在一開始輸出一次。
+  但輸出為試算表格式時，則只在一開始輸出一次。
 
 * 表身
 
@@ -49,14 +49,14 @@
 ### PDF \(itext\)
 
 以 itext 產製 PDF 文件的基本步驟為建立 Dodument、PdfWriter物件，並使用相關 methods 進行內容輸出。
-UDE-Report 套件已將此部分開關文件流程進行包裝。
+UDE-Report 套件已包裝所有文件開關流程。
 
 ``` java
 @Test
 public void testCreatePDF() throws IOException {
     final PDFDocumentManager documentManager = getDocumentManager();
     final File file = createFileByTestName(DocumentFormat.PDF);
-    try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
+    try (PDFDocument pdfDocument = documentManager.createPDFDocument(file, PageSize.A5)) {
         pdfDocument.writeText("TEST");
     }
 }
@@ -68,5 +68,5 @@ public void testCreatePDF() throws IOException {
 
 ### MS Word
 
-_UDEReport 尚未支援輸出 WORD 格式。_
+** _UDEReport 尚未支援 WORD 格式輸出。_ **
 
