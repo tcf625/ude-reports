@@ -22,8 +22,8 @@ setPrintPageSize(PrintPageSize)
 
 目前 PDF / Excel 皆支援設定頁面大小。唯PDF 格式的頁面定義較彈性，EXCEL 受限於 POI API，只有固定的選項可用。
 
+* Sample_PageSize.java
 ``` java
-/* Sample_PageSize */
 @Test
 public void test_PDF_A3() throws IOException {
     super.createPDF(pdfDocument -> {
