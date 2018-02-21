@@ -19,7 +19,7 @@ public interface ReportDefinition {
     /** 舉例：可以統一在此處理輸出時使用的檔名. */
     default String toFileName(final DocumentFormat format) {
         final LocalDateTime localDateTime = Now.localDateTime();
-        final String time = RocDateUtils.format(localDateTime, "yyyMMddhms");
+        final String time = RocDateUtils.format(localDateTime, "yyyMMdd-h-m-s");
         return getReportCode() + "_" + time + "_" + uuid() + "." + format.getExtFileName();
     }
 }
