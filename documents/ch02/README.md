@@ -18,7 +18,6 @@ setMarkers(List<? extends MarkInfo>) // 浮水印相關定義
 setPrintPageSize(PrintPageSize)
 ```
 
-
 ## 頁面大小
 
 目前 PDF / Excel 皆支援設定頁面大小。唯PDF 格式的頁面定義較彈性，EXCEL 受限於 POI API，只有固定的選項可用。
@@ -42,13 +41,13 @@ public void test_Excel_A3() {
 ```
 
 
-## 共通介面
+## 共通 Generator 介面
 
 當同一種報表內容要用不同格式輸出時，通常會用共同的 AbstractReport 實作 DocumentGenerator 的任一介面，如 PDFGenerator、ExcelGenerator…。
 
 ### MultiFormatReportSupport
 
-當文件產出類別同時提供多種格式選擇時，可加入實作 MultiFormatReportSupport，它依據以下兩個函式。
+當文件產出類別同時提供多種格式選擇時，可加入實作 MultiFormatReportSupport，它依據以下兩個函式提供 createExcelSheet(document)::ExcelSheet<?>。
 
 
 ``` java
@@ -61,6 +60,9 @@ default PrintPageSize toPrintPageSize() {
 };
 ```
 
+所以在第一章架構範例中的表樣別(GSS0010)裡，我們可以在建構子中，以 PageSize.A3 參數，同時定義產出 PDF 及 EXCEL 的預設頁面大小。
+
+* GSS0010.java
 ``` java
     public GSS0010() {
         super(AllReports.GSS0010, PageSize.A3);
@@ -77,6 +79,15 @@ default PrintPageSize toPrintPageSize() {
         sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
         sheet.setColumnWidth(0, 20);
     }
+```
+* Sample_PageSize.java
+``` java    
+    @Test
+    public void test_MultiFormat() {
+        final GSS0010 report = new GSS0010();
+        super.createPDF(report);
+        super.createExcel(report);
+    }    
 ```
 
 ## BaseLayoutInfo 邊界與頁首頁尾控制
