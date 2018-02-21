@@ -45,6 +45,14 @@ public void test_Excel_A3() {
 
 當同一種報表內容要用不同格式輸出時，通常會用共同的 AbstractReport 實作 DocumentGenerator 的任一介面，如 PDFGenerator、ExcelGenerator…。
 
+## 分節 getSections()
+
+UDE-Report 可利用 Section 機制，組合多個 DocumentGenerator 輸出為同一檔案，見後文說明.
+
+## BaseLayoutInfo 邊界與頁首頁尾控制
+
+見後文說明。
+
 ### MultiFormatReportSupport
 
 當文件產出類別同時提供多種格式選擇時，可加入實作 MultiFormatReportSupport，它依據以下兩個函式提供 createExcelSheet(document)::ExcelSheet<?>。
@@ -60,7 +68,7 @@ default PrintPageSize toPrintPageSize() {
 };
 ```
 
-所以在第一章架構範例中的表樣別(GSS0010)裡，我們可以在建構子中，以 PageSize.A3 參數，同時定義產出 PDF 及 EXCEL 的預設頁面大小。
+所以在第一章架構範例中的表樣別(GSS0010)裡，可以在建構子使用 PageSize.A3 參數，同時定義 PDF 及 EXCEL 產出的預設頁面大小。
 
 * GSS0010.java
 ``` java
@@ -89,30 +97,6 @@ default PrintPageSize toPrintPageSize() {
         super.createExcel(report);
     }    
 ```
-
-## BaseLayoutInfo 邊界與頁首頁尾控制
-
-見後文說明。
-
-## 分節 getSections()
-
-UDE-Report 可利用 Sections 機制，組合多個 DocumentGenerator 輸出為同一檔案，
-見後文說明.
-
-
-其中與頁面控制相關的項目有以下幾項：
-
-``` java
-default BaseLayoutInfo prepareLayoutInfo() {
-return null;
-}
-default List<DocumentGenerator> getSections() {
-return Arrays.asList(this);
-};
-```
-
-
-
 
 
 
