@@ -36,6 +36,7 @@ public class PDFSection extends AbstractPDFGenerator {
 ``` java
 @Test
 public void test_PDF_Section() {
+    // 第一層項目
     final PDFSection s1 = new PDFSection(PageSize.A6.rotate(), "Chap 1");
     final PDFSection s2 = new PDFSection(PageSize.A6.rotate(), "Chap 2");
     final PDFSection s3 = new PDFSection(PageSize.A6.rotate(), "Chap 3");
@@ -46,6 +47,7 @@ public void test_PDF_Section() {
     s2.addSection(new PDFSection(PageSize.A7, "Chap 2-1")); 
     s2.addSection(new PDFSection(PageSize.A7, "Chap 2-2"));
     s2.addSection(new PDFSection(PageSize.A7, "Chap 2-3"));
+    // CREATE PDF
     super.createPDF(root);
 }
 ```
