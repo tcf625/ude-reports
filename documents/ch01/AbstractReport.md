@@ -82,7 +82,7 @@ public abstract class AbstractSampleReport extends AbstractPDFGenerator implemen
 
     protected final ReportDefinition reportDefinition;
 
-    protected AbstractReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
+    protected AbstractSampleReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
         this.reportDefinition = reportDefinition;
         super.setPageSize(pageSize);
     }
