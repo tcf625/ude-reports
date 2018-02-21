@@ -23,12 +23,10 @@ setPrintPageSize(PrintPageSize)
 當同一種報表內容要用不同格式輸出時，通常會用一個共同的 AbstractReport 實作 DocumentGenerator 及其子介面，其中與頁面控制相關的項目有以下幾項：
 
 ``` java
-default public PrintPageSize getPrintPageSize() {
-    return PrintPageSize.DEFAULT;
-}
 default BaseLayoutInfo prepareLayoutInfo() {
     return null;
 }
+
 default List<DocumentGenerator> getSections() {
     return Arrays.asList(this);
 };
