@@ -15,7 +15,6 @@ setMarkers(List<? extends MarkInfo>) // 浮水印相關定義
   在EXCEL中，頁面控制原則上以 sheet 為單位設定。目前 ude-reports 對於 EXCEL 版面控制沒有做太多的包裝處理，有需要的話，可以透過 getRealSheet() 取得 poi 原生物件進行設定。
 
 ``` java
-
 setPrintPageSize(PrintPageSize)
 ```
 
