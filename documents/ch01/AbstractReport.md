@@ -73,12 +73,12 @@ public enum AllReports implements ReportDefinition {
 
 ### 文件產出範例
 
-#### 共用文件父類別：AbstractReport
+#### 共用文件父類別：AbstractSampleReport
 
 要求子類別實作所有輸出格式介面。
 
 ``` java
-public abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
+public abstract class AbstractSampleReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
 
     protected final ReportDefinition reportDefinition;
 
