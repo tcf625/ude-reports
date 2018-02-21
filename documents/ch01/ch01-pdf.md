@@ -64,9 +64,9 @@ public void testCreatePDF() throws IOException {
 }
 ```
 
-#### 使用 AbstractPDFGenerator 
+#### 繼承 AbstractPDFGenerator 
 
-實作 generatePDFContent(final PDFDocument pdfDocument) ，可以得到更多關於 LAYOUT / HEADER / FOOTER / 分節的控制支援。最後呼叫 generatePDF(...) 即可產出PDF：
+繼承並實作 generatePDFContent(PDFDocument pdfDocument)，可以得到更多關於LAYOUT、HEADER、FOOTER、分節的控制支援。最後呼叫 generatePDF(...) 即可產出PDF：
 
 ``` java 
 void generatePDF(PDFDocumentManager, File)
