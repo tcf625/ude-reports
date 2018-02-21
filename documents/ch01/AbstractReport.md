@@ -16,11 +16,11 @@ public interface ReportDefinition {
     String getReportCode(); 
     String getReportName();
     Set<DocumentFormat> getSuppertedFormats();
-    /** 也可以統一在此處理輸出的檔案名稱. */
+    /** 舉例：可以統一在此處理輸出時使用的檔名. */
     default String toFileName(final DocumentFormat format) {
         final LocalDateTime localDateTime = Now.localDateTime();
-        final String timeString = RocDateUtils.format(localDateTime, "yyyMMddhms");
-        return getReportCode() + "_" + timeString + "." + format.getExtFileName();
+        final String time = RocDateUtils.format(localDateTime, "yyyMMddhms");
+        return getReportCode() + "_" + time + "_" + uuid() + "." + format.getExtFileName();
     }
 }
 ```
