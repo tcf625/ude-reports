@@ -38,6 +38,28 @@ default List<DocumentGenerator> getSections() {
 
 目前有 PDF / Excel 支援，PDF 格式的頁面定義較彈性；EXCEL則受限於 POI 的 void setPaperSize(short size); 只有固定的選項可用。
 
+``` java
+/* Sample_PageSize */
+
+@Test
+public void test_PDF_A3() throws IOException {
+    super.createPDF(pdfDocument -> {
+        pdfDocument.setPageSize(PageSize.A3);
+        pdfDocument.writeText("A3");
+    });
+}
+@Test
+public void test_Excel_A3() {
+    super.createExcel(document -> {
+        final ExcelSheet<?> sheet = document.createSheet("sheet_a3");
+        sheet.setPrintPageSize(PoiDefaultSize.A3);
+    });
+}
+
+```
+
+
+
 ## BaseLayoutInfo 邊界與頁首頁尾控制
 
 見後文說明。
