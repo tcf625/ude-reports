@@ -66,7 +66,12 @@ public void testCreatePDF() throws IOException {
 
 #### 使用 AbstractPDFGenerator 
 
-實作 generatePDFContent(final PDFDocument pdfDocument) ，並呼叫 generatePDF(...) 產出PDF，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。
+實作 generatePDFContent(final PDFDocument pdfDocument) ，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。最後呼叫 generatePDF(...) 即可產出PDF：
+
+``` java 
+void generatePDF(PDFDocumentManager, File)
+void generatePDF(PDFDocumentManager, OutputStream)
+```
 
 
 ### MS Word
