@@ -2,7 +2,6 @@
 
 設定檔使用 UDE-Extended properties 格式撰寫，預設的 itext-config-default.properties 內容如下：
 
-
 ``` properties
 
 # 預設字型
