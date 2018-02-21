@@ -5,7 +5,7 @@
 另一個常見用途是組合不同報表做客制化輸出。
 當然，依文件類型特性，分節處理模式自然不同。像是 EXCEL 預設會以獨立 SHEET 輸出各節內容；CSV 預設直接接續輸出所有內容。若有其它較特別的需求，也可以自行 override xxxGenerator 中的相關實作處理。
 
-### 基本範例
+### 基本範例 (PDF)
 
 下例 PDFSection 用於輸出基本頁面，產出指定大小頁面配上單一文字。
 
@@ -32,7 +32,7 @@ public class PDFSection extends AbstractPDFGenerator {
   * 一般專案實作中，應該要自訂空白 ROOT 文件類別，以便處理專案所需的邏輯，如檔案置放原則等等...。
 * 第二層以後的項目可用 AbstractPDFGenerator 所定義的 addSection() method 加入。
 
-
+* Sample_Sections.java
 ``` java
 @Test
 public void test_PDF_Section() {
