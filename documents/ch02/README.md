@@ -44,7 +44,9 @@ public void test_Excel_A3() {
 
 ## 共通介面
 
-當同一種報表內容要用不同格式輸出時，通常會用共同的 AbstractReport 實作 DocumentGenerator 及其子介面，其中與頁面控制相關的項目有以下幾項：
+當同一種報表內容要用不同格式輸出時，通常會用共同的 AbstractReport 實作 DocumentGenerator 的任一介面，如 PDFGenerator、ExcelGenerator…。
+
+其中與頁面控制相關的項目有以下幾項：
 
 ``` java
 default BaseLayoutInfo prepareLayoutInfo() {
@@ -58,10 +60,6 @@ default List<DocumentGenerator> getSections() {
 ### MultiFormatReportSupport
 
 ``` java
-//####################################################################
-//## [Method] sub-block : Excel
-//####################################################################
-
 default String toExcelSheetName() {
     return "sheet";
 };
