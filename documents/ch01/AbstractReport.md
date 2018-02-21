@@ -80,14 +80,14 @@ public enum AllReports implements ReportDefinition {
 ``` java
 public abstract class AbstractSampleReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
 
-    protected final ReportDefinition reportDefinition;
+    protected final SampleReportDefinition reportDefinition;
 
-    protected AbstractSampleReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
+    protected AbstractSampleReport(SampleReportDefinition reportDefinition, Rectangle pageSize) {
         this.reportDefinition = reportDefinition;
         super.setPageSize(pageSize);
     }
     
-    public ReportDefinition getReportDefinition() {
+    public SampleReportDefinition getReportDefinition() {
         return this.reportDefinition;
     }
     
