@@ -51,6 +51,8 @@
 以 itext 產製 PDF 文件的基本步驟為建立 Dodument、PdfWriter物件，並使用相關 methods 進行內容輸出。
 UDE-Report 套件已包裝所有文件開關流程。
 
+#### 使用基本 API
+
 ``` java
 @Test
 public void testCreatePDF() throws IOException {
@@ -62,8 +64,9 @@ public void testCreatePDF() throws IOException {
 }
 ```
 
-上例展示如何使用包裝過的基本 API 輸出 PDF 文件。
-若使用 AbstractPDFGenerator ，實作 generatePDFContent(final PDFDocument pdfDocument) ，並呼叫 generatePDF(...) 產出PDF，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。
+#### 使用 AbstractPDFGenerator 
+
+實作 generatePDFContent(final PDFDocument pdfDocument) ，並呼叫 generatePDF(...) 產出PDF，可以得到更多 LAYOUT / HEADER / FOOTER / 分節方面的控制支援。
 
 
 ### MS Word
