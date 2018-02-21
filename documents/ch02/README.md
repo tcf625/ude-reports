@@ -50,8 +50,8 @@ public void test_PDF_A3() throws IOException {
 }
 @Test
 public void test_Excel_A3() {
-    super.createExcel(document -> {
-        final ExcelSheet<?> sheet = document.createSheet("sheet_a3");
+    super.createExcel(excelDocument -> {
+        final ExcelSheet<?> sheet = excelDocument .createSheet("sheet_a3");
         sheet.setPrintPageSize(PoiDefaultSize.A3);
     });
 }
