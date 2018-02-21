@@ -5,7 +5,7 @@
   * 範例程式：/ude-report-sample
   * 相關產出結果：/sample-output
 
-###  表樣清單定義介面設計
+###  表樣清單介面及定義
 
 #### 介面：ReportDefinition 
 
