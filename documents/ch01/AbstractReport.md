@@ -1,11 +1,11 @@
-### 文件範例
+### 文件架構範例
 
-本文件的範例程式原始碼，皆放置於 github 專案：https://github.com/tcf625/ude-reports/
+所有範例原始碼，皆放於 github 專案：https://github.com/tcf625/ude-reports/ 以供下載。
 
   * 範例程式：/ude-report-sample
   * 相關產出結果：/sample-output
 
-###  表樣清單介面及定義
+###  表樣清單介面及定義範例
 
 #### 介面：ReportDefinition 
 
