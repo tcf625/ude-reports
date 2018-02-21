@@ -1,6 +1,6 @@
 ## 環境與設定
 
-Ude-Report 基於 UDE 套件開發，一般運作於 Spring 環境之下，但現在需準備的元件只有 PDFDocumentManager 一個。
+Ude-Report 基於 UDE 套件開發，一般運作於 Spring 環境之下，但需準備的元件只有 PDFDocumentManager 一個。
 
 ``` xml
 <bean class="com.iisigroup.ude.report.itext2.PDFDocumentManager" />   
