@@ -9,13 +9,13 @@ Ude-Report 基於 UDE 套件開發，一般運作於 Spring 環境之下，但�
 預設會使用隨同發布的 'classpath:itext-config-default.properties' 做為設定檔，其完整內容於下節說明。
 
 
-''' properties
+``` properties
 watermarks.config.path=${resource.path}/reports/marks/
 font.WindowsFont.MINGLIU.0 = ${global.resource.path}/fonts/mingliu.ttc
 font.WindowsFont.MINGLIU.2 = ${global.resource.path}/fonts/mingliub.ttc
 font.WindowsFont.KAI.0 = ${global.resource.path}/fonts/kaiu.ttf
 font.CNS11643.SUNG.0=${global.resource.path}/fonts/TW-Sung-98_1.ttf
-'''
+```
 
 
 ``` xml
