@@ -107,7 +107,7 @@ public abstract class AbstractSampleReport extends AbstractPDFGenerator implemen
 
     @Override
     public void generateExcelContent(final ExcelDocument<?, ?> document) {
-        final ExcelSheet<?> sheet = document.createSheet(this.toExcelSheetName());
+        final ExcelSheet<?> sheet = super.createExcelSheet(document);
         sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
         sheet.setColumnWidth(0, 20);
     }

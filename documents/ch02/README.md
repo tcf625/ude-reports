@@ -46,28 +46,37 @@ public void test_Excel_A3() {
 
 當同一種報表內容要用不同格式輸出時，通常會用共同的 AbstractReport 實作 DocumentGenerator 的任一介面，如 PDFGenerator、ExcelGenerator…。
 
-其中與頁面控制相關的項目有以下幾項：
-
-``` java
-default BaseLayoutInfo prepareLayoutInfo() {
-    return null;
-}
-default List<DocumentGenerator> getSections() {
-    return Arrays.asList(this);
-};
-```
-
 ### MultiFormatReportSupport
+
+當文件產出類別同時提供多種格式選擇時，可加入實作 MultiFormatReportSupport，它依據以下兩個函式。
+
 
 ``` java
 default String toExcelSheetName() {
     return "sheet";
 };
-
 default PrintPageSize toPrintPageSize() {
     final Rectangle pdfPageSize = getPageSize();
     return HELPER.lookupPringPageSize(pdfPageSize);
 };
+```
+
+``` java
+    public GSS0010() {
+        super(AllReports.GSS0010, PageSize.A3);
+    }
+
+    @Override
+    public void generatePDFContent(final PDFDocument pdfDocument) {
+        pdfDocument.writeText("TEST-GSS0010");
+    }
+
+    @Override
+    public void generateExcelContent(final ExcelDocument<?, ?> document) {
+        final ExcelSheet<?> sheet = super.createExcelSheet(document);
+        sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
+        sheet.setColumnWidth(0, 20);
+    }
 ```
 
 ## BaseLayoutInfo 邊界與頁首頁尾控制
@@ -80,7 +89,16 @@ UDE-Report 可利用 Sections 機制，組合多個 DocumentGenerator 輸出為�
 見後文說明.
 
 
+其中與頁面控制相關的項目有以下幾項：
 
+``` java
+default BaseLayoutInfo prepareLayoutInfo() {
+return null;
+}
+default List<DocumentGenerator> getSections() {
+return Arrays.asList(this);
+};
+```
 
 
 
