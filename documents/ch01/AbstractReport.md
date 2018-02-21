@@ -75,7 +75,7 @@ public enum AllReports implements ReportDefinition {
 
 #### 共用文件父類別：AbstractSampleReport
 
-要求子類別實作所有輸出格式介面。
+要求子類別實作所有輸出格式介面。實務上，reportDefinition、pageSize 也可用 Introduce Parameter Object 手法整合為同一參數物件。
 
 ``` java
 public abstract class AbstractSampleReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
@@ -97,7 +97,7 @@ public abstract class AbstractSampleReport extends AbstractPDFGenerator implemen
 
 #### GSS0010 / GSS0011
 
-最簡單的輸出內容程式，如：
+隨意輸出簡單內容，如：
 
 ``` java 
     @Override
@@ -123,7 +123,7 @@ public abstract class AbstractSampleReport extends AbstractPDFGenerator implemen
 
 #### GSS0010Test / GSS0011Test
 
-   執行報表程式用，完整說明請參考後續「單元測試」範例。
+   用於執行報表程式，完整說明請參考後續「單元測試」範例。
 
 
 
