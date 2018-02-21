@@ -21,7 +21,7 @@ import ude.report.sample.SampleVO_OM;
 public class Sample_RepeatTableByRow extends AbstractSample {
 
     public void setPageSizeA5R(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A5.rotate());
+        pdfDocument.setupPageSize(PageSize.A5.rotate());
     }
 
     private void appendBand(final TreeTableMetadata metadata, final BandType type) {

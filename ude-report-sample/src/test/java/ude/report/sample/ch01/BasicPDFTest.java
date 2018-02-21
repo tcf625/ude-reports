@@ -18,7 +18,7 @@ public class BasicPDFTest extends AbstractSample {
     public void testCreatePDF() throws IOException {
         final PDFDocumentManager documentManager = getDocumentManager();
         final File file = createFileByTestName(DocumentFormat.PDF);
-        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
+        try (PDFDocument pdfDocument = documentManager.createPDFDocument(file, PageSize.A5)) {
             pdfDocument.writeText("TEST");
         }
     }
@@ -27,7 +27,7 @@ public class BasicPDFTest extends AbstractSample {
     public void testCreateEmptyPDF() throws IOException {
         final PDFDocumentManager documentManager = getDocumentManager();
         final File file = createFileByTestName(DocumentFormat.PDF);
-        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A5)) {
+        try (PDFDocument pdfDocument = documentManager.createPDFDocument(file, PageSize.A5)) {
             //
         }
     }

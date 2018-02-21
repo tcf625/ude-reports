@@ -7,7 +7,8 @@ import com.iisigroup.ude.report.DocumentFormat;
 import com.iisigroup.ude.util.lang8.date.Now;
 import com.iisigroup.ude.util.lang8.date.RocDateUtils;
 
-interface ReportDefinition {
+interface SampleReportDefinition {
+
     String getReportName();
 
     String getReportCode();
@@ -16,7 +17,7 @@ interface ReportDefinition {
 
     default String toFileName(final DocumentFormat format) {
         final LocalDateTime localDateTime = Now.localDateTime();
-        final String timeString = RocDateUtils.format(localDateTime, "yyyMMddhms");
-        return getReportName() + "_" + timeString + "." + format.getExtFileName();
+        final String timeString = RocDateUtils.format(localDateTime, "yyyMMdd-h-m-s");
+        return getReportCode() + "_" + timeString + "." + format.getExtFileName();
     }
 }

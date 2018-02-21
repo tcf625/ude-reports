@@ -12,10 +12,10 @@ import com.iisigroup.ude.report.table.format.Border;
 import com.iisigroup.ude.report.table.format.CellFormat;
 import com.lowagie.text.PageSize;
 
-public class GSS0010 extends AbstractReport {
+public class GSS0010 extends AbstractSampleReport {
 
     public GSS0010() {
-        super(AllReports.GSS0010, PageSize.A4);
+        super(AllReports.GSS0010, PageSize.A3);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class GSS0010 extends AbstractReport {
 
     @Override
     public void generateExcelContent(final ExcelDocument<?, ?> document) {
-        final ExcelSheet<?> sheet = document.createSheet(this.toExcelSheetName());
+        final ExcelSheet<?> sheet = super.createExcelSheet(document);
         sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
         sheet.setColumnWidth(0, 20);
     }

@@ -22,7 +22,7 @@ public class Sample_Fonts extends AbstractSample {
     public void testFonts() throws IOException {
         final PDFDocumentManager documentManager = getDocumentManager();
         final File file = createFileByTestName(DocumentFormat.PDF);
-        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A6.rotate())) {
+        try (PDFDocument pdfDocument = documentManager.createPDFDocument(file, PageSize.A6.rotate())) {
             pdfDocument.writeText("細明體");
             pdfDocument.writeText("ABCD");
             pdfDocument.writeText(ReportTextUtils.CHINESE_BLOCK);

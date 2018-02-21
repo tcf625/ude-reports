@@ -8,7 +8,7 @@ import com.iisigroup.ude.report.excel.ExcelDocument;
 import com.iisigroup.ude.report.itext2.PDFDocument;
 import com.lowagie.text.PageSize;
 
-public class GSS0011 extends AbstractReport {
+public class GSS0011 extends AbstractSampleReport {
 
     public GSS0011() {
         super(AllReports.GSS0011, PageSize.A4);

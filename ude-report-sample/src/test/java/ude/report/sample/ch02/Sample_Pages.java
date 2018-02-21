@@ -33,7 +33,7 @@ public class Sample_Pages extends AbstractSample {
             final LayoutInfo layoutInfo = new LayoutInfo();
             layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 14);
             pdfDocument.setLayoutInfo(layoutInfo);
-            pdfDocument.setPageSize(PageSize.A8.rotate());
+            pdfDocument.setupPageSize(PageSize.A8.rotate());
             pdfDocument.writeText("P1"); // 一開始在 P1
             pdfDocument.newPage(); // 進入 P2
             pdfDocument.newPage(); // 連續兩次呼叫兩次 newPage() 不會有空白頁
@@ -63,7 +63,7 @@ public class Sample_Pages extends AbstractSample {
             final LayoutInfo layoutInfo = new LayoutInfo();
             layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 12);
             pdfDocument.setLayoutInfo(layoutInfo);
-            pdfDocument.setPageSize(PageSize.A8.rotate());
+            pdfDocument.setupPageSize(PageSize.A8.rotate());
             // !
             Assert.assertFalse("一開始未換頁", pdfDocument.isPageChanged());
             Assert.assertTrue(pdfDocument.isNewPageBegin());
@@ -81,7 +81,7 @@ public class Sample_Pages extends AbstractSample {
     @Test
     public void test_PageChangeChecking() {
         super.createPDF(pdfDocument -> {
-            pdfDocument.setPageSize(PageSize.A6.rotate());
+            pdfDocument.setupPageSize(PageSize.A6.rotate());
             for (int i = 0; i < 200; i++) {
                 final String prefix = i + StringUtils.repeat(" ", i % 4 + 1);
                 pdfDocument.writeText(prefix + "-1換頁測試\n" + prefix + "-2換頁測試\n" + prefix + "-3換頁測試\n");
@@ -101,7 +101,7 @@ public class Sample_Pages extends AbstractSample {
     public void test_Margin() {
         super.createPDF(pdfDocument -> {
             // ! 定義頁面大小.
-            pdfDocument.setPageSize(PageSize.A4.rotate());
+            pdfDocument.setupPageSize(PageSize.A4.rotate());
             // ! 定義四周邊界大小.
             final float marginLeft = LengthUnit.CM.trans(2.54f);  // 以 公分為單位
             final float marginRight = 36;                         // 以 pixel 為單位

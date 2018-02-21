@@ -22,7 +22,7 @@ import ude.report.sample.SampleVO_OM;
 public class Sample_TreeTableAddColumns extends AbstractSample {
 
     public void setPageSizeA5R(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A5.rotate());
+        pdfDocument.setupPageSize(PageSize.A5.rotate());
     }
 
     //####################################################################

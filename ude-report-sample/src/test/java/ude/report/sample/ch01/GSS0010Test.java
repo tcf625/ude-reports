@@ -3,6 +3,7 @@ package ude.report.sample.ch01;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.junit.Test;
 
 import com.iisigroup.ude.report.DocumentFormat;
@@ -31,7 +32,10 @@ public class GSS0010Test extends AbstractITextTestkit {
 
     @Test
     public void testPDF() {
-        this.gss0010.generatePDF(getDocumentManager(), createFileByTestName(DocumentFormat.PDF));
+        final String fileName = AllReports.GSS0010.toFileName(DocumentFormat.PDF);
+        final String suffix = "_" + FilenameUtils.getBaseName(fileName);
+        final File createFileByTestName = createFileByTestName(suffix, DocumentFormat.PDF);
+        this.gss0010.generatePDF(getDocumentManager(), createFileByTestName);
     }
 
     @Test

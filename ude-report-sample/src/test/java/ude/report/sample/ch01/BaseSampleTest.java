@@ -10,7 +10,7 @@ import com.iisigroup.ude.report.itext2.testkit.AbstractITextTest;
 import com.iisigroup.ude.report.itext2.testkit.ITextTestConfig;
 import com.iisigroup.ude.system.UdeSystemPropertyItem;
 
-public abstract class BaseSampleTest extends AbstractITextTest<AbstractReport> {
+public abstract class BaseSampleTest extends AbstractITextTest<AbstractSampleReport> {
 
     private static final ITextTestConfig CONFIG = new ITextTestConfig();
 
@@ -24,19 +24,19 @@ public abstract class BaseSampleTest extends AbstractITextTest<AbstractReport> {
         super(CONFIG);
     }
 
-    public BaseSampleTest(final Class<? extends AbstractReport> generatorClass) {
+    public BaseSampleTest(final Class<? extends AbstractSampleReport> generatorClass) {
         super(CONFIG, generatorClass);
     }
 
     @Override
-    public Set<DocumentFormat> getSuppertedFormats(final AbstractReport generator) {
+    public Set<DocumentFormat> getSuppertedFormats(final AbstractSampleReport generator) {
 
         return generator.getReportDefinition().getSuppertedFormats();
     }
 
     @Override
-    public File createFile(final AbstractReport reportGenerator, final String suffix, final DocumentFormat format) {
-        final ReportDefinition definition = reportGenerator.getReportDefinition();
+    public File createFile(final AbstractSampleReport reportGenerator, final String suffix, final DocumentFormat format) {
+        final SampleReportDefinition definition = reportGenerator.getReportDefinition();
         if (StringUtils.isNotBlank(suffix)) {
             return super.createFileByTestName(definition.getReportCode() + "_" + suffix, format);
         } else {

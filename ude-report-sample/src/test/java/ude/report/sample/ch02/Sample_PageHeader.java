@@ -71,7 +71,7 @@ public class Sample_PageHeader extends AbstractSample {
 
         this.noteText = "使用預設 StringHeader 及換行範例，顯示對齊位置";
         final PDFSampleContent setting = pdfDocument -> {
-            pdfDocument.setPageSize(PageSize.A5.rotate());
+            pdfDocument.setupPageSize(PageSize.A5.rotate());
             final LayoutInfo layoutInfo = super.getDocumentManager().createLayoutInfo();
             final String text = ReportTextUtils.CHINESE_BLOCK + "中文" + ReportTextUtils.CHINESE_BLOCK + "\n"
                     + ReportTextUtils.CHINESE_BLOCK + "第二行" + ReportTextUtils.CHINESE_BLOCK;
@@ -100,7 +100,7 @@ public class Sample_PageHeader extends AbstractSample {
         this.noteText += "／中下-" + "中文頁次／總頁數";
         this.noteText += "／右下-" + "中文總頁數";
         final PDFSampleContent setting = pdfDocument -> {
-            pdfDocument.setPageSize(PageSize.A5.rotate());
+            pdfDocument.setupPageSize(PageSize.A5.rotate());
             final LayoutInfo layoutInfo = new LayoutInfo();
             layoutInfo.setHeader(ItemPosition.LeftHeader, PageHeaderEN.PAGE, 14);
             layoutInfo.setHeader(ItemPosition.CenterHeader, PageHeaderEN.BOTH, 14);

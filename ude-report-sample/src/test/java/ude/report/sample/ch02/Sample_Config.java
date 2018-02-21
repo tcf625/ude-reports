@@ -31,7 +31,7 @@ public class Sample_Config extends AbstractITextTestkit {
     public void testNarrowMargin() throws IOException {
         final PDFDocumentManager documentManager = getDocumentManager();
         final File file = createFileByTestName(DocumentFormat.PDF);
-        try (PDFDocument pdfDocument = documentManager.getPDFDocument(file, PageSize.A6.rotate())) {
+        try (PDFDocument pdfDocument = documentManager.createPDFDocument(file, PageSize.A6.rotate())) {
             //
         }
     }

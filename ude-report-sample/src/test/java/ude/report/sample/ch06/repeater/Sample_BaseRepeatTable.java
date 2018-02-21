@@ -16,11 +16,11 @@ import ude.report.sample.AbstractSample;
 public abstract class Sample_BaseRepeatTable extends AbstractSample {
 
     protected void setPageSizeA5R(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A5.rotate());
+        pdfDocument.setupPageSize(PageSize.A5.rotate());
     }
 
     protected void setPageSizeA4(final PDFDocument pdfDocument) {
-        pdfDocument.setPageSize(PageSize.A4);
+        pdfDocument.setupPageSize(PageSize.A4);
     }
 
     protected void appendBand(final TreeTableMetadata metadata, final BandType type) {

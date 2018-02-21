@@ -1,23 +1,22 @@
 package ude.report.sample.ch01;
 
-import com.iisigroup.ude.report.csv.CSVGenerator;
-import com.iisigroup.ude.report.excel.ExcelGenerator;
+import com.iisigroup.ude.report.document.MultiFormatReportSupport;
 import com.iisigroup.ude.report.itext2.AbstractPDFGenerator;
 import com.iisigroup.ude.report.itext2.commons.LayoutInfo;
 import com.iisigroup.ude.report.layout.ItemPosition;
 import com.iisigroup.ude.report.utils.LengthUnit;
 import com.lowagie.text.Rectangle;
 
-abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
+abstract class AbstractSampleReport extends AbstractPDFGenerator implements MultiFormatReportSupport {
 
-    protected final ReportDefinition reportDefinition;
+    protected final SampleReportDefinition reportDefinition;
 
-    protected AbstractReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
+    protected AbstractSampleReport(final SampleReportDefinition reportDefinition, final Rectangle pageSize) {
         this.reportDefinition = reportDefinition;
-        super.setPageSize(pageSize);
+        super.setupPageSize(pageSize);
     }
 
-    public ReportDefinition getReportDefinition() {
+    public SampleReportDefinition getReportDefinition() {
         return this.reportDefinition;
     }
 
