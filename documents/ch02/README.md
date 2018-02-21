@@ -4,7 +4,7 @@
 
 * PDFDocument
 
-``` JAVA
+``` java
 setPageSize(Rectangle)      // 頁面大小與方向
 setLayoutInfo(LayoutInfo)   // 邊界留白與頁首頁尾
 setMarkers(List<? extends MarkInfo>) // 浮水印相關定義
