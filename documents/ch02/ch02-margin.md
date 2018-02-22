@@ -9,6 +9,7 @@
 單位為 pixel，可以使用 LengthUnit 的 trans\(\) 函式進行換算，如下例為公分、公厘、英吋不同單位設定結果。  
 _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
+![](/assets/ch02/pages_margin-small.png)  1  2 
 ![](/assets/ch02/pages_margin-small.png)
 
 跟 Excel 中的版面設定相比，上下定位點的定義略有不同，不過 UDE-Report 會進行相關轉換處理。
