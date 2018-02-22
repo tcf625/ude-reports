@@ -15,22 +15,36 @@ _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
 * Sample_Page_Margin.java
 ``` java
+private LayoutInfo createLayout() {
+    // ! 定義四周邊界大小.
+    final float marginLeft = LengthUnit.CM.trans(2.54f);  // 左方以 公分為單位，合 1英吋/72pixel
+    final float marginRight = 36;                         // 右方以 pixel 為單位，合 0.5英吋
+    final float marginTop = LengthUnit.MM.trans(12.7f);   // 上方以 公厘為單位，合 0.5英吋/36pixel
+    final float marginBottom = LengthUnit.INCH.trans(1);  // 下方以英吋為單位， 1英吋
+    final LayoutInfo layoutInfo = new LayoutInfo(marginLeft, marginRight, marginTop, marginBottom);
+    // ! 定義上下頁首尾間距.
+    layoutInfo.setHeaderExtra(36);
+    layoutInfo.setFooterExtra(72);
+    return layoutInfo;
+}
+
 @Test
-public void test_Margin() {
+public void test_PDF_Margin() {
     super.createPDF(pdfDocument -> {
-        // ! 定義頁面大小.
-        pdfDocument.setupPageSize(PageSize.A4.rotate());
-        // ! 定義四周邊界大小.
-        final float marginLeft = LengthUnit.CM.trans(2.54f);  // 左方以 公分為單位，合 1英吋/72pixel
-        final float marginRight = 36;                         // 右方以 pixel 為單位，合 0.5英吋
-        final float marginTop = LengthUnit.MM.trans(12.7f);   // 上方以 公厘為單位，合 0.5英吋/36pixel
-        final float marginBottom = LengthUnit.INCH.trans(1);  // 下方以英吋為單位， 1英吋
-        final LayoutInfo layoutInfo = new LayoutInfo(marginLeft, marginRight, marginTop, marginBottom);
-        // ! 定義上下頁首尾間距.
-        layoutInfo.setHeaderExtra(36);
-        layoutInfo.setFooterExtra(72);
-        // ! 設定版面資訊
-        pdfDocument.setLayoutInfo(layoutInfo);
+        pdfDocument.setupPageSize(PageSize.A4.rotate()); // ! 定義頁面大小
+        pdfDocument.setLayoutInfo(createLayout());       // ! 設定版面資訊
+    });
+}
+
+@Test
+public void test_Excel_Margin() {
+    super.createExcel(excelDocument -> {
+        final ExcelSheet<?> sheet = excelDocument.createSheet("sheet");
+        sheet.setPrintPageSize(PoiDefaultSize.A4L);     // ! 定義頁面大小.
+        sheet.setLayoutInfo(createLayout());            // ! 設定版面資訊
+        for (int i = 0; i < 1000; i++) {
+            sheet.appendCell(new ExcelPoint(i / 20, i % 20), "");
+        }
     });
 }
 ```
