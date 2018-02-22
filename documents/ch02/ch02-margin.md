@@ -6,14 +6,35 @@
 
 再回顧一下基本概念中看到的「頁面版型結構」，使用 BaseLayoutInfo 可定義其中的定位資訊。
 
-單位為 pixel，可以使用 LengthUnit.XXX.trans\(\) 進行換算，如下例為公分、公厘、英吋不同單位設定結果。  
+單位為 pixel，可以使用 LengthUnit 的 trans\(\) 函式進行換算，如下例為公分、公厘、英吋不同單位設定結果。  
 _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
 ![](/assets/ch02/pages_margin-small.png)
 
 跟 Excel 中的版面設定相比，上下定位點的定義略有不同，不過 UDE-Report 會進行相關轉換處理。
 
-> ** TODO : ADD SAMPLE**
+* Sample_Page_Margin.java
+``` java
+@Test
+public void test_Margin() {
+    super.createPDF(pdfDocument -> {
+        // ! 定義頁面大小.
+        pdfDocument.setupPageSize(PageSize.A4.rotate());
+        // ! 定義四周邊界大小.
+        final float marginLeft = LengthUnit.CM.trans(2.54f);  // 左方以 公分為單位，合 1英吋/72pixel
+        final float marginRight = 36;                         // 右方以 pixel 為單位，合 0.5英吋
+        final float marginTop = LengthUnit.MM.trans(12.7f);   // 上方以 公厘為單位，合 0.5英吋/36pixel
+        final float marginBottom = LengthUnit.INCH.trans(1);  // 下方以英吋為單位， 1英吋
+        final LayoutInfo layoutInfo = new LayoutInfo(marginLeft, marginRight, marginTop, marginBottom);
+        // ! 定義上下頁首尾間距.
+        layoutInfo.setHeaderExtra(36);
+        layoutInfo.setFooterExtra(72);
+        // ! 設定版面資訊
+        pdfDocument.setLayoutInfo(layoutInfo);
+    });
+}
+```
+
 
 ## 換頁控制
 
