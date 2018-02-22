@@ -9,14 +9,14 @@
 單位為 pixel，可以使用 LengthUnit 的 trans\(\) 函式進行換算，如下例為公分、公厘、英吋不同單位設定結果。  
 _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 
-![](/assets/ch02/pages_margin-small.png)  1  2 
+![](/assets/ch02/pages_margin-small.png)  1 ![](/assets/ch02/pages_margin-excel.png) 2   
 ![](/assets/ch02/pages_margin-small.png)
 
 跟 Excel 中的版面設定相比，上下定位點的定義略有不同，不過 UDE-Report 會進行相關轉換處理。
 
-* Sample_Page_Margin.java
+* Sample\_Page\_Margin.java
 
-``` java
+```java
 private LayoutInfo createLayout() {
     // ! 定義四周邊界大小.
     final float marginLeft = LengthUnit.CM.trans(2.54f);  // 左方以 公分為單位，合 1英吋/72pixel
@@ -50,7 +50,6 @@ public void test_Excel_Margin() {
     });
 }
 ```
-
 
 ## 換頁控制
 
@@ -111,8 +110,6 @@ public void test_forceNewPage() {
 ```
 
 ![](/assets/ch02/sample_forceNewPages.png)
-
-
 
 頁面大小與邊界，在文件生成的過程中是可以改變的。當目前頁面已有內容輸出時，頁面大小變動會在下一頁才生效。  
 但邊界變動可能會導致部分頁首頁尾輸出與預期不符，使用時請自行確認當下文件輸出狀態。換言之，建議把PageSize與LayoutInfo的異動緊接在newPage\(\) 之後進行。
