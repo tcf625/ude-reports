@@ -14,6 +14,7 @@ _\(邊界虛線以測試套件的 showMarginBorder=TRUE 輸出。\)_
 跟 Excel 中的版面設定相比，上下定位點的定義略有不同，不過 UDE-Report 會進行相關轉換處理。
 
 * Sample_Page_Margin.java
+
 ``` java
 private LayoutInfo createLayout() {
     // ! 定義四周邊界大小.
