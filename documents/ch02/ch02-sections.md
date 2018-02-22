@@ -62,7 +62,7 @@ public void test_Excel_Section() {
     final GSS0010 s1 = new GSS0010();
     final GSS0010 s2 = new GSS0010("S1");
     final GSS0010 s3 = new GSS0010("S2");
-    final AbstractSampleReport root = AbstractSampleReport.from(s1, s2, s3);
+    final AbstractSampleReport root = AbstractSampleReport.of(s1, s2, s3);
     super.doDocument(root, DocumentFormat.EXCEL);
     super.doDocument(root, DocumentFormat.PDF);
 }
