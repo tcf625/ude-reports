@@ -28,7 +28,7 @@ public class PDFSection extends AbstractPDFGenerator {
 我們可以建立多個 PDFSection 實例，並組裝起來，使其依 1、2、2-1、2-2、2-3、3、4、5 的順序輸出。
 組裝方式有二：
 
-* 第一層的項目可以直接用 PDFGenerator.Helper.from( PDFGenerator... ) 產出一個空的 ROOT PDF文件包含指定內容。
+* 第一層的項目可以直接用 AbstractPDFGenerator.of( PDFGenerator... ) 產出一個空的 ROOT PDF文件包含指定內容。
   * 一般專案實作中，應該要自訂空白 ROOT 文件類別，以便處理專案所需的邏輯，如檔案置放原則等等...。
 * 第二層以後的項目可用 AbstractPDFGenerator 所定義的 addSection() method 加入。
 
