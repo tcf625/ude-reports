@@ -1,33 +1,36 @@
-### 文件範例
+### 文件架構範例
 
-本文件的範例程式原始碼，皆放置於 github 專案：https://github.com/tcf625/ude-reports/
+所有範例原始碼，皆放於 github 專案：https://github.com/tcf625/ude-reports/ 以供下載。
 
   * 範例程式：/ude-report-sample
   * 相關產出結果：/sample-output
 
-###  表樣清單定義介面設計
+###  表樣清單介面及定義範例
 
 #### 介面：ReportDefinition 
 
-基本的規劃範例，每一張表樣應有的資訊可能包括「代碼」、「名稱」及「可支援輸出格式」。
+基本的規劃範例：每一張表樣應有的資訊包括「代碼」、「名稱」及「可支援輸出格式」。
 
 ``` java
 public interface ReportDefinition {
-    String getReportCode(); 
-    String getReportName();
+    /** 代碼. */ 
+    String getReportCode();
+    /** 名稱. */ 
+    String getReportName(); 
+    /** 支援輸出格式. */
     Set<DocumentFormat> getSuppertedFormats();
-    /** 也可以統一在此處理輸出的檔案名稱. */
+    /** 也可以統一處理輸出時使用的檔名(舉例). */
     default String toFileName(final DocumentFormat format) {
         final LocalDateTime localDateTime = Now.localDateTime();
-        final String timeString = RocDateUtils.format(localDateTime, "yyyMMddhms");
-        return getReportCode() + "_" + timeString + "." + format.getExtFileName();
+        final String time = RocDateUtils.format(localDateTime, "yyyMMdd-h-m-s");
+        return getReportCode() + "_" + time + "_" + uuid() + "." + format.getExtFileName();
     }
 }
 ```
 
 ####  定義：AllReports
 
-這個範例中定義了兩張表樣，一般正式的專案裡，表樣數量可能是數以百計，有可能會再依業務性質拆分為不同的 ENUM 定義。
+這個範例只定義兩張表樣。一般正式的專案裡，表樣數量可能是數以百計，也有可能會依業務性質拆分為多個不同的 ENUM 定義。
 
 ``` java
 public enum AllReports implements ReportDefinition {
@@ -39,12 +42,13 @@ public enum AllReports implements ReportDefinition {
     private final Set<DocumentFormat> suppertedFormats;
 
     /** 規劃預期支援的文件格式為 PDF/EXCEL. */
-    private AllReports(final String reportName) {
+    private AllReports(String reportName) {
         this.reportName = reportName;
         this.suppertedFormats = EnumSet.of(DocumentFormat.PDF, DocumentFormat.EXCEL);
     }
+    
     /** 自訂支援文件格式. */ 
-    private AllReports(final String reportName, final DocumentFormat first, final DocumentFormat... rest) {
+    private AllReports(String reportName, DocumentFormat first, DocumentFormat... rest) {
         this.reportName = reportName;
         this.suppertedFormats = EnumSet.of(first, rest);
     }
@@ -69,21 +73,21 @@ public enum AllReports implements ReportDefinition {
 
 ### 文件產出範例
 
-#### 共用文件父類別：AbstractReport
+#### 共用文件父類別：AbstractSampleReport
 
-要求子類別實作所有輸出格式介面。
+要求子類別實作所有輸出格式介面。實務上，reportDefinition、pageSize 也可用 Introduce Parameter Object 手法整合為同一參數物件。
 
 ``` java
-public abstract class AbstractReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
+public abstract class AbstractSampleReport extends AbstractPDFGenerator implements ExcelGenerator, CSVGenerator {
 
-    protected final ReportDefinition reportDefinition;
+    protected final SampleReportDefinition reportDefinition;
 
-    protected AbstractReport(final ReportDefinition reportDefinition, final Rectangle pageSize) {
+    protected AbstractSampleReport(SampleReportDefinition reportDefinition, Rectangle pageSize) {
         this.reportDefinition = reportDefinition;
         super.setPageSize(pageSize);
     }
     
-    public ReportDefinition getReportDefinition() {
+    public SampleReportDefinition getReportDefinition() {
         return this.reportDefinition;
     }
     
@@ -93,7 +97,7 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
 
 #### GSS0010 / GSS0011
 
-最簡單的輸出內容程式，如：
+隨意輸出簡單內容，如：
 
 ``` java 
     @Override
@@ -103,7 +107,7 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
 
     @Override
     public void generateExcelContent(final ExcelDocument<?, ?> document) {
-        final ExcelSheet<?> sheet = document.createSheet(this.toExcelSheetName());
+        final ExcelSheet<?> sheet = super.createExcelSheet(document);
         sheet.appendCell(new ExcelPoint(0, 0), "TEST-GSS0010", new CellFormat(Border.BOX));
         sheet.setColumnWidth(0, 20);
     }
@@ -119,7 +123,7 @@ public abstract class AbstractReport extends AbstractPDFGenerator implements Exc
 
 #### GSS0010Test / GSS0011Test
 
-   執行報表程式用，完整說明請參考後續「單元測試」範例。
+   用於執行報表程式，完整說明請參考後續「單元測試」範例。
 
 
 

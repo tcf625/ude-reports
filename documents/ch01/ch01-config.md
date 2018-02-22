@@ -2,7 +2,6 @@
 
 設定檔使用 UDE-Extended properties 格式撰寫，預設的 itext-config-default.properties 內容如下：
 
-
 ``` properties
 
 # 預設字型
@@ -67,6 +66,8 @@ default.font.size=12
 ##### UNICODE 多字面
 
 實際使用的字型檔案則以 font.{字型代碼}.{UNICODE字面} 進行定義。如下例中，font.CNS11643.SUNG.0 為全字庫宋體字第0字面，font.CNS11643.SUNG.F為全字庫宋體字第15字面。
+
+> ** 全字庫字型請自行至「政府資料開放平臺」http://data.gov.tw/node/5961下載 **
 
 若使用完整UDE套件及相關設定方式，設定路徑可使用${global.resource.path}、${resource.path}等環境變數，讀入設定檔時會自動代換。
 

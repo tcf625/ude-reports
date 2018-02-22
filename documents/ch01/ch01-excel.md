@@ -1,10 +1,10 @@
 ## 概述
 
-如 Excel
+* 如 Excel
 
-Grid-Table
+* Grid-Table
 
-頁首、頁尾樣式受限
+* 頁首、頁尾樣式受限
 
 
 ## Excel
@@ -17,6 +17,4 @@ Grid-Table
 
 ## ODS
 
-
-
-尚未支援。
+**_尚未支援。_**
