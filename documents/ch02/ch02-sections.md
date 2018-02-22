@@ -54,7 +54,7 @@ public void test_PDF_Section() {
 
 ### Excel 分節 (多SHEET)
 
-
+接著拿實作 MultiFormatReportSupport 的 GSS0010 測試。在產出 EXCEL 時，各分節會以不同 SHEET 呈現。
 
 ``` java
 @Test
@@ -62,7 +62,7 @@ public void test_Excel_Section() {
     final GSS0010 s1 = new GSS0010();
     final GSS0010 s2 = new GSS0010("S1");
     final GSS0010 s3 = new GSS0010("S2");
-    final AbstractSampleReport root = AbstractSampleReport.of(s1, s2, s3);
+    final DocumentGenerator root = AbstractSampleReport.of(s1, s2, s3);
     super.doDocument(root, DocumentFormat.EXCEL);
     super.doDocument(root, DocumentFormat.PDF);
 }
