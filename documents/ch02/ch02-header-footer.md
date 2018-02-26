@@ -1,8 +1,7 @@
 ## 頁首、頁尾控制
 
-
-頁首、頁尾同樣經由 BaseLayoutInfo 設定。
-但因 Excel的支援性問題，BaseLayoutInfo 只可設定基本的文字或頁面輸出。
+頁首、頁尾同樣經由 BaseLayoutInfo 設定。  
+但因 Excel的支援性問題，BaseLayoutInfo 只可設定基本的文字或頁面輸出。  
 若用 LayoutInfo 輸出 PDF ，則有更多彈性的樣式可以選擇。
 
 ### 定位點
@@ -15,39 +14,51 @@
 
 若預留空間不足，則輸出內容會超出頁首、尾範圍。
 
-* Sample_PageHeader_BasicText.java :: test_BASELINE
-``` java
+* Sample\_PageHeader\_BasicText.java :: test\_BASELINE
+
+  ```java
+  final LayoutInfo layoutInfo = new LayoutInfo();
+  layoutInfo.setTextHeader(ItemPosition.LeftHeader, text, 14);
+  layoutInfo.setTextHeader(ItemPosition.CenterHeader, text, 12);
+  layoutInfo.setTextHeader(ItemPosition.RightHeader, text, 8);
+  layoutInfo.setTextHeader(ItemPosition.LeftFooter, text, 8);
+  layoutInfo.setTextHeader(ItemPosition.CenterFooter, text, 12);
+  layoutInfo.setTextHeader(ItemPosition.RightFooter, text, 14);
+  pdfDocument.setLayoutInfo(layoutInfo);
+  ```
+
+  ![](/assets/ch02/header_position.png)
+
+* ### 基本文字輸出
+
+set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。
+
+* Sample\_PageHeader\_BasicText.java :: test_fontStyle
+```java
 final LayoutInfo layoutInfo = new LayoutInfo();
-layoutInfo.setTextHeader(ItemPosition.LeftHeader, text, 14);
-layoutInfo.setTextHeader(ItemPosition.CenterHeader, text, 12);
-layoutInfo.setTextHeader(ItemPosition.RightHeader, text, 8);
-layoutInfo.setTextHeader(ItemPosition.LeftFooter, text, 8);
-layoutInfo.setTextHeader(ItemPosition.CenterFooter, text, 12);
-layoutInfo.setTextHeader(ItemPosition.RightFooter, text, 14);
+layoutInfo.setTextHeader(ItemPosition.LeftHeader, String.format(text, "BOLD"), 12, FontStyle.BOLD);
+layoutInfo.setTextHeader(ItemPosition.CenterHeader, String.format(text, "ITALIC"), 12, FontStyle.ITALIC);
+layoutInfo.setTextHeader(ItemPosition.RightHeader, String.format(text, "UNDERLINE"), 12, FontStyle.UNDERLINE);
+layoutInfo.setTextHeader(ItemPosition.LeftFooter, String.format(text, "STRIKETHRU"), 12, FontStyle.STRIKETHRU);
+layoutInfo.setTextHeader(ItemPosition.CenterFooter, String.format(text, "BOLDITALIC"), 12, FontStyle.BOLDITALIC);
+layoutInfo.setTextHeader(ItemPosition.RightHeader, String.format(text, "UNDERLINE"), 12, FontStyle.UNDERLINE);
 pdfDocument.setLayoutInfo(layoutInfo);
 ```
-
-
-
-### 基本文字輸出
-
-於頁首、頁尾輸出固定文字text並指定字體大小，輸出位置以邊界定位點自動計算。
-在範例中，將以全黑的方框字元，呈現輸出於不同位置的對齊結果。
+  ![](/assets/ch02/header_text_fontStyle.png)
 
 
 
 ### 基本頁碼輸出
 
+* PAGE    文件頁次
+* TOTAL\_PAGES    文件頁數
+* BOTH     文件頁次＋文件頁數
+* SECTION    目前節次
+* PAGE\_IN\_SECTION    目前節內頁次
+* SECTION\_AND\_PAGE    目前節次＋目前節內頁次
+* SECTION\_PAGES    各節總頁數
 
-* PAGE	文件頁次
-* TOTAL_PAGES	文件頁數
-* BOTH 	文件頁次＋文件頁數
-* SECTION	目前節次
-* PAGE_IN_SECTION	目前節內頁次
-* SECTION_AND_PAGE	目前節次＋目前節內頁次
-* SECTION_PAGES	各節總頁數
-
-``` java
+```java
 final PDFSampleContent setting = pdfDocument -> {
     pdfDocument.setPageSize(PageSize.A5.rotate());
     final LayoutInfo layoutInfo = new LayoutInfo();
@@ -62,19 +73,11 @@ final PDFSampleContent setting = pdfDocument -> {
 super.createPDF(setting.andThen(this::outputRepeatText));
 ```
 
-
-
-
-## PDF  
+## PDF
 
 ### 多文字格式
 
 ### 表格輸出
 
-  
-  
-    
 若有需要，可用 DocumentFormat 參數做判斷處理。
 
-
-  
