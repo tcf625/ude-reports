@@ -31,7 +31,7 @@
 
 * ### 基本文字輸出
 
-set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。
+set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。也可以控制字體樣式，如下例。另外注意UNDERLINE樣式，應用在頁首時，可能會佔用 HeaderExtra 的空間 (兩條虛線之間)。
 
 * Sample\_PageHeader\_BasicText.java :: test_fontStyle
 ```java
@@ -41,11 +41,9 @@ layoutInfo.setTextHeader(ItemPosition.CenterHeader, String.format(text, "ITALIC"
 layoutInfo.setTextHeader(ItemPosition.RightHeader, String.format(text, "UNDERLINE"), 12, FontStyle.UNDERLINE);
 layoutInfo.setTextHeader(ItemPosition.LeftFooter, String.format(text, "STRIKETHRU"), 12, FontStyle.STRIKETHRU);
 layoutInfo.setTextHeader(ItemPosition.CenterFooter, String.format(text, "BOLDITALIC"), 12, FontStyle.BOLDITALIC);
-layoutInfo.setTextHeader(ItemPosition.RightHeader, String.format(text, "UNDERLINE"), 12, FontStyle.UNDERLINE);
 pdfDocument.setLayoutInfo(layoutInfo);
 ```
   ![](/assets/ch02/header_text_fontStyle.png)
-
 
 
 ### 基本頁碼輸出
