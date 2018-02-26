@@ -31,7 +31,7 @@
 
 * ### 基本文字輸出
 
-set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。也可以控制字體樣式，如下例。另外注意UNDERLINE樣式，應用在頁首時，可能會佔用 HeaderExtra 的空間 (兩條虛線之間)。
+set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。基本文字輸出也可以控制字體樣式，如下例。另外注意UNDERLINE樣式，應用在頁首時，可能會佔用 HeaderExtra 的空間 (兩條虛線之間)。
 
 * Sample\_PageHeader\_BasicText.java :: test_fontStyle
 ```java
