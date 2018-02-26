@@ -15,6 +15,19 @@
 
 若預留空間不足，則輸出內容會超出頁首、尾範圍。
 
+* Sample_PageHeader_BasicText.java :: test_BASELINE
+``` java
+final LayoutInfo layoutInfo = new LayoutInfo();
+layoutInfo.setTextHeader(ItemPosition.LeftHeader, text, 14);
+layoutInfo.setTextHeader(ItemPosition.CenterHeader, text, 12);
+layoutInfo.setTextHeader(ItemPosition.RightHeader, text, 8);
+layoutInfo.setTextHeader(ItemPosition.LeftFooter, text, 8);
+layoutInfo.setTextHeader(ItemPosition.CenterFooter, text, 12);
+layoutInfo.setTextHeader(ItemPosition.RightFooter, text, 14);
+pdfDocument.setLayoutInfo(layoutInfo);
+```
+
+
 
 ### 基本文字輸出
 
