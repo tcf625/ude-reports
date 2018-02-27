@@ -34,6 +34,7 @@
 set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。基本文字輸出也可以控制字體樣式，如下例。注意UNDERLINE樣式，應用在頁首時，可能會佔用 HeaderExtra 的空間 \(兩條虛線之間\)。
 
 * Sample\_PageHeader\_BasicText.java :: test\_fontStyle
+
   ```java
   final LayoutInfo layoutInfo = new LayoutInfo();
   layoutInfo.setTextHeader(ItemPosition.LeftHeader, String.format(text, "BOLD"), 12, FontStyle.BOLD);
@@ -48,16 +49,15 @@ set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上�
 
 ### 基本頁碼輸出
 
-| 項目 | 說明 | 預設中文格式 | 預設英文格式 |
+| 項目 | 說明 | 預設英文格式 | 預設中文格式 |
 | --- | --- | --- | --- |
-| PAGE  |  文件頁次| Page  | |
-| TOTAL\_PAGES |   文件頁數| | |
-| BOTH   | 文件頁次＋文件頁數| | |
-| SECTION  |  目前節次| | |
-| PAGE\_IN\_SECTION  |  目前節內頁次| | |
-| SECTION\_AND\_PAGE  |  目前節次＋目前節內頁次| | |
-| SECTION\_PAGES  |  各節總頁數| | |
-
+| PAGE | 文件頁次 | Page {p} | 第{p}頁 |
+| TOTAL\_PAGES | 文件頁數 | Total pages:{tp} | 共{tp}頁 |
+| BOTH | 文件頁次＋文件頁數 | Page {p} of {tp} | 第{p}頁，共{tp}頁 |
+| SECTION | 目前節次 | {s} |  |
+| PAGE\_IN\_SECTION | 目前節內頁次 | Page {sp} |  |
+| SECTION\_AND\_PAGE | 目前節次＋目前節內頁次 | Page {s} - {sp} |  |
+| SECTION\_PAGES | 各節總頁數 | Total pages:{tsp} |  |
 
 ```java
 final PDFSampleContent setting = pdfDocument -> {
