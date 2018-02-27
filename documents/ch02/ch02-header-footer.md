@@ -112,16 +112,17 @@ PagingPattern
 | SECTION\_AND\_PAGE | 目前節次＋目前節內頁次 | Page {s} - {sp} | 第{s}-{sp}頁 |
 | SECTION\_PAGES | 各節總頁數 | Total pages:{tsp} | 共{tsp}頁 |
 
+* Sample_PageHeader_BasicPage :: test_BasicPaging
 ```java
 final PDFSampleContent setting = pdfDocument -> {
     pdfDocument.setPageSize(PageSize.A5.rotate());
     final LayoutInfo layoutInfo = new LayoutInfo();
-    layoutInfo.setHeader(ItemPosition.LeftHeader, PageHeaderEN.PAGE, 14);
-    layoutInfo.setHeader(ItemPosition.CenterHeader, PageHeaderEN.BOTH, 14);
-    layoutInfo.setHeader(ItemPosition.RightHeader, PageHeaderEN.TOTAL_PAGES, 14);
-    layoutInfo.setHeader(ItemPosition.LeftFooter, PageHeaderZH.PAGE, 14);
-    layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 14);
-    layoutInfo.setHeader(ItemPosition.RightFooter, PageHeaderZH.TOTAL_PAGES, 14);
+    layoutInfo.setPagingHeader(ItemPosition.LeftHeader, PagingHeaderEN.PAGE, 14);
+    layoutInfo.setPagingHeader(ItemPosition.CenterHeader, PagingHeaderEN.BOTH, 14);
+    layoutInfo.setPagingHeader(ItemPosition.RightHeader, PagingHeaderEN.TOTAL_PAGES, 14);
+    layoutInfo.setPagingHeader(ItemPosition.LeftFooter, PagingHeaderZH.PAGE, 10);
+    layoutInfo.setPagingHeader(ItemPosition.CenterFooter, PagingHeaderZH.BOTH, 10);
+    layoutInfo.setPagingHeader(ItemPosition.RightFooter, PagingHeaderZH.TOTAL_PAGES, 10);
     pdfDocument.setLayoutInfo(layoutInfo);
 };
 super.createPDF(setting.andThen(this::outputRepeatText));
