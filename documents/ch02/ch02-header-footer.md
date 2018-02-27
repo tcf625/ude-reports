@@ -26,11 +26,12 @@ public interface Header {
 
 ### 定位點 \(ItemPosition\)
 
-輸出位置由position指定，依左中右／上下組合，共有六個位置：
+輸出位置由position指定，依左中右／上下組合，共有 8 個位置：
 
 * 文字輸出於左邊時置左；右邊時置右；中間時置中。
 * 輸出在上方時，會靠下對齊marginTop定位點。
 * 輸出在下方時，會靠上對齊marginBottom定位點。
+* PageCenterFooter / PageCenterHeader
 
 若預留空間不足，則輸出內容會超出頁首、尾範圍。
 
@@ -48,6 +49,10 @@ public interface Header {
   ```
 
   ![](/assets/ch02/header_position.png)
+
+* PageCenter VS Center
+
+TODO
 
 ### 重複模式 \(RepeatMode\)
 
