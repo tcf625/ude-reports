@@ -95,9 +95,10 @@ set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上�
 
 set/addPagingHeader 可以輸出目前頁次，並指定字體大小。
 
-PagingPattern
+主要參數為 PagingPattern，以 PagingItem 定義使用的頁次資訊；getPrefix()、getConjunction()、getSuffix() 定義前後綴及連接文字。
+若要更客制化的輸出多種頁次資訊，目前只支援 PDF 格式，需繼承 AbstractPagingHeader 實作。
 
-| 項目 | 說明 | 預設英文格式\(PageHeaderEN\) | 預設中文格式\(PageHeaderZH\) |
+| PagingItem | 說明 | 預設英文格式\(PageHeaderEN\) | 預設中文格式\(PageHeaderZH\) |
 | --- | --- | --- | --- |
 | PAGE | 文件頁次 | Page {p} | 第{p}頁 |
 | TOTAL\_PAGES | 文件頁數 | Total pages:{tp} | 共{tp}頁 |
