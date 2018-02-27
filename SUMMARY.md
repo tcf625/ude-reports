@@ -15,6 +15,8 @@
   * [1. 內容分節](documents/ch02/ch02-sections.md)
   * [2. 邊界與換頁](documents/ch02/ch02-margin.md)
   * [3. 頁首頁尾](documents/ch02/ch02-header-footer.md)
+    * [文字內容](documents/ch02/ch02-header-footer-text.md)  
+    * [頁次資訊](documents/ch02/ch02-header-footer-paging.md)  
     * [PDF 頁首頁尾](documents/ch02/ch02-pdf-header-footer.md)  
   * [4. 浮水印\#](documents/ch02/ch02-watermark.md)
 * [三、文字](documents/ch03/README.md)
