@@ -146,15 +146,5 @@ layout.setPagingHeader(ItemPosition.RightFooter, PagingItem.SECTION_PAGES.prefix
 
 * **TODO : EXCEL 支援及範例**
 
-## PDF 格式支援
 
-### 多文字格式
-
-### 頁次管理
-
-* **TODO : 待完善實作**
-
-### 表格輸出
-
-若有需要，可用 DocumentFormat 參數做判斷處理。
 
