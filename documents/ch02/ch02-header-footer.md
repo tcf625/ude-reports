@@ -4,7 +4,31 @@
 但因 Excel的支援性問題，BaseLayoutInfo 只可設定基本的文字或頁面輸出。  
 若用 LayoutInfo 輸出 PDF ，則有更多彈性的樣式可以選擇。
 
-### 定位點
+以下是設定頁首、頁尾時的兩個主要參數 ItemPosition 及 RepeatMode：
+
+* BaseLayoutInfo.java
+``` java 
+/** 設定指定位置上的 HEADER. */
+void setHeader(ItemPosition position, Header header)
+/** 增加指定位置上的 HEADER. */
+void addHeader(ItemPosition position, Header header)
+/** 清除指定位置上的 HEADER. */
+void removeHeaders(ItemPosition position)
+
+public interface Header {
+    default RepeatMode getRepeatMode() {
+        return RepeatMode.ALL;
+    }
+}
+
+```
+
+
+
+Header
+
+
+### 定位點 (ItemPosition)
 
 輸出位置由position指定，依左中右／上下組合，共有六個位置：
 
@@ -28,8 +52,20 @@
   ```
 
   ![](/assets/ch02/header_position.png)
+  
+### 重複模式 (RepeatMode)
 
-* ### 基本文字輸出
+|Name| 說明|
+|--|--|
+|ALL|每頁出現|
+|FIRST_PAGE    | 只在文件的第一頁輸出 (不論該頁是否計算頁數) |
+|CONTENT_PAGES | 於頁次計數不為0的頁面輸出 (ONLY-FOR-PDF) |
+|COVERAGE_PAGES| 於頁次計數為0的頁面輸出 (ONLY-FOR-PDF) |
+|ODD_PAGES     | 於奇數頁次輸出 |
+|EVEN_PAGES    | 於偶數頁次輸出 |
+
+
+### 基本文字輸出
 
 set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上例即使用此方法設定頁首、頁尾。基本文字輸出也可以控制字體樣式，如下例。注意UNDERLINE樣式，應用在頁首時，可能會佔用 HeaderExtra 的空間 \(兩條虛線之間\)。
 
@@ -49,15 +85,19 @@ set/addTextHeader 可以輸出固定文字內容並且指定字體大小，上�
 
 ### 基本頁碼輸出
 
-| 項目 | 說明 | 預設英文格式 | 預設中文格式 |
+set/addPagingHeader 可以輸出目前頁次，並指定字體大小。
+
+PagingPattern
+
+| 項目 | 說明 | 預設英文格式(PageHeaderEN) | 預設中文格式(PageHeaderZH) |
 | --- | --- | --- | --- |
 | PAGE | 文件頁次 | Page {p} | 第{p}頁 |
 | TOTAL\_PAGES | 文件頁數 | Total pages:{tp} | 共{tp}頁 |
 | BOTH | 文件頁次＋文件頁數 | Page {p} of {tp} | 第{p}頁，共{tp}頁 |
-| SECTION | 目前節次 | {s} |  |
-| PAGE\_IN\_SECTION | 目前節內頁次 | Page {sp} |  |
-| SECTION\_AND\_PAGE | 目前節次＋目前節內頁次 | Page {s} - {sp} |  |
-| SECTION\_PAGES | 各節總頁數 | Total pages:{tsp} |  |
+| SECTION | 目前節次 | {s} | 第{s}節 |
+| PAGE\_IN\_SECTION | 目前節內頁次 | Page {sp} | 第{sp}頁 |
+| SECTION\_AND\_PAGE | 目前節次＋目前節內頁次 | Page {s} - {sp} | 第{s}-{sp}頁 |
+| SECTION\_PAGES | 各節總頁數 | Total pages:{tsp} | 共{tsp}頁 |
 
 ```java
 final PDFSampleContent setting = pdfDocument -> {
@@ -73,6 +113,7 @@ final PDFSampleContent setting = pdfDocument -> {
 };
 super.createPDF(setting.andThen(this::outputRepeatText));
 ```
+
 
 ## PDF
 
