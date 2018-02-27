@@ -7,25 +7,23 @@
 以下是設定頁首、頁尾時的兩個主要參數 ItemPosition 及 RepeatMode：
 
 * BaseLayoutInfo.java
-``` java 
-/** 設定指定位置上的 HEADER. */
-void setHeader(ItemPosition position, Header header)
-/** 增加指定位置上的 HEADER. */
-void addHeader(ItemPosition position, Header header)
-/** 清除指定位置上的 HEADER. */
-void removeHeaders(ItemPosition position)
 
-public interface Header {
-    default RepeatMode getRepeatMode() {
-        return RepeatMode.ALL;
-    }
+``` java
+public class BaseLayoutInfo {
+  /** 設定指定位置上的 HEADER. */
+  void setHeader(ItemPosition position, Header header) {}
+  /** 增加指定位置上的 HEADER. */
+  void addHeader(ItemPosition position, Header header) {}
+  /** 清除指定位置上的 HEADER. */
+  void removeHeaders(ItemPosition position) {}
 }
-
+public interface Header {
+    default RepeatMode getRepeatMode() { return RepeatMode.ALL; }
+}
 ```
 
+在設定 Header 時，必須指定 ItemPosition，也就是相同的 Header 可以被放置在文件上的任何位置。而 Header 介面本身要求回傳 RepeatMode ，由此決定該 HEADER 在哪些頁次會被輸出。getRepeatMode() 的預設回傳為 ALL，也就是在所有頁次都會出現。
 
-
-Header
 
 
 ### 定位點 (ItemPosition)
