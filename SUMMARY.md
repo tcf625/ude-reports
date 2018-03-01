@@ -22,6 +22,7 @@
 * [三、文字](documents/ch03/README.md)
   * [範例：字型與字面](documents/ch03/Fonts.md)
   * [範例：ParagraphBuilder](documents/ch03/ParagraphBuilder.md)
+  * [補充：字型管理實作](documents/ch03/AdvFontFactory.md)  
 * [四、表格](documents/ch04/README.md)
   * [1. 基本表格輸出](documents/ch04/a-BasicTable.md)
     * [範例：建立基本 PDF 表格](documents/ch04/CreatePDFTable.md)
