@@ -11,12 +11,12 @@ import java.util.List;
 import org.junit.Test;
 
 import com.iisigroup.ude.report.itext2.commons.LayoutInfo;
-import com.iisigroup.ude.report.itext2.font.CNS11643;
 import com.iisigroup.ude.report.itext2.marker.markinfo.MarkInfo;
 import com.iisigroup.ude.report.itext2.marker.markinfo.PropertiesMarkInfo;
 import com.iisigroup.ude.report.itext2.marker.watermark.TextWatermarkProperties;
+import com.iisigroup.ude.report.itext2.text.font.CNS11643;
 import com.iisigroup.ude.report.layout.ItemPosition;
-import com.iisigroup.ude.report.layout.PageHeaderZH;
+import com.iisigroup.ude.report.layout.paging.PagingHeaderZH;
 import com.iisigroup.ude.report.utils.ReportTextUtils;
 import com.lowagie.text.PageSize;
 

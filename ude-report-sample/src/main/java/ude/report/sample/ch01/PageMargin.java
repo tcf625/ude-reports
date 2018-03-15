@@ -8,21 +8,23 @@ import com.iisigroup.ude.report.excel.ExcelDocument;
 import com.iisigroup.ude.report.excel.ExcelPoint;
 import com.iisigroup.ude.report.excel.ExcelSheet;
 import com.iisigroup.ude.report.itext2.PDFDocument;
+import com.iisigroup.ude.report.itext2.commons.LayoutInfo;
 import com.iisigroup.ude.report.table.format.Border;
 import com.iisigroup.ude.report.table.format.CellFormat;
 import com.lowagie.text.PageSize;
 
-public class GSS0010 extends AbstractSampleReport {
+public class PageMargin extends AbstractSampleReport {
 
-    private String text = "TEST-GSS0010";
+    private String text = "PageMargin";
 
-    public GSS0010() {
+    public PageMargin() {
         super(AllReports.GSS0010, PageSize.A3);
     }
 
-    public GSS0010(final String text) {
-        super(AllReports.GSS0010, PageSize.A3);
-        this.text = text;
+    @Override
+    protected LayoutInfo createLayoutInfo() {
+        // TODO Auto-generated method stub
+        return super.createLayoutInfo();
     }
 
     @Override

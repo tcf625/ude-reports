@@ -19,8 +19,8 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.iisigroup.ude.report.itext2.font.CHTFontFactories;
-import com.iisigroup.ude.report.itext2.font.CNS11643;
+import com.iisigroup.ude.report.itext2.text.font.CNS11643;
+import com.iisigroup.ude.report.itext2.text.font.UdeFontFactory;
 
 public class JfreeChartTest {
 
@@ -46,7 +46,7 @@ public class JfreeChartTest {
         dataset.setValue("非常不同意", RandomUtils.nextInt(0, 100));
 
         // 建立文字型態
-        final Font awtFont = CHTFontFactories.INSTANCE.getFactory(CNS11643.SUNG).getAwtFont(0);
+        final Font awtFont = UdeFontFactory.INSTANCE.getFontFamily(CNS11643.SUNG).getAwtFont(0);
         final Font font1 = awtFont.deriveFont(Font.BOLD, 36);
         final Font font2 = awtFont.deriveFont(30F);
 

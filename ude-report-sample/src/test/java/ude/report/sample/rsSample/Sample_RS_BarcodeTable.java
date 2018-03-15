@@ -9,14 +9,10 @@ import com.iisigroup.ude.report.itext2.table.TableiText;
 import com.iisigroup.ude.report.itext2.utils.barcode.Barcode39Drawer;
 import com.iisigroup.ude.report.table.format.Border;
 import com.iisigroup.ude.report.table.format.CellFormat;
-import com.iisigroup.ude.report.table.format.CellFormat.AlignH;
 import com.iisigroup.ude.report.table.format.CellFormat.AlignV;
 import com.iisigroup.ude.report.table.format.DocumentAlign;
-import com.iisigroup.ude.report.table.format.celltype.LinesDrawer;
-import com.iisigroup.ude.report.table.format.celltype.LinesDrawer.Line;
 import com.iisigroup.ude.report.utils.Coordinate;
 import com.iisigroup.ude.report.utils.LengthUnit;
-import com.iisigroup.ude.report.utils.PointF;
 import com.lowagie.text.pdf.PdfPCell;
 
 import ude.report.sample.AbstractSample;
@@ -62,15 +58,15 @@ public class Sample_RS_BarcodeTable extends AbstractSample {
             table.addCell("NAME", 2);
             table.addCell("NAME", 2);
 
-            final CellFormat picCell = new CellFormat().setAlign(AlignH.CENTER, AlignV.MIDDLE).setMinHeightInCM(5.2F);
-            final Line line1 = new Line(new PointF(0.5F, 0.5F), new PointF(0.5F, 1));
-            final Line line2 = new Line(new PointF(0.5F, 0.5F), new PointF(0.8F, 0.5F));
-            picCell.setCellType(new LinesDrawer(Coordinate.CM_TL, line1, line2));
+            //            final CellFormat picCell = new CellFormat().setAlign(AlignH.CENTER, AlignV.MIDDLE).setMinHeightInCM(5.2F);
+            //            final Line line1 = new Line(new PointF(0.5F, 0.5F), new PointF(0.5F, 1));
+            //            final Line line2 = new Line(new PointF(0.5F, 0.5F), new PointF(0.8F, 0.5F));
+            //            picCell.setCellType(new LinesDrawer(Coordinate.CM_TL, line1, line2));
 
-            table.addCell("依XXX\n相片XXX\nA", picCell);
-            table.addCell("B");
-            table.addCell("C");
-            table.addCell("D");
+            //            table.addCell("依XXX\n相片XXX\nA", picCell);
+            //            table.addCell("B");
+            //            table.addCell("C");
+            //            table.addCell("D");
 
             table.addCell("NAME", 2);
             table.addCell("NAME", 2);

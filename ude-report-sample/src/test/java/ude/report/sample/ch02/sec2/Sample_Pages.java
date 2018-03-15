@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2009. 資拓科技. All right reserved.
  */
-package ude.report.sample.ch02;
+package ude.report.sample.ch02.sec2;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -13,9 +13,8 @@ import org.junit.Test;
 
 import com.iisigroup.ude.report.itext2.commons.LayoutInfo;
 import com.iisigroup.ude.report.layout.ItemPosition;
-import com.iisigroup.ude.report.layout.PageHeaderZH;
+import com.iisigroup.ude.report.layout.paging.PagingHeaderZH;
 import com.iisigroup.ude.report.table.format.DocumentAlign;
-import com.iisigroup.ude.report.utils.LengthUnit;
 import com.iisigroup.ude.util.io.UdeFileUtils;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.pdf.PdfReader;
@@ -31,7 +30,7 @@ public class Sample_Pages extends AbstractSample {
         // ! [TEST_INVOKE]
         final File pdfFile = super.createPDF(pdfDocument -> {
             final LayoutInfo layoutInfo = new LayoutInfo();
-            layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 14);
+            layoutInfo.setPagingHeader(ItemPosition.CenterFooter, PagingHeaderZH.BOTH, 14);
             pdfDocument.setLayoutInfo(layoutInfo);
             pdfDocument.setupPageSize(PageSize.A8.rotate());
             pdfDocument.writeText("P1"); // 一開始在 P1
@@ -43,7 +42,7 @@ public class Sample_Pages extends AbstractSample {
             pdfDocument.newPage();
             pdfDocument.newPage(true); // 強制換頁後，才進入 P4
             pdfDocument.writeText("P4. 我是第四頁");
-            pdfDocument.newPage();     // 後續未輸出內容，P5 不會產生。 
+            pdfDocument.newPage();     // 後續未輸出內容，P5 不會產生。
         });
         // ! [TEST_ASSERT]
         try (BufferedInputStream in = UdeFileUtils.createInputStream(pdfFile)) {
@@ -61,7 +60,7 @@ public class Sample_Pages extends AbstractSample {
     public void test_forceNewPage() {
         super.createPDF(pdfDocument -> {
             final LayoutInfo layoutInfo = new LayoutInfo();
-            layoutInfo.setHeader(ItemPosition.CenterFooter, PageHeaderZH.BOTH, 12);
+            layoutInfo.setPagingHeader(ItemPosition.CenterFooter, PagingHeaderZH.BOTH, 12);
             pdfDocument.setLayoutInfo(layoutInfo);
             pdfDocument.setupPageSize(PageSize.A8.rotate());
             // !
@@ -94,27 +93,6 @@ public class Sample_Pages extends AbstractSample {
                     }
                 }
             }
-        });
-    }
-
-    @Test
-    public void test_Margin() {
-        super.createPDF(pdfDocument -> {
-            // ! 定義頁面大小.
-            pdfDocument.setupPageSize(PageSize.A4.rotate());
-            // ! 定義四周邊界大小.
-            final float marginLeft = LengthUnit.CM.trans(2.54f);  // 以 公分為單位
-            final float marginRight = 36;                         // 以 pixel 為單位
-            final float marginTop = LengthUnit.MM.trans(12.7f);   // 以 公厘為單位
-            final float marginBottom = LengthUnit.INCH.trans(1);  // 以英吋為單位
-            final LayoutInfo layoutInfo = new LayoutInfo(marginLeft, marginRight, marginTop, marginBottom);
-
-            // ! 定義上下頁首尾間距.
-            layoutInfo.setHeaderExtra(36);
-            layoutInfo.setFooterExtra(72);
-
-            // ! 設定版面資訊
-            pdfDocument.setLayoutInfo(layoutInfo);
         });
     }
 

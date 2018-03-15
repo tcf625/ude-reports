@@ -82,6 +82,10 @@ public abstract class AbstractSample extends AbstractITextTestkit {
     //## [Method] sub-block :
     //####################################################################
 
+    //####################################################################
+    //## [Method] sub-block :
+    //####################################################################
+
     public final File createPDF(final PDFSampleContent sampleContent, final PDFSampleContent content) {
         final File doDocument = super.doDocument(sampleContent.andThen(content), DocumentFormat.PDF, "");
         return doDocument;

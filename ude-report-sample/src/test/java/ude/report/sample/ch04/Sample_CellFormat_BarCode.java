@@ -61,7 +61,7 @@ public class Sample_CellFormat_BarCode extends AbstractSample {
                     PaintTool.Default.drawBlock(lineDC, p1, p2, 0, PdfContentByte::fill);
                     lineDC.restoreState();
                     lineDC.beginText();
-                    lineDC.setFontAndSize(pdfDocument.getFontFactory().getBaseFont(), 7);
+                    lineDC.setFontAndSize(pdfDocument.getFontFamily().getBaseFont(), 7);
                     PaintTool.Default.drawTextAlignLeft(lineDC, "A123", left, top - 10);
                     lineDC.endText();
 

@@ -8,9 +8,9 @@ import org.junit.Test;
 import com.iisigroup.ude.report.DocumentFormat;
 import com.iisigroup.ude.report.itext2.PDFDocument;
 import com.iisigroup.ude.report.itext2.PDFDocumentManager;
-import com.iisigroup.ude.report.itext2.font.CHTFontFactories;
-import com.iisigroup.ude.report.itext2.font.CHTFontFactory;
-import com.iisigroup.ude.report.itext2.font.WindowsFont;
+import com.iisigroup.ude.report.itext2.text.font.FontFamily;
+import com.iisigroup.ude.report.itext2.text.font.UdeFontFactory;
+import com.iisigroup.ude.report.itext2.text.font.WindowsFont;
 import com.iisigroup.ude.report.utils.ReportTextUtils;
 import com.lowagie.text.PageSize;
 
@@ -27,8 +27,8 @@ public class Sample_Fonts extends AbstractSample {
             pdfDocument.writeText("ABCD");
             pdfDocument.writeText(ReportTextUtils.CHINESE_BLOCK);
 
-            final CHTFontFactory fontFactory = CHTFontFactories.INSTANCE.getFactory(WindowsFont.NEWMINGLIU);
-            pdfDocument.setFontInfo(fontFactory.createFontInfo(12));
+            final FontFamily fontFamily = UdeFontFactory.INSTANCE.getFontFamily(WindowsFont.NEWMINGLIU);
+            pdfDocument.setFontInfo(fontFamily.createFontInfo(12));
             pdfDocument.writeText("新細明體");
             pdfDocument.writeText("ABCD");
             pdfDocument.writeText(ReportTextUtils.CHINESE_BLOCK);

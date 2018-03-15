@@ -7,7 +7,7 @@ import com.iisigroup.ude.report.layout.ItemPosition;
 import com.iisigroup.ude.report.utils.LengthUnit;
 import com.lowagie.text.Rectangle;
 
-abstract class AbstractSampleReport extends AbstractPDFGenerator implements MultiFormatReportSupport {
+public abstract class AbstractSampleReport extends AbstractPDFGenerator implements MultiFormatReportSupport {
 
     protected final SampleReportDefinition reportDefinition;
 
@@ -47,8 +47,8 @@ abstract class AbstractSampleReport extends AbstractPDFGenerator implements Mult
     }
 
     protected void defaultHeader(final LayoutInfo layoutInfo) {
-        layoutInfo.setHeader(ItemPosition.LeftHeader, this.reportDefinition.getReportCode(), 12);
-        layoutInfo.setHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportName(), 12);
+        layoutInfo.setTextHeader(ItemPosition.LeftHeader, this.reportDefinition.getReportCode(), 12);
+        layoutInfo.setTextHeader(ItemPosition.CenterHeader, this.reportDefinition.getReportName(), 12);
     }
 
 }
