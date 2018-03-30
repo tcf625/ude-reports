@@ -24,3 +24,11 @@ Temp
 //    //
 //    //        ExcelFunction<Object> excelFunction = new ExcelFunction<Object>("DIFF", a, v4);
 ```
+
+* public class ArrayData implements CellDataSource {
+  * 當傳入的原始資料為陣列形式.
+
+*  文字切成多行 :  LineSplitter  // bySeparator  // byChars
+
+
+
