@@ -3,6 +3,9 @@
 
 * **適用於 PDF / EXCEL**
 
+## CellDataSource
+
+
 ## CellFormat
 
 本套件以 CellFormat 來定義個別欄位l的顯示外觀，此物件可適用於 PDF 及 Excel 表格，唯部分性質可能在兩種文件格式中的支援度不同。於_'表格描述定義'_中，同樣使用 CellFormat 設定格式外觀。「表格欄位樣式」一節會再詳細說明。
