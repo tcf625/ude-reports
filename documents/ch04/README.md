@@ -1,5 +1,5 @@
 
-# 表格 Table
+# 表格 (Table)
 
 * **適用於 PDF / EXCEL**
 
