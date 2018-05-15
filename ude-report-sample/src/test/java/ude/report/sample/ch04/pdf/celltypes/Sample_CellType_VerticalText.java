@@ -18,8 +18,18 @@ import ude.report.sample.AbstractSample;
 public class Sample_CellType_VerticalText extends AbstractSample {
 
     @Test
-    public void testVerticalTitle() {
+    public void forDebug() {
+        super.createPDF(pdfDocument -> {
+            pdfDocument.writeText("");
+            final TableiText table = pdfDocument.createTable(1);
+            table.getDefaultFormat().setMinHeightInCM(2.0).setCellType(VerticalText.DEFAULT);
+            addCases(table, "直列");
+            table.appendMe();
+        });
+    }
 
+    @Test
+    public void testVerticalTitle() {
         super.createPDF(pdfDocument -> {
             pdfDocument.writeText("");
             final TableiText table = pdfDocument.createTable(2);

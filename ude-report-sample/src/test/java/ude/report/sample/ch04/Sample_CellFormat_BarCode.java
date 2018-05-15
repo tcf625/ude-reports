@@ -7,15 +7,17 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-import com.iisigroup.ude.report.data.source.Const;
-import com.iisigroup.ude.report.data.source.image.BarcodeImage;
-import com.iisigroup.ude.report.data.source.image.BarcodeImage.BarcodeType;
 import com.iisigroup.ude.report.itext2.table.CellFactory;
 import com.iisigroup.ude.report.itext2.table.TableiText;
 import com.iisigroup.ude.report.itext2.utils.PaintTool;
 import com.iisigroup.ude.report.itext2.utils.barcode.Barcode39Drawer;
 import com.iisigroup.ude.report.itext2.utils.barcode.BarcodeSupport;
 import com.iisigroup.ude.report.itext2.utils.barcode.QRCodeDrawer;
+import com.iisigroup.ude.report.table.format.CellFormat;
+import com.iisigroup.ude.report.table.format.CellFormat.AlignH;
+import com.iisigroup.ude.report.table.format.CellFormat.AlignV;
+import com.iisigroup.ude.report.table.format.cellcreator.BarcodeCell;
+import com.iisigroup.ude.report.table.format.cellcreator.BarcodeCell.BarcodeType;
 import com.iisigroup.ude.report.utils.Coordinate;
 import com.iisigroup.ude.report.utils.PointF;
 import com.lowagie.text.Element;
@@ -32,13 +34,14 @@ public class Sample_CellFormat_BarCode extends AbstractSample {
         super.createPDF(pdfDocument -> {
 
             final TableiText table = pdfDocument.createTable(4);
-            //table.getDefaultFormat().setFontSize(8).setMinHeightInCM(3F);
             {
-                final BarcodeImage barcodeImage = BarcodeImage.type(BarcodeType.CODE39, 100, 20).apply(Const.define("A123456"));
-                table.addCell(barcodeImage);
-                table.addCell(barcodeImage);
-                table.addCell(barcodeImage);
-                table.addCell(barcodeImage);
+                table.addCell("A123456", new CellFormat(new BarcodeCell(BarcodeType.CODE39, 100, 20)));
+                table.addCell("A123456", new CellFormat(new BarcodeCell(BarcodeType.CODE39, 100, 16)));
+                table.addCell("A123456", new CellFormat(new BarcodeCell(BarcodeType.CODE39, 100, 16, true)));
+                table.addCell("A123456", new CellFormat(new BarcodeCell(BarcodeType.CODE39, 100, 16)) //
+                        .setAlignV(AlignV.MIDDLE) //
+                        .setAlignH(AlignH.CENTER));
+                table.completeRow();
             }
             {
                 final BarcodeSupport barCode39 = new Barcode39Drawer(Coordinate.CM_TL);
@@ -48,10 +51,10 @@ public class Sample_CellFormat_BarCode extends AbstractSample {
 
                 final CellFactory factory = barCode39.factory("1000000000", 3.0, 0.45, false);
                 final PdfPCell cell = factory.create(table);
+                cell.setMinimumHeight(200);
                 cell.setCellEvent((final PdfPCell cella, final Rectangle position, final PdfContentByte[] canvases) -> {
                     final float left = (position.getLeft() + position.getRight()) / 2;
                     final float top = (position.getBottom() + position.getTop()) / 2;
-
                     final PdfContentByte lineDC = canvases[PdfPTable.TEXTCANVAS];
                     lineDC.saveState();
                     lineDC.setColorFill(Color.white);
@@ -60,11 +63,6 @@ public class Sample_CellFormat_BarCode extends AbstractSample {
                     final PointF p2 = new PointF(left + 50, top - 20);
                     PaintTool.Default.drawBlock(lineDC, p1, p2, 0, PdfContentByte::fill);
                     lineDC.restoreState();
-                    lineDC.beginText();
-                    lineDC.setFontAndSize(pdfDocument.getFontFamily().getBaseFont(), 7);
-                    PaintTool.Default.drawTextAlignLeft(lineDC, "A123", left, top - 10);
-                    lineDC.endText();
-
                 });
                 table.addCell(cell);
 

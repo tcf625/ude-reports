@@ -13,8 +13,6 @@ import com.iisigroup.ude.report.table.format.CellFormat.AlignV;
 import com.iisigroup.ude.report.table.format.DocumentAlign;
 import com.iisigroup.ude.report.utils.Coordinate;
 import com.iisigroup.ude.report.utils.LengthUnit;
-import com.lowagie.text.pdf.PdfPCell;
-
 import ude.report.sample.AbstractSample;
 
 public class Sample_RS_BarcodeTable extends AbstractSample {
@@ -37,8 +35,7 @@ public class Sample_RS_BarcodeTable extends AbstractSample {
                 defaultFormat.setAlignV(AlignV.MIDDLE);
 
                 final Barcode39Drawer barCode39 = new Barcode39Drawer(Coordinate.CM_TL);
-                final PdfPCell barcodeCell = barCode39.createCell(subTable, "A123456789", 3.8F, 0.6F, false);
-                subTable.addCell(barcodeCell);
+                subTable.addCell(barCode39.factory("A123456789", 3.8F, 0.6F, false));
                 subTable.addCell("申請書", new CellFormat().setFontSize(18));
                 subTable.addCell("TX");
             });
@@ -48,10 +45,9 @@ public class Sample_RS_BarcodeTable extends AbstractSample {
                 defaultFormat.setMinHeightInCM(1.2F); // ! ROW-HEIGHT
                 defaultFormat.setAlignV(AlignV.MIDDLE);
                 final Barcode39Drawer barCode39 = new Barcode39Drawer(Coordinate.CM_TL);
-                final PdfPCell barcodeCell = barCode39.createCell(subTable, "A123456789", 3.8F, 0.6F, false);
-                subTable.addCell(barcodeCell);
+                subTable.addCell(barCode39.factory("A123456789", 3.8F, 0.6F, false));
                 subTable.addCell("ID");
-                subTable.addCell(barcodeCell);
+                subTable.addCell(barCode39.factory("A123456789", 3.8F, 0.6F, false));
                 subTable.addCell("ID");
             });
 

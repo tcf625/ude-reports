@@ -10,12 +10,12 @@ public class GSS001XTest extends BaseSampleTest {
 
     @Test
     public void testGSS0010() {
-        super.doDocumentAllForamt(new GSS0010());
+        super.doDocumentAll(new GSS0010());
     }
 
     @Test
     public void testGSS0011() {
-        super.doDocumentAllForamt(new GSS0011());
+        super.doDocumentAll(new GSS0011());
     }
 
 }

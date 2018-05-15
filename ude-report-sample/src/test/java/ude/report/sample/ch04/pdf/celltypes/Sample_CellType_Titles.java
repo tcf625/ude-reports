@@ -58,6 +58,8 @@ public class Sample_CellType_Titles extends AbstractSample {
             addTrisectionCell(table2, "地區地區地區地區", "人數", "各年度");
             table2.addCell("較小字型");
             addTrisectionCellWithFont(table2, "地區地區地區地區", "人數", "各年度", 4);
+            table2.addCell("較小字型");
+            addTrisectionCellWithFont(table2, "地區地區\n地區地區", "人數", "地區地區\n地區地區", 4);
             table2.addCell("換行字元");
             addTrisectionCell(table2, "地區\n地區", "人數", "年度\n年度");
             table2.appendMe();

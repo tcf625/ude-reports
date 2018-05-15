@@ -40,11 +40,11 @@
 //
 //            for (int i = 0; i < Sample_RS_TableBlockWithDataSource.this.reportData.size(); i += size) {
 //                final List<TableBlock<?, ?>> blocksInPage = new ArrayList<>();
-//                final TableBlock<?, ?> headerTable = headerTable();
-//                final TableBlock<?, ?> masterHeader = masterHeader();
-//                final TableBlock<?, ?> basicTable = basicTable(i,
+//                final TableBlock<?> headerTable = headerTable();
+//                final TableBlock<?> masterHeader = masterHeader();
+//                final TableBlock<?> basicTable = basicTable(i,
 //                        Math.min(i + size, Sample_RS_TableBlockWithDataSource.this.reportData.size()));
-//                final TableBlock<?, ?> masterFooter = masterFooter();
+//                final TableBlock<?> masterFooter = masterFooter();
 //
 //                // PDF
 //                pdfDocument.newPage();
@@ -52,14 +52,14 @@
 //                blocksInPage.add(masterHeader);
 //                blocksInPage.add(basicTable);
 //                blocksInPage.add(masterFooter);
-//                for (final TableBlock<?, ?> tableBlock : blocksInPage) {
+//                for (final TableBlock<?> tableBlock : blocksInPage) {
 //                    PDFTableTransferUtils.append(pdfDocument, tableBlock, Sample_RS_TableBlockWithDataSource.this);
 //                }
 //            }
 //            System.out.println(Sample_RS_TableBlockWithDataSource.this.reportData.size());
 //        };
 //
-//        public TableBlock<?, ?> headerTable() {
+//        public TableBlock<?> headerTable() {
 //            final NestBlock block = NestBlock.noBorder();
 //            block.append("戶政所別：", dataSource("reportData[0].text1"));
 //            block.nextRow();
@@ -67,7 +67,7 @@
 //            return block;
 //        }
 //
-//        public TableBlock<?, ?> masterHeader() {
+//        public TableBlock<?> masterHeader() {
 //
 //            final NestBlock block = NestBlock.normalBorder();
 //            //         戶　長　統　號*2F4986464 戶　別單獨生活戶
@@ -90,7 +90,7 @@
 //            return block;
 //        }
 //
-//        public TableBlock<?, ?> masterFooter() {
+//        public TableBlock<?> masterFooter() {
 //            final NestBlock block = NestBlock.normalBorder();
 //            block.append("承辦人簽章");
 //            block.append("");
@@ -100,7 +100,7 @@
 //            return block;
 //        }
 //
-//        public TableBlock<?, ?> basicTable(final int start, final int end) {
+//        public TableBlock<?> basicTable(final int start, final int end) {
 //
 //            final NestBlock block = NestBlock.normalBorder();
 //

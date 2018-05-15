@@ -8,36 +8,66 @@ import org.junit.Test;
 import com.iisigroup.ude.report.excel.ExcelPoint;
 import com.iisigroup.ude.report.excel.ExcelSheet;
 import com.iisigroup.ude.report.table.format.CellFormat;
+import com.iisigroup.ude.report.utils.LengthUnit;
+import com.iisigroup.ude.report.utils.ReportTextUtils;
 import com.iisigroup.ude.util.lang8.date.Now;
 
 import ude.report.sample.AbstractSample;
 
-public class Sample_ExcelTable extends AbstractSample {
+public class Sample_Excel_CellSize extends AbstractSample {
 
     @Test
-    public void test_basic_types() {
+    public void rows() {
         super.createExcel(document -> {
-            int r = 0;
             final ExcelSheet<?> sheet = document.createSheet("sheet1");
+            for (int r = 1; r <= 20; r++) {
+                sheet.appendCell(new ExcelPoint(r, 0), ReportTextUtils.CHINESE_BLOCK + (r * 10));
+                sheet.getRealSheet().getRow(r).setHeightInPoints(r * 10);
+            }
+        });
+    }
 
-            sheet.appendCell(new ExcelPoint(r++, 0), null);
-            sheet.appendCell(new ExcelPoint(r++, 0), "");
+    @Test
+    public void rate() {
 
-            sheet.appendCell(new ExcelPoint(r++, 0), "A1");
+        System.out.println(LengthUnit.ExcelPixel.trans(480));
+        System.out.println(LengthUnit.ExcelPixel.trans(480));
 
-            sheet.appendCell(new ExcelPoint(r++, 0), 100);
-            sheet.appendCell(new ExcelPoint(r++, 0), 100L);
-            sheet.appendCell(new ExcelPoint(r++, 0), 100.00001D);
-            sheet.appendCell(new ExcelPoint(r++, 0), 100.00002D);
-            sheet.appendCell(new ExcelPoint(r++, 0), 100.00002F);
+        System.out.println(LengthUnit.CM.trans(12.45F));
+        System.out.println(LengthUnit.CM.trans(11.5F));
 
-            sheet.appendCell(new ExcelPoint(r++, 0), Now.date());
-            sheet.appendCell(new ExcelPoint(r++, 0), Now.localDate());
-            sheet.appendCell(new ExcelPoint(r++, 0), Now.localDateTime());
-            sheet.appendCell(new ExcelPoint(r++, 0), Now.instant());
-            sheet.appendCell(new ExcelPoint(r++, 0), Now.timestamp());
+        System.out.println(LengthUnit.CM.transTo(LengthUnit.ExcelPixel, 12.45F));
+        System.out.println(LengthUnit.CM.transTo(LengthUnit.ExcelPixel, 11.5F));
+    }
+
+    @Test
+    public void rowsInPixel() {
+        super.createExcel(document -> {
+            {
+                final ExcelSheet<?> sheet = document.createSheet("sheet1");
+                sheet.setColumnWidthInPixel(0, 100);
+                for (int r = 1; r <= 20; r++) {
+                    sheet.appendCell(new ExcelPoint(r, 0), ReportTextUtils.CHINESE_BLOCK + (r * 10));
+                    sheet.setRowHeightInPixel(r, r * 5);
+                }
+            }
+
+            {
+                final ExcelSheet<?> sheet = document.createSheet("sheet2");
+                for (int r = 1; r <= 3; r++) {
+                    sheet.setRowHeightInPixel(r, LengthUnit.CM.transTo(LengthUnit.ExcelPixel, r));
+                    sheet.setColumnWidthInPixel(r, LengthUnit.CM.transTo(LengthUnit.ExcelPixel, r));
+                    sheet.appendCell(new ExcelPoint(r, r), ReportTextUtils.CHINESE_BLOCK);
+                }
+
+                sheet.setRowHeightInPixel(0, LengthUnit.CM.transTo(LengthUnit.ExcelPixel, 12.7F));
+                sheet.setColumnWidthInPixel(0, LengthUnit.CM.transTo(LengthUnit.ExcelPixel, 12.7F));
+                sheet.appendCell(new ExcelPoint(0, 0), ReportTextUtils.CHINESE_BLOCK);
+
+            }
 
         });
+
     }
 
     @Test

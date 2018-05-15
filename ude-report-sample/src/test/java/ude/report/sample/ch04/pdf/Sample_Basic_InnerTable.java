@@ -29,7 +29,7 @@ public class Sample_Basic_InnerTable extends AbstractSample {
             // Row 2
             table0.addCell("A2");
             final float[] subWidths = { 3, 4, 5 };
-            table0.addTable(subWidths, 2, innerTable -> {
+            table0.innerTable(subWidths, 2, innerTable -> {
                 innerTable.addCell("BC-a");
                 innerTable.addCell("BC-b");
                 innerTable.addCell("BC-c");

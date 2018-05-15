@@ -189,7 +189,7 @@ public class Sample_TreeTableMetadata extends AbstractSample {
             transfer.transTable(SampleVO_OM.testDataset());
         });
         super.createExcel(excelDocument -> {
-            metadata.setWidthUnit(LengthUnit.ExcelPoint);
+            metadata.setWidthUnit(LengthUnit.ExcelPixel);
             final ExcelSheet<?> sheet = excelDocument.createSheet("A");
             final ExcelTableTransfer transfer = new ExcelTableTransfer(metadata, sheet);
             transfer.transTable(SampleVO_OM.testDataset());

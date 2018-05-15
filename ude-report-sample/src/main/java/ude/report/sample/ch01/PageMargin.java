@@ -36,7 +36,7 @@ public class PageMargin extends AbstractSampleReport {
     public void generateExcelContent(final ExcelDocument<?, ?> document) {
         final ExcelSheet<?> sheet = super.createExcelSheet(document);
         sheet.appendCell(new ExcelPoint(0, 0), this.text, new CellFormat(Border.BOX));
-        sheet.setColumnWidth(0, 20);
+        sheet.setColumnWidthInPixel(0, 20);
     }
 
     @Override

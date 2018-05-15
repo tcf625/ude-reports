@@ -22,6 +22,8 @@ public abstract class AbstractSample extends AbstractITextTestkit {
 
     private static final ITextTestConfig CONFIG = new ITextTestConfig();
 
+    protected static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(AbstractSample.class);
+
     //== [static variables] Block Stop
     //================================================
     //== [instance variables] Block Start

@@ -17,7 +17,7 @@
 <!--     <logger name="com.iisigroup.ude" level="WARN" /> -->
     
 	<logger name="com.iisigroup.udeweb.security" level="WARN" />
-	<logger name="tw.gov.moi.aeweb.security" level="WARN" />
+	<logger name="tw.gov.moi.sris3.aeweb.security" level="WARN" />
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>[%d{MM/dd-HH:mm:ss.SSS}][%-7X{taskCode}][%-5level] %msg \(%c.java:%L\)%n</pattern>
