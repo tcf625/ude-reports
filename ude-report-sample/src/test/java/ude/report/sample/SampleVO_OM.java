@@ -63,9 +63,9 @@ public class SampleVO_OM {
         vo.setText2(area);
         vo.setText3(item);
         vo.setText4("" + RandomUtils.nextInt(1000, 2000));
-        vo.setValue1(counter.incrementAndGet());
-        vo.setValue2(RandomUtils.nextInt(0, 200));
-        vo.setValue3(RandomUtils.nextInt(0, 10000));
+        vo.setValue1(1);
+        vo.setValue2(counter.incrementAndGet());
+        vo.setValue3(RandomUtils.nextInt(0, 1000));
         vo.setDate1(now);
         final MinguoDate minguoDate = MinguoDate.of(year + 11, RandomUtils.nextInt(1, 12), RandomUtils.nextInt(1, 20));
         final LocalDate localDate = LocalDate.from(minguoDate);

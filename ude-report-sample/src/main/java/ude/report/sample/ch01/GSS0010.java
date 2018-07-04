@@ -32,7 +32,7 @@ public class GSS0010 extends AbstractSampleReport {
 
     @Override
     public void generateExcelContent(final ExcelDocument<?, ?> document) {
-        final ExcelSheet<?> sheet = super.createExcelSheet(document);
+        final ExcelSheet<?> sheet = super.createExcelSheet(document, prepareLayoutInfo());
         sheet.appendCell(new ExcelPoint(0, 0), this.text, new CellFormat(Border.BOX));
         sheet.setColumnWidthInPixel(0, 20);
     }
