@@ -5,7 +5,6 @@
 
 * TableTransfer 的基本轉換流程(參考)
 
-
 ``` java 
 // ! RESET
 this.resetProcessInfo(values);
