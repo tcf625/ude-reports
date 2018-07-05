@@ -63,8 +63,9 @@ append(CellDataSource source, float widthWeight)
 
 * PDFDuplicatedTableTransfer 
   * 特殊資料清冊，不支援統計群集功能，將直列表格轉成多欄依序輸出。
+  
 * 客製化 TableTransfer 
-  * 例如遇到群集資料時，要特別做換頁或其它格式輸出。
+  * 例如遇到群集資料時，要特別做換頁處理或其它格式輸出。
 
 
 
