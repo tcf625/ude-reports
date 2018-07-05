@@ -16,7 +16,7 @@
 ## 表格描述定義(TableMetadata)
 
 
-表格描述基本定義，是1-1對應設定直欄標頭與資料來源。如下例為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
+表格描述基本定義，是一對一設定直欄標頭與資料來源對應。如下例為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
 
 ```java
 final TreeTableMetadata metadata = new TreeTableMetadata ();
