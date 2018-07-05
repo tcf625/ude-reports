@@ -54,7 +54,6 @@ append(CellDataSource source, float widthWeight)
 
 ## 表格轉換器(TableTransfer)
 
-
 有原始資料，有表格描述定義，就可以選用不同的表格轉換器轉換為表格輸出。
 
 最基本的轉換器是以文件格式分類：PDFTableTransfer、ExcelTableTransfer、CSVTableTransfer，把表格內容轉為各自格式的最適化輸出。
