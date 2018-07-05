@@ -5,11 +5,11 @@
     public void test_basicTable() {
         final TreeTableMetadata metadata = new TreeTableMetadata();
         metadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
-        metadata.append("年度", new BeanProperty("text1"), 20);
-        metadata.append("地區", new BeanProperty("text2"), 20);
-        metadata.append("項目", new BeanProperty("text3"), 20);
-        metadata.append("值1", new BeanProperty("value1"), 20);
-        metadata.append("值2", new BeanProperty("value2"), 20);
+        metadata.append("年度", dataSource("text1"), 20);
+        metadata.append("地區", dataSource("text2"), 20);
+        metadata.append("項目", dataSource("text3"), 20);
+        metadata.append("值1", dataSource("value1"), 20);
+        metadata.append("值2", dataSource("value2"), 20);
         super.createPDF(this::setPageSizeA5R, pdfDocument -> {
             pdfDocument.writeText("基本表格，標題部分每頁重複顯示");
             final PDFTableTransfer transfer = new PDFTableTransfer(pdfDocument, metadata);
