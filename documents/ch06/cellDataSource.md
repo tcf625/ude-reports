@@ -73,9 +73,9 @@ NumberValue(HorizontalExpression<BigDecimal>)
   有了第一個項目以後，就可以呼叫串接 API，建立完整的運算式。
   
   ```
-NumberOP add(CellDataSource)
-NumberOP add(ColumnMetadata)
-NumberOP add(Number)
+NumberOP add(CellDataSource)  // = plus
+NumberOP add(ColumnMetadata)  // = plus
+NumberOP add(Number)          // = plus
 NumberOP dividedBy(CellDataSource)
 NumberOP dividedBy(CellDataSource, int)
 NumberOP dividedBy(ColumnMetadata)
