@@ -31,7 +31,7 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
 CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, String...)
 ```
 
-另外，也可以附加 Band 資訊，以定義轉換表格時，所需顯示的額外區塊。
+另外，TableMetadata也可以附加 Band 資訊，以定義轉換表格時，所需顯示的額外區塊。
 
 ## 表格轉換器(TableTransfer)
 
