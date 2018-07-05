@@ -16,7 +16,7 @@ final TreeTableMetadata metadata = new TreeTableMetadata ();
 metadata.append("年度", new BeanProperty("text1"));
 ```
 
-* 底層升版到 JDK8 後，新增 DocumentGenerator 介面，並定義 dataSource(...) 相關函式。主要在不同的測試模式下，可改為輸出來源描述資訊。
+* 底層升版到 JDK8 後，對 DocumentGenerator 介面新增 dataSource(...) 相關 default 函式。主要在不同的測試模式下，可改為輸出來源描述資訊。
 
 ```java
 CellDataSource dataSource(String)       // 同 new BeanProperty(...)
