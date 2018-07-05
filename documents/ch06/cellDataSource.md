@@ -64,10 +64,10 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
   基本開頭，應是一個 NumberValue 物件，它會把指定資料來源試轉為 BigDecimal，以進行後續計算。  
   
   ``` java
-NumberValue(CellDataSource)
-NumberValue(ColumnMetadata)
-NumberValue(HorizontalExpression<BigDecimal>)
 NumberValue(Number)  
+NumberValue(ColumnMetadata) // 優先於 CellDataSource
+NumberValue(CellDataSource)
+NumberValue(HorizontalExpression<BigDecimal>)
   ```
   
   
