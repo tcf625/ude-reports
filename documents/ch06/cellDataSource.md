@@ -43,7 +43,6 @@ CellDataSource dataSource(Function<CellDataSource, ? extends CellDataSource>, St
 CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, CellDataSource...)
 CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, String...)
 ```
-
   
 
 ### 常見轉換器
@@ -53,9 +52,22 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
    * Mask : 文字遮罩
 
 
-## 欄公式
+## 欄公式 (HorizontalExpression)
 
   column 間有相依關係，但**JavaBean未實作相關計算**時，可以使用公式相關設定。
   
+  目前比較穩定有用的，是數值間的計算公式(NumberOP)。  
+  
+  早期發展時有字串相加之類的公式，但目前版本暫不提供。
+
+### NumberOP
+
+  數值間的計算公式。
+  
+  
+  
+  
+  
+      
 
 
