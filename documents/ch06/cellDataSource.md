@@ -70,6 +70,28 @@ NumberValue(CellDataSource)
 NumberValue(HorizontalExpression<BigDecimal>)
   ```
   
+  有了第一個項目以後，就可以呼叫串接 API，建立完整的運算式。
+  
+  ```
+add(CellDataSource)
+add(ColumnMetadata)
+add(Number)
+dividedBy(CellDataSource)
+dividedBy(CellDataSource, int)
+dividedBy(ColumnMetadata)
+dividedBy(ColumnMetadata, int)
+dividedBy(Number)
+dividedBy(Number, int)
+minus(CellDataSource)
+minus(ColumnMetadata)
+minus(Number)
+multiply(CellDataSource)
+multiply(ColumnMetadata)
+multiply(Number)
+plus(CellDataSource)
+plus(ColumnMetadata)
+plus(Number)  
+  ```
   
   
   
