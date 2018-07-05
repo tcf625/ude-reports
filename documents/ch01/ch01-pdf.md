@@ -39,9 +39,9 @@
 
 * 表身
 
-  * ColumnBody   ： 資料內容。  
-  * GroupHeader
-  * GroupFooter
+  * ~~ColumnBody   ： 資料內容。~~  
+  * ~~GroupHeader~~
+  * ~~GroupFooter~~
 
 * 表尾 TableFooter  
   也可定義是否每頁重複\(內容可變\) ，或只出現在最末。
