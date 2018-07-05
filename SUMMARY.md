@@ -57,6 +57,7 @@
     * [巢狀表格](documents/ch06/NestTable.md)
   * [2. 額外區塊](documents/ch06/block.md)
   * [3. 資料群集與統計](documents/ch06/grouping.md)
+    * TitleMode
   * [4. 其它表格轉換器](documents/ch06/tableTransfer.md)
 * [七、其它議題](documents/ch07/README.md)
   * [1. PDF文件安全性設定](documents/ch07/ch07-encryption.md)
