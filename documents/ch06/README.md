@@ -1,5 +1,5 @@
 
-# TableTransfer
+# 表格轉換架構
 
 「表格描述定義」可以針對 JavaBean / Map 形式資料來源，以相同的 Table-Metadata 轉換為不同格式(PDF/Excel/CSV)輸出，方便變換報表格式時處理。
 
