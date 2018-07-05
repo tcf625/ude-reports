@@ -26,5 +26,13 @@
   * 計數器，在同一個 TRANSFER 中有效。
   * 重新轉換時會回到初始值。
 
+* DataObject
+
+  * 原始資料本身
+  ''' java 
+  DataObject.SELF
+  '''
 
 ## 轉換器
+
+
