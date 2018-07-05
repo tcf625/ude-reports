@@ -9,7 +9,6 @@
   * 由 java bean 屬性取得內容。
   * 等效 dataSource(propName)。
   
-
 * Const 
   * 定字資訊
   * 當下日期物件
