@@ -8,16 +8,23 @@
 將被轉換為表格的原始資料，應為 Iterable<T> 類型，每一筆資料列的內容，存在一個類別為 T 的物件中。
 
 
-
 本章介紹製表所用的基礎API，理論上所有的表格皆可以用基礎繪製，但是可使用「表格描述定義」時，還是建議盡量使用，以簡化程式開發。
 
 基礎API 適用的應用情境包含格式複雜的申請書、跨頁的大型表格、格式簡單的名條、頁首頁尾特殊排版。
 
 
-
-# 表格描述定義
+## 表格描述定義(TableMetadata)
 
 利用本套件輸出此類表格的設定方式，第一步是先建立 xxxTableMetadata，再插入個別欄位定義\(含標頭、資料來源及格式\)、群組定義。最後再以 PDFTableTransfer、ExcelTableTransfer 等表格轉換器，撘配原始資料List《JavaBean/Map》轉換為表格輸出。
+
+
+
+## 表格轉換器(TableTransfer)
+
+
+
+
+
 
 UDE-Report 的表格描述基本準則，是1-1對應設定直欄標頭與資料來源。如下面建立 TableMetadata 的範例，為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
 
