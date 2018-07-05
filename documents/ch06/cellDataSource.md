@@ -33,7 +33,25 @@
 
 ## 轉換器
 
-  格式或型別轉換。
+  * 格式或型別轉換。
+  * 一般轉換器，皆會提供建立轉換器的Function，供 dataSource(...) 函式使用。
+  
+```java
+CellDataSource dataSource(BiFunction<CellDataSource, CellDataSource, ? extends CellDataSource>, String, String)
+CellDataSource dataSource(Function<CellDataSource, ? extends CellDataSource>, CellDataSource)
+CellDataSource dataSource(Function<CellDataSource, ? extends CellDataSource>, String)
+CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, CellDataSource...)
+CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, String...)
+```
+
+  
+
+### 常見轉換器
+
+   * Code : 代碼檔
+   * ToText : 文字格式化
+   * Mask : 文字遮罩
+
 
 ## 欄公式
 
