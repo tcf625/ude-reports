@@ -1,4 +1,4 @@
 
 
-UDE Report 以 CHTFontFactory 管理單一字型。
+UDE Report 以 UDEFontFactory 管理單一字型。
 
