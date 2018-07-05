@@ -15,6 +15,30 @@
 
 ## 表格描述定義(TableMetadata)
 
+
+表格描述基本定義，是1-1對應設定直欄標頭與資料來源。如下例為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
+
+```java
+final TreeTableMetadata metadata = new TreeTableMetadata ();
+metadata.append("年度", new BeanProperty("text1"));
+```
+
+底層升版到 JDK8 後，新增 DocumentGenerator 介面，並定義 dataSource(...) 相關函式。
+主要在不同的測試模式下，可改為輸出來源描述資訊。
+
+```java
+CellDataSource dataSource(String)       // 同 new BeanProperty(...)
+CellDataSource[] dataSources(String...) // 
+
+CellDataSource dataSource(BiFunction<CellDataSource, CellDataSource, ? extends CellDataSource>, String, String)
+CellDataSource dataSource(Function<CellDataSource, ? extends CellDataSource>, CellDataSource)
+CellDataSource dataSource(Function<CellDataSource, ? extends CellDataSource>, String)
+CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, CellDataSource...)
+CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, String...)
+
+```
+
+
 利用本套件輸出此類表格的設定方式，第一步是先建立 xxxTableMetadata，再插入個別欄位定義\(含標頭、資料來源及格式\)、群組定義。最後再以 PDFTableTransfer、ExcelTableTransfer 等表格轉換器，撘配原始資料List《JavaBean/Map》轉換為表格輸出。
 
 
@@ -29,11 +53,7 @@
 
 UDE-Report 的表格描述基本準則，是1-1對應設定直欄標頭與資料來源。如下面建立 TableMetadata 的範例，為 metadata 增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示由 java bean 的 "text1" 屬性取得內容。
 
-```java
-final TreeTableMetadata metadata = new TreeTableMetadata ();
-metadata.append("年度", new BeanProperty("text1"));
-// ...
-```
+
 
 一些新增欄位定義的函式如下，後續章節會再逐一介紹。
 
