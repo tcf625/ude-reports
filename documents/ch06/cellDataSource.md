@@ -61,7 +61,14 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
 ### NumberOP
 
   數值間的計算公式。
+  基本開頭，應是一個 NumberValue 物件，它會把指定資料來源試著轉為 BigDecimal，以進行後續計算。  
   
+  ``` java
+NumberValue(CellDataSource)
+NumberValue(ColumnMetadata)
+NumberValue(HorizontalExpression<BigDecimal>)
+NumberValue(Number)  
+  ```
   
   
   
