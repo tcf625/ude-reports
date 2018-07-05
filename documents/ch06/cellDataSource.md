@@ -25,7 +25,7 @@
 
 
 * DataObject
-  * 原始資料本身
+  * 原始資料本身 (少用)
   
   ``` java 
   DataObject.SELF
