@@ -17,6 +17,7 @@
   ```
   
 * Counter 
+  * 計數器，在同一個 TRANSFER 中有效。
 
 如下例增加一個「年度」欄位，其資料值「new BeanProperty("text1")」表示
 
