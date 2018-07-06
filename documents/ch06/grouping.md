@@ -30,6 +30,7 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
 * 原始資料必須 order by 年度、地區。
 
 * 目前有設 mergedRows時，最後一層有顯示群組列的層級必設，不然會破壞跨欄。
+  (2018新增特性，未盡完善)
 
 * 對原始資料中的值，沒有其它描述定義其中的從屬關係。
 
