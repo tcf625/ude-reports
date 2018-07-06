@@ -14,8 +14,8 @@
 * 原始資料必須 order by 年度、地區。
 * 群組列可呈現於資料上方或下方或兩者皆有。  
   ``` java
-final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
-final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
+final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BEFORE);
+final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.AFTER);
 final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
   ```
 * 目前有設 mergedRows時，最後一層有顯示群組列的層級必設，不然會破壞跨欄。
