@@ -13,6 +13,8 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
 final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.AFTER);
 final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
   ``` 
+  * 群組列中的資料值
+  
   
 * 群集階層(GroupingLevel)定義有三層：
   個別群組列不顯示，可用 setShowGroupingRow 設定。
