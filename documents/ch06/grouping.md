@@ -15,10 +15,10 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
   ``` 
   
 * 群集階層(GroupingLevel)定義有三層：
+  個別群組列不顯示，可用 setShowGroupingRow 設定。
   * Level0 : 總計 (桃色)
   * Level1 : 年度 小計 (藍色)
   * Level2 : 地區 小計 (綠色)
-  * **個別群組列不顯示，可用 setShowGroupingRow 設定。**  
   
 * 原始資料必須 order by 年度、地區。
 
