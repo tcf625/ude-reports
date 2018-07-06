@@ -13,6 +13,7 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
 final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.AFTER);
 final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
   ```
+  
 * 群集(GroupingLevel)定義有三層：
   * Level0 : 總計 (桃色)
   * Level1 : 年度 小計 (藍色)
