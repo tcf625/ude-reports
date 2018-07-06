@@ -18,7 +18,6 @@ public interface CellType {
 ```
 
 
-
 * 部分定義可合併使用
 
 #### 如何自定義 CellType
@@ -34,10 +33,7 @@ public interface CellCreator<T extends Celltype> {
 ```
 
 
-
-
-
-### TableiTextDecorator
+### 表格：TableiTextDecorator
 
 
 實作以下 MEHTOD，當每一個單獨表格繪製完成後，可用自訂的TableiTextDecorator加上表格裝飾效果。
