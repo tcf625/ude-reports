@@ -1,19 +1,9 @@
 
-# TODO
-
-
-資訊未整理。
-
-
-------------------
-
-
-
 ## 特殊樣式處理
 
 * 對 PDF 的支援度較高。
 
-### CellType
+### 欄位：CellType
 
 ``` JAVA
 public interface Celltype {
@@ -29,6 +19,14 @@ public interface CellCreator<T extends Celltype> {
     PdfPCell create(CHTFontFactory fontFactory, int fontSize, String text, T cellType, Paragraph paragraph);
 }
 ```
+
+
+* 部分定義可合併使用
+
+#### 如何自定義 CellType
+
+ TODO
+
 
 
 ### TableiTextDecorator
