@@ -42,7 +42,7 @@ public class Sample_Sealstamp extends AbstractSample {
                 pdfDocument.writeText("PDF文件頁數: " + pdfDocument.getPageNumber());
                 pdfDocument.writeText("PDF文件頁數: " + pageCounter.getRealPages());
 
-                final TableiText table = pdfDocument.createTable(60, 5);
+                final TableiText table = pdfDocument.createTableWithRatio(60, 5);
                 table.setHorizontalAlignment(DocumentAlign.CENTER);
                 for (int k = 1; k <= 90; k++) {
                     table.addCell("TEST");
@@ -69,7 +69,7 @@ public class Sample_Sealstamp extends AbstractSample {
                 pdfDocument.writeText("PDF文件頁數: " + pdfDocument.getPageNumber());
                 pdfDocument.writeText("PDF文件頁數: " + pageCounter.getRealPages());
 
-                final TableiText table = pdfDocument.createTable(60, 5);
+                final TableiText table = pdfDocument.createTableWithRatio(60, 5);
                 table.setHorizontalAlignment(DocumentAlign.CENTER);
                 for (int k = 1; k <= 90; k++) {
                     table.addCell("TEST");
@@ -98,7 +98,7 @@ public class Sample_Sealstamp extends AbstractSample {
             pdfDocument.writeText("TEST PAGE (LOCAL-COUNT): " + i);
             pdfDocument.writeText("PDF文件頁數: " + pdfDocument.getPageNumber());
             pdfDocument.writeText("PDF文件頁數: " + pageCounter.getRealPages());
-            final TableiText table = pdfDocument.createTable(60, 5);
+            final TableiText table = pdfDocument.createTableWithRatio(60, 5);
             table.setHorizontalAlignment(DocumentAlign.CENTER);
             for (int k = 1; k <= 90; k++) {
                 table.addCell("TEST");

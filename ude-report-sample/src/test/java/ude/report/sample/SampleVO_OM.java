@@ -20,7 +20,7 @@ import com.iisigroup.ude.util.lang8.date.UdeTimeUtils;
 public class SampleVO_OM {
 
     final static private String[] AREA_NAME = { "臺北市", "新北市", "高雄市" };
-    final static private String[] ITEM_NAME = { "第一類", "第二類", "第三類", "第四類" };
+    final static private String[] ITEM_NAME = { "甲類", "乙類", "第三類", "第四類" }; // 
 
     public static SampleVO testData() {
         return testData(99, AREA_NAME[0], ITEM_NAME[1]);

@@ -25,7 +25,7 @@ import com.iisigroup.ude.report.table.format.CellFormat.AlignV;
 import com.iisigroup.ude.report.table.grouping.GroupingFunction;
 import com.iisigroup.ude.report.table.grouping.GroupingInfo;
 import com.iisigroup.ude.report.table.grouping.GroupingInfo.Position;
-import com.iisigroup.ude.report.table.grouping.GroupingLevel;
+import com.iisigroup.ude.report.table.grouping.GroupingLevel.TitleMode;
 import com.iisigroup.ude.report.table.metadata.TreeColumnMetadata;
 import com.iisigroup.ude.util.lang.UdeRegexUtils;
 import com.lowagie.text.PageSize;
@@ -76,16 +76,22 @@ public class Sample_Grouping extends AbstractSample {
 
         final TreeTableMetadata tableMetadata = new TreeTableMetadata();
         tableMetadata.getDefaultContentFormat().setAlignV(AlignV.MIDDLE);
+
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
+
         tableMetadata.append("年度", new BeanProperty("text1"), yearColumn -> {
             yearColumn.setGroupFunction(GroupingFunction.HEADER);
-            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(" 小計", yearColumn);
-            groupingLevel.setMergedRowsLevel(2);
-
+            groupingInfo.addGroupLevel(yearColumn)//
+                    .setTitleMode(TitleMode.THIS) //
+                    .setMergedRows(true) //
+                    .setSuffix(" 小計");
         });
+
         tableMetadata.append("地區", new BeanProperty("text2"), areaColumn -> {
-            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(" 計", areaColumn);
-            groupingLevel.setMergedRowsLevel(2);
+            groupingInfo.addGroupLevel(areaColumn)//
+                    .setMergedRowsLevel(2)//
+                    .setSuffix(" 計") //
+            ;
         });
 
         // !!
@@ -149,10 +155,10 @@ public class Sample_Grouping extends AbstractSample {
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.AFTER);
         tableMetadata.append("年度", new BeanProperty("text1"), yearColumn -> {
             yearColumn.setGroupFunction(GroupingFunction.HEADER);
-            groupingInfo.addGroupLevel(" 小計", yearColumn);
+            groupingInfo.addGroupLevel(yearColumn).setSuffix(" 小計");
         });
         tableMetadata.append("地區", new BeanProperty("text2"), areaColumn -> {
-            groupingInfo.addGroupLevel(" 計", areaColumn);
+            groupingInfo.addGroupLevel(areaColumn).setSuffix(" 計");
         });
 
         // !!
@@ -211,7 +217,7 @@ public class Sample_Grouping extends AbstractSample {
 
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總合", Position.AFTER);
         yearColumn.setGroupFunction(GroupingFunction.HEADER);
-        groupingInfo.addGroupLevel("小計", yearColumn);
+        groupingInfo.addGroupLevel(yearColumn).setSuffix("小計");
 
         final List<SampleVO> testDataset = SampleVO_OM.testDataset(101);
         super.createPDF(pdfDocument -> {

@@ -20,7 +20,7 @@ public class Sample_Basic_InnerTable extends AbstractSample {
     public void test_innerTable() {
 
         super.createPDF(pdfDocument -> {
-            final TableiText table0 = pdfDocument.createTable(80, 4);
+            final TableiText table0 = pdfDocument.createTableWithRatio(80, 4);
             table0.addCell("A1");
             table0.addCell("B1");
             table0.addCell("C1");

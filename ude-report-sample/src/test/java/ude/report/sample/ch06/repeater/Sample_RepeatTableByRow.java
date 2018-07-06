@@ -33,7 +33,7 @@ public class Sample_RepeatTableByRow extends AbstractSample {
     }
 
     private void outputNextTable(final PDFDocument pdfDocument) {
-        final TableiText nextTable = pdfDocument.createTable(100, 2);
+        final TableiText nextTable = pdfDocument.createTableWithRatio(100, 2);
         nextTable.addCell("Next");
         nextTable.addCell("Table");
         nextTable.setSpacing(0);

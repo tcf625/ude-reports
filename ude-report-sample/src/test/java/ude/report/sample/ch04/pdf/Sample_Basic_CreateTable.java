@@ -17,16 +17,16 @@ public class Sample_Basic_CreateTable extends AbstractSample {
     public void test_basicTable() {
 
         super.createPDF(pdfDocument -> {
-            final TableiText table0 = pdfDocument.createTable(80, 2);
+            final TableiText table0 = pdfDocument.createTableWithRatio(80, 2);
             table0.setHorizontalAlignment(DocumentAlign.LEFT);
             table0.addCell("A : 80%");
             table0.addCell("B");
             table0.appendMe();
-            final TableiText table1 = pdfDocument.createTable(80, 2);
+            final TableiText table1 = pdfDocument.createTableWithRatio(80, 2);
             table1.addCell("A : 80%");
             table1.addCell("B");
             table1.appendMe();
-            final TableiText table2 = pdfDocument.createTable(100, 2);
+            final TableiText table2 = pdfDocument.createTableWithRatio(100, 2);
             table2.addCell("A : 100%");
             table2.appendMe();
         });
@@ -35,11 +35,11 @@ public class Sample_Basic_CreateTable extends AbstractSample {
     @Test
     public void test_basicWidths() {
         super.createPDF(pdfDocument -> {
-            final TableiText table1 = pdfDocument.createTable(100, 5);
+            final TableiText table1 = pdfDocument.createTableWithRatio(100, 5);
             addWidthInfoCells(table1);
             table1.appendMe();
             final float[] widths = { 1, 2, 3, 4, 5 };
-            final TableiText table2 = pdfDocument.createTable(100, widths);
+            final TableiText table2 = pdfDocument.createTableWithRatio(100, widths);
             addWidthInfoCells(table2);
             table2.setSpacingBeforeInCM(0.5F);
             table2.appendMe();

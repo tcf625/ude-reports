@@ -48,7 +48,7 @@ public class Sample_CellType_Titles extends AbstractSample {
         super.createPDF(pdfDocument -> {
             pdfDocument.writeText("三等分欄位的特別案例");
             final float[] widths = { 3, 5, 5, 8 };
-            final TableiText table2 = pdfDocument.createTable(90, widths);
+            final TableiText table2 = pdfDocument.createTableWithRatio(90, widths);
             table2.setSpacingBefore(24);
             table2.addCell("說明");
             table2.addCell("傳入參數");
@@ -68,7 +68,7 @@ public class Sample_CellType_Titles extends AbstractSample {
 
     private void addSampleTable(final PDFDocument pdfDocument, final String xTitle, final String contentTitle,
             final String yTitle, final String empty) {
-        final TableiText table = pdfDocument.createTable(50, UdeArrayUtils.floats(10, 5, 5));
+        final TableiText table = pdfDocument.createTableWithRatio(50, UdeArrayUtils.floats(10, 5, 5));
         table.getDefaultFormat().setAlignH(AlignH.CENTER);
 
         final CellFormat titleFormat = new CellFormat().setBackgroundColor(Color.LIGHT_GRAY).setFontSize(10).setPaddingV(6);

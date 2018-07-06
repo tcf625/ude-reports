@@ -88,12 +88,12 @@ public class Sample_Grouping_Excel extends AbstractSample {
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.BOTH);
         tableMetadata.append("年度", new BeanProperty("text1"), yearColumn -> {
             yearColumn.setGroupFunction(GroupingFunction.HEADER);
-            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(" 小計", yearColumn);
+            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(yearColumn).setSuffix(" 小計");
             groupingLevel.setMergedRowsLevel(2);
 
         });
         tableMetadata.append("地區", new BeanProperty("text2"), areaColumn -> {
-            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(" 計", areaColumn);
+            final GroupingLevel groupingLevel = groupingInfo.addGroupLevel(areaColumn).setSuffix(" 計");
             groupingLevel.setMergedRowsLevel(2);
         });
 
@@ -144,10 +144,10 @@ public class Sample_Grouping_Excel extends AbstractSample {
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Position.AFTER);
         tableMetadata.append("年度", new BeanProperty("text1"), yearColumn -> {
             yearColumn.setGroupFunction(GroupingFunction.HEADER);
-            groupingInfo.addGroupLevel(" 小計", yearColumn);
+            groupingInfo.addGroupLevel(yearColumn).setSuffix(" 小計");
         });
         tableMetadata.append("地區", new BeanProperty("text2"), areaColumn -> {
-            groupingInfo.addGroupLevel(" 計", areaColumn);
+            groupingInfo.addGroupLevel(areaColumn).setSuffix(" 計");
         });
 
         // !!
@@ -206,7 +206,7 @@ public class Sample_Grouping_Excel extends AbstractSample {
 
         final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總合", Position.AFTER);
         yearColumn.setGroupFunction(GroupingFunction.HEADER);
-        groupingInfo.addGroupLevel("小計", yearColumn);
+        groupingInfo.addGroupLevel(yearColumn).setSuffix("小計");
 
         final List<SampleVO> testDataset = SampleVO_OM.testDataset(101);
         super.createPDF(pdfDocument -> {
