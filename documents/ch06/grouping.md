@@ -21,8 +21,8 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
   * Level2 : 地區 小計 (綠色)
   
   ``` java
-  addGroupLevel\(CellDataSource\)  
-  addGroupLevel\(ColumnMetadata\) // 建議優先使用。
+  addGroupLevel\(ColumnMetadata\)  // 建議優先使用。
+  addGroupLevel\(CellDataSource\)  // 若欄位不存在表格中
   ```
   
 * 原始資料必須 order by 年度、地區。
