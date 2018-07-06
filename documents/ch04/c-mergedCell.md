@@ -5,5 +5,7 @@
 ### PDF： subTable (...)
 
     垂直合併時，針對其它非合併部分，應使用 subTable
+    
+    因為：iText 原生API的 rowSpan 在跨頁時的呈現不易控制。
 
 ### Excel： appendCell(ExcelPoint, ExcelPoint, Object, CellFormat) 
