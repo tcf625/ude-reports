@@ -7,7 +7,7 @@
 * SUM
 * COUNT
 * FIRST // 同一群集中的第一項
-* LAST  // 同一群集中的最後項
+* LAST  // 同一群集中的最末項
 * MAX_VALUE
 * MIN_VALUE
 
