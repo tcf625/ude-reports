@@ -6,11 +6,24 @@
 ### 欄位：CellType
 
 ``` JAVA
-public interface Celltype {
-    Celltype NONE = text -> text;
-    String asText(String defaultText); // FOR EXCEL
+public interface CellType {
+    CellType NONE = new CellType() {    };
+    default void setupContent(final ColumnMetadata c) { // For Consumer 串接
+        c.getContentFormat().setCellType(this);
+    }
+    default void setupHeader(final ColumnMetadata c) { // For Consumer 串接
+        c.getHeaderFormat().setCellType(this);
+    }
 }
 ```
+
+
+
+* 部分定義可合併使用
+
+#### 如何自定義 CellType
+
+* TODO
 
 專案若自行定義 Celltype ，同時必須實作對應的 CellCreator。
 
@@ -21,11 +34,6 @@ public interface CellCreator<T extends Celltype> {
 ```
 
 
-* 部分定義可合併使用
-
-#### 如何自定義 CellType
-
-* TODO
 
 
 
