@@ -36,7 +36,7 @@ public interface CellCreator<T extends Celltype> {
 ### 表格：TableiTextDecorator
 
 
-實作以下 MEHTOD，當每一個單獨表格繪製完成後，可用自訂的TableiTextDecorator加上表格裝飾效果。
+自訂的TableiTextDecorator實作以下 MEHTOD，當每個單獨表格繪製完成後，可加上裝飾效果。
 ``` java
   public abstract void drawTableLayout(PDFDocument pdfDocument ... ) 
 ```
