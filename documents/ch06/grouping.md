@@ -20,6 +20,11 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
   * Level1 : 年度 小計 (藍色)
   * Level2 : 地區 小計 (綠色)
   
+  ``` java
+  addGroupLevel\(CellDataSource\)  
+  addGroupLevel\(ColumnMetadata\) // 建議優先使用。
+  ```
+  
 * 原始資料必須 order by 年度、地區。
 
 * 目前有設 mergedRows時，最後一層有顯示群組列的層級必設，不然會破壞跨欄。
@@ -27,8 +32,6 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
 
 
 
-addGroupLevel\(CellDataSource\)  
-addGroupLevel\(ColumnMetadata\)
 
 addGroupLevel\(String titleSuffix, CellDataSource\)  
 addGroupLevel\(String titleSuffix, ColumnMetadata\)
