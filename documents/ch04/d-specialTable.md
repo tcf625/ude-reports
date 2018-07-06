@@ -37,15 +37,14 @@ public interface CellCreator<T extends Celltype> {
 
 
 實作以下 MEHTOD，當每一個單獨表格繪製完成後，可用自訂的TableiTextDecorator加上表格裝飾效果。
-UDE-Report 也有提供一些常用的的裝飾類別。
+``` java
+  public abstract void drawTableLayout(PDFDocument pdfDocument ... ) 
+```
 
-```
-    public abstract void drawTableLayout(PDFDocument pdfDocument //
-            , PdfPTable table //
-            , float[][] widths //
-            , float[] heights //
-            , int headerRows //
-            , int rowStart//
-            , PdfContentByte[] canvases);
-```
+#### 常用裝飾類別(UDE內建)
+
+* TableBorder 外框處理
+* RowBackgroundColor 每列底色變化
+
+
 
