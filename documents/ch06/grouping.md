@@ -13,7 +13,7 @@
   * Level2 : 地區 小計 (綠色)
 * 原始資料必須 order by 年度、地區。
 * 群組列可呈現於資料上方或下方或兩者皆有。  
-* 目前有設 mergedRows時，最後一層有顯示群組列的層級必設
+* 目前有設 mergedRows時，最後一層有顯示群組列的層級必設，不然會破壞跨欄。
 
 
 addGroupLevel\(CellDataSource\)  
