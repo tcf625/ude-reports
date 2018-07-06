@@ -11,3 +11,10 @@
 * MAX_VALUE
 * MIN_VALUE
 
+``` java 
+tableMetadata.append("年度", new BeanProperty("text1"));
+tableMetadata.append("地區", new BeanProperty("text2"));
+tableMetadata.append("項目", new BeanProperty("text3")).setGroupFunction(GroupingFunction.COUNT);
+tableMetadata.append("值1", new BeanProperty("value1")).setGroupFunction(GroupingFunction.SUM);
+tableMetadata.append("值2", new BeanProperty("value2")).setGroupFunction(GroupingFunction.SUM);
+```
