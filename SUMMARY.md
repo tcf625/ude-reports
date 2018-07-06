@@ -41,7 +41,7 @@
     * [範例：線段外觀\(Cell\)](documents/ch04/CellType-ExtraLines.md)
     * [範例：外框處理\(Table\)](documents/ch04/decorator-border.md)
     * [範例：每列底色變化\(Table\)](documents/ch04/decorator-row-bgcolor.md)
-* [五、繪圖、定位輸出](documents/ch05/README.md)
+* [五、繪圖模式 \(定位點輸出\)](documents/ch05/README.md)
   * [1. 線段輸出](documents/ch05/painter-lines.md)
   * [2. 文字輸出](documents/ch05/painter-text.md)
   * [3. 圖片輸出](documents/ch05/painter-image.md)
