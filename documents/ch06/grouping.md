@@ -37,11 +37,9 @@ addGroupLevel\(String titleSuffix, CellDataSource\)
 addGroupLevel\(String titleSuffix, ColumnMetadata\)
 
 
-
-
-
 > ## NOTE 
 >
-> 戶役政系統 所實作的 GroupingKey
+> 戶役政系統 所實作的 GroupingKey 是針對同一欄位的資料，也有層級關係時。
+> 
 >
-
+>
