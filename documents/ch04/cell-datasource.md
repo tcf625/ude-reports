@@ -1,6 +1,7 @@
 
 # CellDataSource
 
+用在 TableIText 時，需配合 table.setDataObject(...)
 
 ## 基本來源
 
