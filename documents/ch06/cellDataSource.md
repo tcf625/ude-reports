@@ -47,9 +47,11 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
 
 ### 常見轉換器
 
-   * Code : 代碼檔
+   * Code : 代碼檔對應文字
    * ToText : 文字格式化
    * Mask : 文字遮罩
+   * Abbreviate : 刪節文字
+   * Decoder : 自訂文字對應
 
 
 ## 欄公式 (HorizontalExpression)
@@ -70,7 +72,7 @@ NumberValue(CellDataSource)
 NumberValue(HorizontalExpression<BigDecimal>)
   ```
   
-  有了第一個項目以後，就可以呼叫串接 API，建立完整的運算式。
+  建立第一個項目以後，就可以呼叫串接 API，構建完整運算式。
   
   ```
 NumberOP add(CellDataSource)  // = plus
@@ -95,7 +97,12 @@ NumberOP plus(Number)
   
   
   
-  
+## Notes
+
+輸出 \< li \> 效果文字
+
+
+    
   
   
   
