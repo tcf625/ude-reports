@@ -54,7 +54,10 @@ CellDataSource dataSource(Function<CellDataSource[], ? extends CellDataSource>, 
 column 間有相依關係，但**JavaBean未實作相關計算**時，可以使用公式相關設定。
 早期發展時有字串相加、日期處理之類的公式，但目前版本暫時不再提供。
 
-目前比較穩定被使用的，只有數值間的計算公式(NumberOP)。  
+* 目前比較穩定被使用的，只有數值間的計算公式(NumberOP)。  
+
+* 專案也可以客制化公式，如上述提到的日期計算或中位數、平均數計算等等。
+
 
 ### NumberOP
 
@@ -87,6 +90,9 @@ NumberOP plus(CellDataSource)
 NumberOP plus(ColumnMetadata)
 NumberOP plus(Number)
 ```
+
+### 
+
 ## Notes
 
 輸出 < li \> 效果文字，配合 NoteItem 使用。
