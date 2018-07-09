@@ -44,5 +44,6 @@ final GroupingInfo groupingInfo = tableMetadata.createGroupingInfo("總計", Pos
 >
 > 因為其資料的群集、加總模式比較複雜，所以另行定義 GroupingKey...等相關資料結構，先行針對資料進行運算。             
 > 而非交由 TableTranfer 中的 GroupingLevel 處理。
+> 所以不顯示由 GroupingLevel 計算而得的群組列。
 >
-> 需要做分頁 
+> 若需要依某項群集階層(GroupingLevel)變動時，做分頁處理，則交由客製化的表格轉換器處理。
