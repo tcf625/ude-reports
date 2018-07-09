@@ -12,39 +12,13 @@
   *  群集計算資訊
   *  具狀態的 CellDataSource (如 counter)
 * 繪製 BandType : TableHeader
-* 初始表格物件   _this.processTableStart();_
+* 初始表格物件   processTableStart();_
 * 準備表頭(ColumnHeader)內容 
-* 輸出表身
-// ! BODY
-this.transBodyPart(values);
-// 
-//  TableHeaderRepeat 
-//  TableFooterRepeat 
-//  foreach dataRow{
-//    this.processDataRow(this.bodyBlock, realData);
-//  
-// processPreGrouping(); 
-// ! 根據現有資料與先前資料比對，決定統計層級及是否需輸出(於前方的案例)。
-// this.drawDataRow(bodyBlock, realData); // ! 處理本列實際輸出。
-// this.processPostGrouping();            // ! 處理統計輸出於資料後方的案例。
-//  } 
-//
-
-
-if (this.dataIndex == 0) {
-    this.processBand(BandType.NoData);
-}
-
-// ! END
-this.processTableEnd();
-this.processBand(BandType.TableFooter);
-
-// ! CHARTS
-final List<ChartBand> charts = this.tableMetadata.getCharts();
-for (final ChartBand chartBand : charts) {
-    this.processChartBand(chartBand);
-}
-
-
-} finally {     this.tableMetadata.reset(false);     }
-
+  * 含 BandType : TableHeaderRepeat / TableFooterRepeat 
+* 輸出表身(ColumnBody)內容    transBodyPart(values);_
+  * 針對每一筆資料，輸出資料列。
+    * [PDF 格式] 一併處理換頁控制。
+    * [含群集設定時] 於輸出前後，檢查是否輸處理群組列。
+* 表格繪製結束 _this.processTableEnd();_
+  * 輸出所有暫存資料(含計算TableFooter空間)。
+  * 繪製 BandType : TableFooter
