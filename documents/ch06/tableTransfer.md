@@ -13,10 +13,8 @@
   *  具狀態的 CellDataSource (如 counter)
 * 繪製 BandType : TableHeader
 * 初始表格物件   _this.processTableStart();_
-* 
-// ! HEADER
-this.transColumnHeaderPart();
-
+* 準備表頭(ColumnHeader)內容 
+* 輸出表身
 // ! BODY
 this.transBodyPart(values);
 // 
