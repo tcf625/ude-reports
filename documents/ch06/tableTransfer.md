@@ -8,19 +8,12 @@
 
 ## 表格轉換基本流程(參考)
 
-
-``` java 
-// ! RESET
-this.resetProcessInfo(values);
-    // this.resetGrouping();
-    // this.evalAllGrouping(values, UdeRuntimeUtils::doNothing);
-    // this.resetAllColumnsValue();
-
-this.processBand(BandType.TableHeader);
-
-// ! TABLE
-this.processTableStart();
-
+* 重設所有處理資訊。_this.resetProcessInfo(values);_
+  *  群集計算資訊
+  *  具狀態的 CellDataSource (如 counter)
+* 繪製 BandType : TableHeader
+* 初始表格物件   _this.processTableStart();_
+* 
 // ! HEADER
 this.transColumnHeaderPart();
 
@@ -56,4 +49,4 @@ for (final ChartBand chartBand : charts) {
 
 
 } finally {     this.tableMetadata.reset(false);     }
-```
+
