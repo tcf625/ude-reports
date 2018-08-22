@@ -17,9 +17,7 @@
 
 以繪圖模式輸出指定線段樣式
 
-
-
-![](/assets/ch02/watermark-lines-sample/import.png)
+![](/assets/ch02/watermark_lines_sample.png)
 
 ### 圖片浮水印
 
