@@ -7,8 +7,8 @@
 
 ``` xml
 <repository>
-<id>SRIS3-PUBLIC</id>
-<name>SRIS3-PULBIC</name>
+<id>IISIUDE-PUBLIC</id>
+<name>IISIUDE-PULBIC</name>
 <url>http://192.168.57.11:8080/ude_maven</url>
 <releases><enabled>true</enabled></releases>
 <snapshots><enabled>true</enabled><updatePolicy>interval:5</updatePolicy></snapshots>
