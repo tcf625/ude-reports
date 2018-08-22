@@ -2,8 +2,7 @@
 
 * **適用於 PDF**
 
-浮水印與騎縫章是相似的概念，都是輸出在文件底部的圖片或文字，差別在於騎縫章會把一張圖片切為兩半，分別輸出在不同頁面的首尾。  
-兩者的定義方式都是建立對應的MarkInfo，在產生PDFDocument時傳入List &lt; ? extends MarkInfo &gt; markInfos。或在 PDFGenerator 實作 prepareMarkInfos\(\)
+浮水印與騎縫章是相似的概念，都是輸出在文件底部的圖片或文字，差別在於騎縫章會把一張圖片切為兩半，分別輸出在不同頁面的首尾。兩者的定義方式都是建立對應的MarkInfo。在產生PDFDocument時傳入List &lt; ? extends MarkInfo &gt; markInfos。或在 PDFGenerator 實作 prepareMarkInfos\(\)
 
 套件內建的浮水印、騎縫章都統一使用PropertiesMarkInfo進行定義，依不同形式的浮水印、騎縫章，各自有對應的MarkmakerProperties 實作子類別。
 
