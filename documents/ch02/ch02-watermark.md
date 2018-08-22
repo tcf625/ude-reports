@@ -15,6 +15,10 @@
 不特別指定角度的話，預設依內頁範圍的左下-右上對角輸出。
 
 
+### 線段浮水印
+
+以繪圖模式輸出指定線段樣式
+
 
 ### 圖片浮水印
 圖片浮水印資訊的實作類別是ImageWatermarkProperties，預設建構子為filePath。若圖檔資源隨同JAR檔一並發布，則可用classpath:${resource-path}格式指定。
