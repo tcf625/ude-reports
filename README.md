@@ -5,19 +5,14 @@
 * **範例程式 @ GitHub：** https://github.com/tcf625/ude-reports/
 * ** Maven Repository Setting :**
 
-```xml
-<repositories>
-    <repository>
-        <id>IISI_UDE</id>
-        <url>http://192.168.57.21/nexus/content/groups/public</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
+``` xml
+<repository>
+<id>SRIS3-PUBLIC</id>
+<name>SRIS3-PULBIC</name>
+<url>http://192.168.57.11:8080/ude_maven</url>
+<releases><enabled>true</enabled></releases>
+<snapshots><enabled>true</enabled><updatePolicy>interval:5</updatePolicy></snapshots>
+</repository>
 ```
 
 
